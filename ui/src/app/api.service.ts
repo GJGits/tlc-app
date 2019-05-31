@@ -15,7 +15,7 @@ export class ApiService {
   }
 
   getApartment(): Observable<Apartment> {
-    return null;
+    return this.httpClient.get<Apartment>(this.baseUrl + 'apartment');
   }
 
   getLastReading(sensor: Sensor): Observable<Reading> {

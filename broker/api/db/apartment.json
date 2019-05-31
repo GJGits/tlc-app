@@ -1,0 +1,16 @@
+{
+  "id": 0,
+  "address": "VIA ROSTA 28",
+  "zones": [
+    {
+      "id": 0,
+      "type": "Camera",
+      "sensor": {
+        "id": "s:CC:50:E3:56:2F:68"
+      },
+      "actuator": {
+        "id":"a:B4:E6:2D:68:34:FD"
+      }
+    }
+  ]
+}

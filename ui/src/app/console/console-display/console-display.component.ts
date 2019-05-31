@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-console-display',
@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsoleDisplayComponent implements OnInit {
 
-  constructor() { }
+  @Input() value: string;
+  @Input() format: string;
+  @Input() tag: string;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
