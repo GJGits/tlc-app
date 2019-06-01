@@ -11,7 +11,7 @@ import {Observable} from 'rxjs';
 export class ConsoleComponent implements OnInit {
 
   apartment$: Observable<Apartment>;
-  progTemp = 15;
+  selectedRoom: Room;
   reading$: Observable<Reading>;
 
   constructor(private apiService: ApiService) {
@@ -21,7 +21,18 @@ export class ConsoleComponent implements OnInit {
     this.apartment$ = this.apiService.getApartment();
   }
 
-  updateReading($event: Room) {
+  updateDisplay($event: Room) {
+    this.selectedRoom = $event;
     this.reading$ = this.apiService.getLastReading($event.sensor);
   }
+
+  updateProgTemp(sign: string) {
+    if (sign === '+' && this.selectedRoom.progTemp < 35) {
+      this.selectedRoom.progTemp++;
+    }
+    if (sign === '-' && this.selectedRoom.progTemp > 15) {
+      this.selectedRoom.progTemp--;
+    }
+  }
+
 }

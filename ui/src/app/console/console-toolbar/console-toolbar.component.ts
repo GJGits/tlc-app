@@ -21,7 +21,9 @@ export class ConsoleToolbarComponent implements OnInit {
   }
 
   emitChange(sign: string) {
-    this.changeTemp.emit(sign);
+    if (this.mode === 'manual') {
+      this.changeTemp.emit(sign);
+    }
   }
 
 }
