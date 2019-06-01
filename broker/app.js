@@ -15,9 +15,11 @@ app.use(express.json());
 
 // definisco routers
 const apartmentRouter = require("./api/routes/apartment");
+const readingsRouter = require("./api/routes/reading");
 
 // mappo routes
 app.use("/apartment", apartmentRouter);
+app.use('/reading', readingsRouter);
 
 // handle 404
 app.use((req, res, next) => {

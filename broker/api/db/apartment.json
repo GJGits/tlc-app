@@ -1,7 +1,7 @@
 {
   "id": 0,
   "address": "VIA ROSTA 28",
-  "zones": [
+  "rooms": [
     {
       "id": 0,
       "type": "Camera",
@@ -10,6 +10,26 @@
       },
       "actuator": {
         "id":"a:B4:E6:2D:68:34:FD"
+      }
+    },
+    {
+      "id": 1,
+      "type": "Bagno",
+      "sensor": {
+        "id": "s:C3:50:E3:56:2F:68"
+      },
+      "actuator": {
+        "id":"a:B8:E6:2D:68:34:FD"
+      }
+    },
+    {
+      "id": 2,
+      "type": "Salotto",
+      "sensor": {
+        "id": "s:C1:50:E3:56:2F:68"
+      },
+      "actuator": {
+        "id":"a:B2:E6:2D:68:34:FD"
       }
     }
   ]

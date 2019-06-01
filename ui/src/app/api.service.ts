@@ -19,7 +19,7 @@ export class ApiService {
   }
 
   getLastReading(sensor: Sensor): Observable<Reading> {
-    return null;
+    return this.httpClient.get<Reading>(this.baseUrl + 'reading/' + sensor.id);
   }
 
 }

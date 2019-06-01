@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-console-toolbar',
@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConsoleToolbarComponent implements OnInit {
 
-  constructor() { }
+  mode = 'manual';
+  @Output() changeTemp = new EventEmitter<string>();
+
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  changeMode(type: string): void {
+    this.mode = type;
+  }
+
+  emitChange(sign: string) {
+    this.changeTemp.emit(sign);
   }
 
 }

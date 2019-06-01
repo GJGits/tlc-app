@@ -1,4 +1,8 @@
 <div class="row col-4 ml-5 mt-5 text-white" style="height: 30px">
-  <button class="col-2 btn border-white text-white text-center">+</button>
-  <button class="col-2 ml-1 btn border-white text-white text-center">-</button>
+  <button (click)="emitChange('+')" class="col-2 btn border-white text-white text-center">+</button>
+  <button (click)="emitChange('-')" class="col-2 ml-1 btn border-white text-white text-center">-</button>
+  <img class="ml-1" (click)="changeMode('manual')"
+       [src]="mode === 'manual'? '../../assets/imgs/mv.png' : '../../assets/imgs/mn.png' " alt="#">
+  <img class="ml-1" (click)="changeMode('programmed')"
+       [src]="mode === 'programmed'? '../../assets/imgs/pv.png' : '../../assets/imgs/pn.png'" width="32" height="32" alt="#">
 </div>

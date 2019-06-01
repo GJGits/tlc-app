@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Apartment, Reading} from '../app-elements';
+import {Apartment, Reading, Room} from '../app-elements';
 import {ApiService} from '../api.service';
 import {Observable} from 'rxjs';
 
@@ -11,7 +11,8 @@ import {Observable} from 'rxjs';
 export class ConsoleComponent implements OnInit {
 
   apartment$: Observable<Apartment>;
-  reading: Reading;
+  progTemp = 15;
+  reading$: Observable<Reading>;
 
   constructor(private apiService: ApiService) {
   }
@@ -20,4 +21,7 @@ export class ConsoleComponent implements OnInit {
     this.apartment$ = this.apiService.getApartment();
   }
 
+  updateReading($event: Room) {
+    this.reading$ = this.apiService.getLastReading($event.sensor);
+  }
 }

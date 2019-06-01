@@ -7,7 +7,7 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ConsoleDisplayComponent implements OnInit {
 
-  @Input() value: string;
+  @Input() value: number;
   @Input() format: string;
   @Input() tag: string;
 
