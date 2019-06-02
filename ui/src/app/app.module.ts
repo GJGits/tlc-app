@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {ConsoleModule} from './console/console.module';
 import { AppRoutingModule } from './app-routing.module';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 /* COMPONENTS */
 import { AppComponent } from './app.component';
@@ -12,6 +12,11 @@ import { ConsoleComponent } from './console/console.component';
 import { ApartmentComponent } from './apartment/apartment.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {HttpErrorInterceptor} from './http-error.interceptor';
+import { ApartmentAddressComponent } from './apartment/apartment-address/apartment-address.component';
+import { RoomListElementComponent } from './apartment/room-list-element/room-list-element.component';
+import { RoomFormComponent } from './apartment/room-form/room-form.component';
+import {FormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -22,14 +27,24 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ApartmentComponent,
     StatisticsComponent,
     PageNotFoundComponent,
+    ApartmentAddressComponent,
+    RoomListElementComponent,
+    RoomFormComponent,
   ],
   imports: [
     BrowserModule,
     ConsoleModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HttpErrorInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

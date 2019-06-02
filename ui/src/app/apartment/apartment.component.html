@@ -1,3 +1,7 @@
-<p>
-  apartment works!
-</p>
+<div class="container mt-5">
+  <app-apartment-address [address]="(apartment$ | async)?.address"></app-apartment-address>
+  <ul *ngIf="apartment$" class="list-group" >
+    <app-room-list-element *ngFor="let room of (apartment$ | async)?.rooms" [room]="room"></app-room-list-element>
+  </ul>
+  <app-room-form></app-room-form>
+</div>

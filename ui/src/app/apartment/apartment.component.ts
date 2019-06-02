@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {Apartment} from '../app-elements';
 
 @Component({
   selector: 'app-apartment',
@@ -6,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./apartment.component.css']
 })
 export class ApartmentComponent implements OnInit {
+
+  apartment$: Observable<Apartment>;
 
   constructor() { }
 

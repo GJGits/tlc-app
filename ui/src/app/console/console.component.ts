@@ -29,9 +29,11 @@ export class ConsoleComponent implements OnInit {
   updateProgTemp(sign: string) {
     if (sign === '+' && this.selectedRoom.progTemp < 35) {
       this.selectedRoom.progTemp++;
+      this.apiService.updateProgTemp(this.selectedRoom);
     }
     if (sign === '-' && this.selectedRoom.progTemp > 15) {
       this.selectedRoom.progTemp--;
+      this.apiService.updateProgTemp(this.selectedRoom);
     }
   }
 
