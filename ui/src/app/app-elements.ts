@@ -24,4 +24,9 @@ export interface Reading {
   hum: number;
 }
 
+export interface ImagePath {
+  roomType: string;
+  path: string;
+}
+
 

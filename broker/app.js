@@ -17,11 +17,15 @@ app.use(express.json());
 const apartmentRouter = require("./api/routes/apartment");
 const readingsRouter = require("./api/routes/reading");
 const updateTempRouter = require("./api/routes/updateTemp");
+const sensRouter = require("./api/routes/sens");
+const actsRouter = require("./api/routes/acts");
 
 // mappo routes
 app.use("/apartment", apartmentRouter);
 app.use('/reading', readingsRouter);
 app.use('/updateTemp', updateTempRouter);
+app.use("/sens", sensRouter);
+app.use("/acts", actsRouter);
 
 // handle 404
 app.use((req, res, next) => {

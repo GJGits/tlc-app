@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Observable} from 'rxjs';
-import {Apartment} from '../app-elements';
+import {Apartment, Room} from '../app-elements';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-apartment',
@@ -9,11 +9,22 @@ import {Apartment} from '../app-elements';
 })
 export class ApartmentComponent implements OnInit {
 
-  apartment$: Observable<Apartment>;
+  apartment: Apartment;
 
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+   this.dataService.response.subscribe(apa => this.apartment = apa);
   }
 
+  updateAddress(address: string) {
+    this.apartment.address = address;
+    this.dataService.updateApartment(this.apartment);
+  }
+
+  updateRoom(room: Room) {
+    const roomIndex = this.apartment.rooms.findIndex(r => room.id === r.id);
+    this.apartment.rooms.splice(roomIndex, 1, room);
+    this.dataService.updateApartment(this.apartment);
+  }
 }

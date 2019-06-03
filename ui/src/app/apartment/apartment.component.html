@@ -1,7 +1,7 @@
 <div class="container mt-5">
-  <app-apartment-address [address]="(apartment$ | async)?.address"></app-apartment-address>
-  <ul *ngIf="apartment$" class="list-group" >
-    <app-room-list-element *ngFor="let room of (apartment$ | async)?.rooms" [room]="room"></app-room-list-element>
+  <app-apartment-address (changedAddress)="updateAddress($event)" [address]="apartment.address"></app-apartment-address>
+  <ul *ngIf="apartment" class="list-group mt-5 offset-2 col-8" >
+    <app-room-list-element (roomChanged)="updateRoom($event)" *ngFor="let room of apartment.rooms" [room]="room"></app-room-list-element>
   </ul>
   <app-room-form></app-room-form>
 </div>

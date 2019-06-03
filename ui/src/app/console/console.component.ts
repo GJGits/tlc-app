@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Apartment, Reading, Room} from '../app-elements';
 import {ApiService} from '../api.service';
 import {Observable} from 'rxjs';
+import {DataService} from '../data.service';
 
 @Component({
   selector: 'app-console',
@@ -14,11 +15,11 @@ export class ConsoleComponent implements OnInit {
   selectedRoom: Room;
   reading$: Observable<Reading>;
 
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private dataService: DataService) {
   }
 
   ngOnInit() {
-    this.apartment$ = this.apiService.getApartment();
+    this.apartment$ = this.dataService.response;
   }
 
   updateDisplay($event: Room) {
@@ -29,7 +30,9 @@ export class ConsoleComponent implements OnInit {
   updateProgTemp(sign: string) {
     if (sign === '+' && this.selectedRoom.progTemp < 35) {
       this.selectedRoom.progTemp++;
-      this.apiService.updateProgTemp(this.selectedRoom);
+      this.apiService.updateProgTemp(this.selectedRoom).subscribe((value) => {
+        console.log(value);
+      });
     }
     if (sign === '-' && this.selectedRoom.progTemp > 15) {
       this.selectedRoom.progTemp--;
