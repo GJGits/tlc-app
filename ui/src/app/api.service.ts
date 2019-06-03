@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Apartment, Reading, Room, Sensor} from './app-elements';
+import {Actuator, Apartment, Reading, Room, Sensor} from './app-elements';
 import {environment} from '../environments/environment';
 
 @Injectable({
@@ -29,6 +29,18 @@ export class ApiService {
   updateProgTemp(room: Room) {
     const url = this.baseUrl + 'apartment/updateProgTemp';
     return this.httpClient.post(url, room);
+  }
+
+  getSensors() {
+    return this.httpClient.get<Sensor[]>(this.baseUrl + 'sens');
+  }
+
+  getHeatActs() {
+    return this.httpClient.get<Actuator[]>(this.baseUrl + 'acts/heat');
+  }
+
+  getCoolActs() {
+    return this.httpClient.get<Actuator[]>(this.baseUrl + 'acts/cool');
   }
 
 }

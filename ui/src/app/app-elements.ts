@@ -11,7 +11,8 @@ export interface Room {
   type: string;
   progTemp: number;
   sensor: Sensor;
-  actuator: Actuator;
+  heatAct: Actuator;
+  coolAct: Actuator;
 }
 
 export interface Apartment {

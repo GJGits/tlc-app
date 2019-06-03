@@ -28,4 +28,12 @@ router.post('/updateProgTemp', (req, res, next) => {
     return res.status(200);
 });
 
+/** POST new room **/
+router.post('/room', (req, res, next) => {
+    let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+    apartment.zones.push(req.body);
+    fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
+    console.log('scritto file: ' + JSON.stringify(apartment));
+});
+
 module.exports = router;

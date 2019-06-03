@@ -19,6 +19,7 @@ const readingsRouter = require("./api/routes/reading");
 const updateTempRouter = require("./api/routes/updateTemp");
 const sensRouter = require("./api/routes/sens");
 const actsRouter = require("./api/routes/acts");
+const commandRouter = require('./api/routes/command');
 
 // mappo routes
 app.use("/apartment", apartmentRouter);
@@ -26,6 +27,7 @@ app.use('/reading', readingsRouter);
 app.use('/updateTemp', updateTempRouter);
 app.use("/sens", sensRouter);
 app.use("/acts", actsRouter);
+app.use("/command", commandRouter);
 
 // handle 404
 app.use((req, res, next) => {
