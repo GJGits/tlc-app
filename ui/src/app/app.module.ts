@@ -16,7 +16,8 @@ import {HttpErrorInterceptor} from './http-error.interceptor';
 import { ApartmentAddressComponent } from './apartment/apartment-address/apartment-address.component';
 import { RoomListElementComponent } from './apartment/room-list-element/room-list-element.component';
 import { RoomFormComponent } from './apartment/room-form/room-form.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DeleteRoomModalComponent } from './apartment/delete-room-modal/delete-room-modal.component';
 
 
 @NgModule({
@@ -30,13 +31,15 @@ import {FormsModule} from '@angular/forms';
     ApartmentAddressComponent,
     RoomListElementComponent,
     RoomFormComponent,
+    DeleteRoomModalComponent,
   ],
   imports: [
     BrowserModule,
     ConsoleModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
     {

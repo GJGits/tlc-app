@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/mqtt/mqtt_client.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/command.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/presence.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/acts.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/acts.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/apartment.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/apartment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/sens.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/sens.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/acts.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/acts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/apartment.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/apartment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/reading.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/app-elements.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/app-elements.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +19,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
+            <state relative-caret-position="754">
               <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
             </state>
           </provider>
@@ -96,6 +82,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -124,7 +111,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -182,7 +168,8 @@
       <workItem from="1559555378269" duration="909000" />
       <workItem from="1559565065890" duration="441000" />
       <workItem from="1559569311391" duration="26000" />
-      <workItem from="1559592823852" duration="4038000" />
+      <workItem from="1559592823852" duration="4202000" />
+      <workItem from="1559632829799" duration="32000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -198,11 +185,18 @@
       <option name="project" value="LOCAL" />
       <updated>1559494128239</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="aggiunti endpoint sens ed acts, wip su scheletro apartment">
+      <created>1559598367736</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1559598367737</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17295000" />
+    <option name="totallyTimeSpent" value="17491000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1360" height="678" extended-state="6" />
@@ -235,7 +229,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale" />
     <MESSAGE value="inizio definizione scheletro apartment, post progTemp non funzionante" />
-    <option name="LAST_COMMIT_MESSAGE" value="inizio definizione scheletro apartment, post progTemp non funzionante" />
+    <MESSAGE value="aggiunti endpoint sens ed acts, wip su scheletro apartment" />
+    <option name="LAST_COMMIT_MESSAGE" value="aggiunti endpoint sens ed acts, wip su scheletro apartment" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/package.json">
@@ -338,7 +333,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
+        <state relative-caret-position="754">
           <caret line="29" column="35" selection-start-line="29" selection-start-column="35" selection-end-line="29" selection-end-column="35" />
         </state>
       </provider>

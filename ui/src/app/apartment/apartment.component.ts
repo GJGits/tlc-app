@@ -27,4 +27,16 @@ export class ApartmentComponent implements OnInit {
     this.apartment.rooms.splice(roomIndex, 1, room);
     this.dataService.updateApartment(this.apartment);
   }
+
+  deleteRoom(room: Room) {
+    const roomIndex = this.apartment.rooms.findIndex(r => room.id === r.id);
+    this.apartment.rooms.splice(roomIndex, 1);
+    this.dataService.updateApartment(this.apartment);
+  }
+
+  addRoom(room: Room) {
+    room.id = this.apartment.rooms.length;
+    this.apartment.rooms.push(room);
+    this.dataService.updateApartment(this.apartment);
+  }
 }
