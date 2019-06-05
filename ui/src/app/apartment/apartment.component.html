@@ -1,6 +1,6 @@
 <div class="container mt-5">
   <app-apartment-address (changedAddress)="updateAddress($event)" [address]="apartment.address"></app-apartment-address>
-  <ul *ngIf="apartment" class="list-group mt-5 offset-2 col-8" >
+  <ul *ngIf="apartment" class="list-group mt-5 " >
     <app-room-list-element (roomDeleted)="deleteRoom($event)" (roomChanged)="updateRoom($event)" *ngFor="let room of apartment.rooms" [room]="room"></app-room-list-element>
   </ul>
   <app-room-form (roomCreated)="addRoom($event)"></app-room-form>
