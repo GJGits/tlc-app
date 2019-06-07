@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Apartment, Room} from '../app-elements';
 import {DataService} from '../data.service';
 
@@ -11,10 +11,11 @@ export class ApartmentComponent implements OnInit {
 
   apartment: Apartment;
 
-  constructor(private dataService: DataService) { }
+  constructor(private dataService: DataService) {
+  }
 
   ngOnInit() {
-   this.dataService.response.subscribe(apa => this.apartment = apa);
+    this.dataService.response.subscribe(apa => this.apartment = apa);
   }
 
   updateAddress(address: string) {

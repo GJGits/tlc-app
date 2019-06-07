@@ -33,5 +33,14 @@ router.get('/cool', (req, res, next) => {
     return res.status(200).send(coolActs);
 });
 
-
+    removeAct = function (act) {
+    let acts = JSON.parse(fs.readFileSync(__dirname + '/../db/acts.json'));
+    let actIndex = acts.findIndex(a => act.id === a.id);
+    if (actIndex !== -1) {
+        acts.splice(actIndex, 1);
+        fs.writeFileSync(__dirname + '/../db/acts.json', JSON.stringify(acts));
+        console.log('scritto file: ' + JSON.stringify(acts));
+    }
+};
 module.exports = router;
+

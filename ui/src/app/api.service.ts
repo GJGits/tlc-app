@@ -19,7 +19,8 @@ export class ApiService {
   }
 
   postApartment(apartment: Apartment) {
-    this.httpClient.post(this.baseUrl + 'apartment', apartment);
+    console.log('post apartment: ' + apartment.address);
+    return this.httpClient.post(this.baseUrl + 'apartment', apartment);
   }
 
   getLastReading(sensor: Sensor): Observable<Reading> {
@@ -27,8 +28,14 @@ export class ApiService {
   }
 
   updateProgTemp(room: Room) {
-    const url = this.baseUrl + 'apartment/updateProgTemp';
-    return this.httpClient.post(url, room);
+    return this.httpClient.post(this.baseUrl + 'apartment/updateProgTemp', room);
+  }
+
+  postCommand(sensor: Sensor, actuator: Actuator, progTemp: number) {
+    const sensorId = sensor.id;
+    const actuatorId = actuator.id;
+    const temp: any = {temp: progTemp};
+    return this.httpClient.post(this.baseUrl + 'command/' + sensorId, + '/' + actuatorId, temp);
   }
 
   getSensors() {

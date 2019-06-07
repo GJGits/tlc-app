@@ -13,4 +13,14 @@ router.get('/', (req, res, next) => {
     return res.status(200).send(sens);
 });
 
+    removeSensor = function(sensor) {
+    let acts = JSON.parse(fs.readFileSync(__dirname + '/../db/sens.json'));
+    let actIndex = acts.findIndex(a => sensor.id === a.id);
+    if (actIndex !== -1) {
+        acts.splice(actIndex, 1);
+        fs.writeFileSync(__dirname + '/../db/sens.json', JSON.stringify(acts));
+        console.log('scritto file: ' + JSON.stringify(acts));
+    }
+};
+
 module.exports = router;

@@ -16,15 +16,14 @@ export class ConsoleRoomPaginationComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.rooms !== null) {
+    if (this.rooms !== null && this.rooms !== undefined) {
       this.roomChanged.emit(this.rooms[this.index]);
     }
-
   }
 
   changeRoom($event: MouseEvent) {
     const up = ($event.target as HTMLSpanElement).id === 'up';
-    if (up && this.index < this.rooms.length - 1) {
+    if (up && this.rooms && this.index < this.rooms.length - 1) {
       this.index++;
       this.roomChanged.emit(this.rooms[this.index]);
     }

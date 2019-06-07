@@ -23,20 +23,23 @@ export class ConsoleComponent implements OnInit {
   }
 
   updateDisplay($event: Room) {
-    this.selectedRoom = $event;
-    this.reading$ = this.apiService.getLastReading($event.sensor);
+    if ($event !== undefined) {
+      this.selectedRoom = $event;
+      this.reading$ = this.apiService.getLastReading($event.sensor);
+    }
+
   }
 
   updateProgTemp(sign: string) {
-    if (sign === '+' && this.selectedRoom.progTemp < 35) {
+    if (sign === '+' && this.selectedRoom && this.selectedRoom.progTemp < 35) {
       this.selectedRoom.progTemp++;
-      this.apiService.updateProgTemp(this.selectedRoom).subscribe((value) => {
-        console.log(value);
-      });
+      this.apiService.updateProgTemp(this.selectedRoom);
+      this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.heatAct, this.selectedRoom.progTemp);
     }
-    if (sign === '-' && this.selectedRoom.progTemp > 15) {
+    if (sign === '-' && this.selectedRoom && this.selectedRoom.progTemp > 15) {
       this.selectedRoom.progTemp--;
       this.apiService.updateProgTemp(this.selectedRoom);
+      this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.coolAct, this.selectedRoom.progTemp);
     }
   }
 
