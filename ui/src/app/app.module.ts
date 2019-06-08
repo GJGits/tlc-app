@@ -18,6 +18,12 @@ import { RoomListElementComponent } from './apartment/room-list-element/room-lis
 import { RoomFormComponent } from './apartment/room-form/room-form.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { DeleteRoomModalComponent } from './apartment/delete-room-modal/delete-room-modal.component';
+import { InfosComponent } from './infos/infos.component';
+import { LoginComponent } from './infos/login/login.component';
+import { GroupInfoComponent } from './infos/group-info/group-info.component';
+import { DeviceInfoComponent } from './infos/device-info/device-info.component';
+import { LogsComponent } from './infos/logs/logs.component';
+import { MenuComponent } from './infos/menu/menu.component';
 
 
 @NgModule({
@@ -32,6 +38,12 @@ import { DeleteRoomModalComponent } from './apartment/delete-room-modal/delete-r
     RoomListElementComponent,
     RoomFormComponent,
     DeleteRoomModalComponent,
+    InfosComponent,
+    LoginComponent,
+    GroupInfoComponent,
+    DeviceInfoComponent,
+    LogsComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

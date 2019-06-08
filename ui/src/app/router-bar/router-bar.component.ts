@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Link} from './link';
 
 @Component({
   selector: 'app-router-bar',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RouterBarComponent implements OnInit {
 
-  constructor() { }
+  links: Link[];
+
+  constructor() {
+    this.links = [{link: 'console', linkDisplay: 'Console'},
+      {link: 'apartment', linkDisplay: 'Apartment'},
+      {link: 'statistics', linkDisplay: 'Statistics'},
+      {link: 'infos', linkDisplay: 'Infos'}];
+  }
 
   ngOnInit() {
   }

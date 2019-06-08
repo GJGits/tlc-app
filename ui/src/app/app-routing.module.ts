@@ -5,11 +5,13 @@ import {ConsoleComponent} from './console/console.component';
 import {ApartmentComponent} from './apartment/apartment.component';
 import {StatisticsComponent} from './statistics/statistics.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {InfosComponent} from './infos/infos.component';
 
 const appRoutes: Routes = [
   {path: 'console', component: ConsoleComponent},
   {path: 'apartment', component: ApartmentComponent},
   {path: 'statistics', component: StatisticsComponent},
+  {path: 'infos', component: InfosComponent},
   {path: '', redirectTo: 'console', pathMatch: 'full'},
   {path: '404', component: PageNotFoundComponent},
   {path: '**', redirectTo: '/404'}
