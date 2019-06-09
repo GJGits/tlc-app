@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import {ConsoleModule} from './console/console.module';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InfoRoutingModule } from './infos/menu/info-routing.module';
 
 /* COMPONENTS */
 import { AppComponent } from './app.component';
@@ -24,6 +25,7 @@ import { GroupInfoComponent } from './infos/group-info/group-info.component';
 import { DeviceInfoComponent } from './infos/device-info/device-info.component';
 import { LogsComponent } from './infos/logs/logs.component';
 import { MenuComponent } from './infos/menu/menu.component';
+import {AuthGuard} from './auth.guard';
 
 
 @NgModule({
@@ -51,7 +53,8 @@ import { MenuComponent } from './infos/menu/menu.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InfoRoutingModule
   ],
   providers: [
     {
