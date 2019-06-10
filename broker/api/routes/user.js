@@ -3,17 +3,11 @@ const router = express.Router();
 const request = require("request");
 const awsURL = "http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002";
 
-/**
- * GET GROUP INFO
- * */
-
-router.get('/:groupID', (req, res, next) => {
-    console.log(req.header("authorization").split(" ")[1]);
-    const groupID = req.params.groupID;
+sendRequest = function (url, method, req, res) {
     const clientOptions = {
-        uri: awsURL + "/user/" + groupID,
+        uri: url,
         body: JSON.stringify(req.body),
-        method: 'GET',
+        method: method,
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'JWT ' + req.header("authorization").split(" ")[1]
@@ -26,6 +20,34 @@ router.get('/:groupID', (req, res, next) => {
             console.error(error);
         }
     })
+};
+
+/**
+ * GET GROUP INFO
+ * */
+
+router.get('/:groupID', (req, res, next) => {
+    const groupID = req.params.groupID;
+    const uri = awsURL + "/user/" + groupID;
+    return sendRequest(uri, 'GET', req, res);
+});
+
+router.post('/:groupID', (req, res, next) => {
+    const groupID = req.params.groupID;
+    const uri = awsURL + "/user/" + groupID;
+    return sendRequest(uri, 'POST', req, res);
+});
+
+router.get('/:groupID/devices', (req, res, next) => {
+    const groupID = req.params.groupID;
+    const uri = awsURL + "/user/" + groupID + "/devices";
+    return sendRequest(uri, 'GET', req, res);
+});
+
+router.post('/:groupID/devices', (req, res, next) => {
+    const groupID = req.params.groupID;
+    const uri = awsURL + "/user/" + groupID + "/devices";
+    return sendRequest(uri, 'POST', req, res);
 });
 
 module.exports = router;
