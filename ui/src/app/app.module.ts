@@ -26,6 +26,7 @@ import { DeviceInfoComponent } from './infos/device-info/device-info.component';
 import { LogsComponent } from './infos/logs/logs.component';
 import { MenuComponent } from './infos/menu/menu.component';
 import {AuthGuard} from './auth.guard';
+import {AuthInterceptor} from './auth-interceptor';
 
 
 @NgModule({
@@ -60,6 +61,11 @@ import {AuthGuard} from './auth.guard';
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpErrorInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
       multi: true
     }
   ],

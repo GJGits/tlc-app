@@ -21,6 +21,8 @@ const sensRouter = require("./api/routes/sens");
 const actsRouter = require("./api/routes/acts");
 const commandRouter = require('./api/routes/command');
 const presenceRouter = require('./api/routes/presence');
+const authRouter = require('./api/routes/auth');
+const userRouter = require('./api/routes/user');
 
 // mappo routes
 app.use("/apartment", apartmentRouter);
@@ -30,6 +32,8 @@ app.use("/sens", sensRouter);
 app.use("/acts", actsRouter);
 app.use("/command", commandRouter);
 app.use("/presence", presenceRouter);
+app.use("/auth", authRouter);
+app.use("/user", userRouter);
 
 // handle 404
 app.use((req, res, next) => {

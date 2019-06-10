@@ -1,0 +1,8 @@
+{
+  "/api": {
+    "target": "http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002",
+    "secure": false,
+    "loglevel": "debug",
+    "changeOrigin": true
+  }
+}
