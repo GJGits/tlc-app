@@ -32,17 +32,29 @@ router.get('/:groupID', (req, res, next) => {
     return sendRequest(uri, 'GET', req, res);
 });
 
+/**
+ * POST GROUP INFO
+ * */
+
 router.post('/:groupID', (req, res, next) => {
     const groupID = req.params.groupID;
     const uri = awsURL + "/user/" + groupID;
     return sendRequest(uri, 'POST', req, res);
 });
 
+/**
+ * GET DEVICE INFO
+ * */
+
 router.get('/:groupID/devices', (req, res, next) => {
     const groupID = req.params.groupID;
     const uri = awsURL + "/user/" + groupID + "/devices";
     return sendRequest(uri, 'GET', req, res);
 });
+
+/**
+ * POST DEVICE INFO
+ * */
 
 router.post('/:groupID/devices', (req, res, next) => {
     const groupID = req.params.groupID;

@@ -16,6 +16,6 @@ POST http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002/user/PL19-16/
 Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6MTM3MCwiaWF0IjoxNTU5OTg1NTUwLCJuYmYiOjE1NTk5ODU1NTAsImV4cCI6MTU2MjU3NzU1MH0.A7gQP3-dJe6XR6sCVKV-wzhsBJYgSleDelpkYrfKGMs
 Content-Type: application/json
 
-{"device_mac":  "39:05:62:2D:C8:B8", "nickname":  "my-nick", "configuration": "some configuration here"}
+{"device_mac":  "39:05:62:2D:C8:B8", "nickname":  "my-nick2", "configuration": "some configuration here"}
 
 ###

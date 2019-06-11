@@ -1,54 +1,65 @@
+const awsIot = require('aws-iot-device-sdk');
 
-var awsIot = require('aws-iot-device-sdk');
-/*
-//
-// Replace the values of '<YourUniqueClientIdentifier>' and '<YourCustomEndpoint>'
-// with a unique client identifier and custom host endpoint provided in AWS IoT.
-// NOTE: client identifiers must be unique within your AWS account; if a client attempts 
-// to connect with a client identifier which is already in use, the existing 
-// connection will be terminated.
-//
-var device = awsIot.device({
-    keyPath: __dirname + '/PL-student.private.key',
-    certPath: __dirname + '/PL-student.cert.pem',
-    caPath: __dirname + '/root-CA.crt',
-    clientId: 'sdk-nodejs-1',
-    host: 'a3cezb6rg1vyed-ats.iot.us-west-2.amazonaws.com'
-});
+class AWSClient {
 
-//
-// Device is an instance returned by mqtt.Client(), see mqtt.js for full
-// documentation.
-//
-device
-    .on('connect', function () {
-        console.log('connect');
-        device.subscribe('pl19/notification');
-        device.publish('pl19/event', JSON.stringify({test_data: 'NodeJS server connected...'}));
-    });
+    constructor() {
+        this.device = AWSClient.initializeDevice();
+        this.setConnectionStrategy();
+        this.setErrorHandler();
+        this.startPingService();
+    }
 
-device
-    .on('offline', function () {
-        console.log('offline');
-    });
+    static initializeDevice() {
+        return awsIot.device({
+            keyPath: __dirname + '/PL-student.private.key',
+            certPath: __dirname + '/PL-student.cert.pem',
+            caPath: __dirname + '/root-CA.crt',
+            clientId: 'sdk-nodejs-*',
+            host: 'a3cezb6rg1vyed-ats.iot.us-west-2.amazonaws.com'
+        });
+    }
 
-device
-    .on('reconnect', function () {
-        console.log('reconnect');
-    });
+    setConnectionStrategy() {
 
-device
-    .on('close', function () {
-        console.log('close');
-    });
+        this.device
+            .on('connect', () => {
+                console.log('aws device: ', ' connected');
+                this.device.subscribe('pl19/notification');
+            });
 
-device
-    .on('message', function (topic, payload) {
-        console.log('message', topic, payload.toString());
-    });
+        this.device
+            .on('offline', () => {
+                console.log('offline');
+            });
 
-device
-    .on('error', function(err) {
-        console.log(err);
-    });
-*/
+        this.device
+            .on('reconnect', () => {
+                console.log('reconnect');
+            });
+
+        this.device
+            .on('close', () => {
+                console.log('close');
+            });
+
+
+    }
+
+    setErrorHandler() {
+        this.device
+            .on('error', (err) => {
+                console.log(err);
+            });
+    }
+
+    startPingService() {
+        this.device
+            .on('message', (topic, payload) => {
+                console.log('message', topic, payload.toString());
+            });
+
+    }
+}
+// this is a Singletone because this file runs once and node store the value exported in a cache
+module.exports = new AWSClient();
+
