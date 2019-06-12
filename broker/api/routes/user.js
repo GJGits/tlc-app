@@ -62,4 +62,14 @@ router.post('/:groupID/devices', (req, res, next) => {
     return sendRequest(uri, 'POST', req, res);
 });
 
+/**
+ * GET LOGS
+ * */
+
+router.get('/:groupID/logs', (req, res, next) => {
+    const groupID = req.params.groupID;
+    const uri = awsURL + "/user/" + groupID + "/logs";
+    return sendRequest(uri, 'GET', req, res);
+});
+
 module.exports = router;
