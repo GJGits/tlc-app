@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require('fs');
 const MqttHandler = require("../mqtt/mqtt_client");
 // const awsClient = require("../mqtt/aws_mqtt_client");
+const mysqlClient = require("../db/mysqlClient");
 
 const client = new MqttHandler('presence', ['presence'], (topic, message) => {
     console.log(`received a message: topic = ${topic}, message = ${message}`);

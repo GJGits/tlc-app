@@ -2,12 +2,12 @@ const express = require("express");
 const router = express.Router();
 const fs = require('fs');
 const cors = require('cors');
+const mysqlClient = require('../db/mysqlClient');
 
 router.options('/', cors());
 
 const MqttHandler = require("../mqtt/mqtt_client");
 const client = new MqttHandler('reading', ['readings'], (topic, message) => {
-    // todo: salva lettura su db
     console.log(`received a message: topic = ${topic}, message = ${message}`);
     let strMessage = message.toString();
     let tokens = strMessage.split(', ');
@@ -18,6 +18,7 @@ const client = new MqttHandler('reading', ['readings'], (topic, message) => {
         index: tokens[2].split("=")[1]
     };
     writeReading(reading);
+    mysqlClient.insertReading(reading);
 });
 client.connect();
 
