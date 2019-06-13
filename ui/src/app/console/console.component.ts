@@ -4,6 +4,8 @@ import {ApiService} from '../api.service';
 import {Observable} from 'rxjs';
 import {DataService} from '../data.service';
 
+
+
 @Component({
   selector: 'app-console',
   templateUrl: './console.component.html',
@@ -20,12 +22,13 @@ export class ConsoleComponent implements OnInit {
 
   ngOnInit() {
     this.apartment$ = this.dataService.response;
+    this.reading$ = this.dataService.reading;
   }
 
   updateDisplay($event: Room) {
     if ($event !== undefined) {
       this.selectedRoom = $event;
-      this.reading$ = this.apiService.getLastReading($event.sensor);
+      this.dataService.updateReading($event.sensor);
     }
 
   }

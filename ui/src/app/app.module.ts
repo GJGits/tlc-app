@@ -6,6 +6,19 @@ import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InfoRoutingModule } from './infos/menu/info-routing.module';
 
+
+import {
+  IMqttMessage,
+  MqttModule,
+  IMqttServiceOptions
+} from 'ngx-mqtt';
+
+export const MQTT_SERVICE_OPTIONS: IMqttServiceOptions = {
+  hostname: 'localhost',
+  port: 9001,
+  path: '/mqtt'
+};
+
 /* COMPONENTS */
 import { AppComponent } from './app.component';
 import { RouterBarComponent } from './router-bar/router-bar.component';
@@ -55,7 +68,8 @@ import {AuthInterceptor} from './auth-interceptor';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    InfoRoutingModule
+    InfoRoutingModule,
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
   ],
   providers: [
     {

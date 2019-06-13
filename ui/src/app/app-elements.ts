@@ -21,8 +21,10 @@ export interface Apartment {
 }
 
 export interface Reading {
+  id: string;
   temp: number;
   hum: number;
+  index: number;
 }
 
 export interface ImagePath {
