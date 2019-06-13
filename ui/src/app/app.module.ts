@@ -5,6 +5,10 @@ import {ConsoleModule} from './console/console.module';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InfoRoutingModule } from './infos/menu/info-routing.module';
+import { ChartsModule } from 'ng2-charts';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
 import {
@@ -38,8 +42,8 @@ import { GroupInfoComponent } from './infos/group-info/group-info.component';
 import { DeviceInfoComponent } from './infos/device-info/device-info.component';
 import { LogsComponent } from './infos/logs/logs.component';
 import { MenuComponent } from './infos/menu/menu.component';
-import {AuthGuard} from './auth.guard';
 import {AuthInterceptor} from './auth-interceptor';
+import {LineChartComponent} from './statistics/line-chart/line-chart.component';
 
 
 @NgModule({
@@ -60,6 +64,7 @@ import {AuthInterceptor} from './auth-interceptor';
     DeviceInfoComponent,
     LogsComponent,
     MenuComponent,
+    LineChartComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +74,13 @@ import {AuthInterceptor} from './auth-interceptor';
     FormsModule,
     ReactiveFormsModule,
     InfoRoutingModule,
-    MqttModule.forRoot(MQTT_SERVICE_OPTIONS)
+    MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
+    ChartsModule,
+    BrowserAnimationsModule,
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory
+    })
   ],
   providers: [
     {

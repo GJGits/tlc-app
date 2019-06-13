@@ -1,3 +1,4 @@
-<p>
-  statistics works!
-</p>
+<div class="container mt-5">
+ <app-line-chart></app-line-chart>
+  <app-console-room-pagination (roomChanged)="updateChart($event)" [rooms]="(apartment$ | async)?.rooms"></app-console-room-pagination>
+</div>
