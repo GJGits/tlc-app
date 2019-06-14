@@ -36,7 +36,6 @@ export class ApartmentComponent implements OnInit {
   }
 
   addRoom(room: Room) {
-    room.id = this.apartment.rooms.length;
     this.apartment.rooms.push(room);
     this.dataService.updateApartment(this.apartment);
   }

@@ -4,12 +4,13 @@ import {CommonModule} from '@angular/common';
 import {ConsoleComponent} from './console/console.component';
 import {ApartmentComponent} from './apartment/apartment.component';
 import {StatisticsComponent} from './statistics/statistics.component';
-import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {ProgramComponent} from './program/program.component';
 
 const appRoutes: Routes = [
   {path: 'console', component: ConsoleComponent},
   {path: 'apartment', component: ApartmentComponent},
   {path: 'statistics', component: StatisticsComponent},
+  {path: 'program', component: ProgramComponent},
   {path: '', redirectTo: 'console', pathMatch: 'full'}
 ];
 

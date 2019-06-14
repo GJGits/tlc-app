@@ -44,6 +44,9 @@ import { LogsComponent } from './infos/logs/logs.component';
 import { MenuComponent } from './infos/menu/menu.component';
 import {AuthInterceptor} from './auth-interceptor';
 import {LineChartComponent} from './statistics/line-chart/line-chart.component';
+import { ProgramComponent } from './program/program.component';
+import { EventsTabComponent } from './program/events-tab/events-tab.component';
+import { EventsFormComponent } from './program/events-form/events-form.component';
 
 
 @NgModule({
@@ -65,6 +68,9 @@ import {LineChartComponent} from './statistics/line-chart/line-chart.component';
     LogsComponent,
     MenuComponent,
     LineChartComponent,
+    ProgramComponent,
+    EventsTabComponent,
+    EventsFormComponent,
   ],
   imports: [
     BrowserModule,

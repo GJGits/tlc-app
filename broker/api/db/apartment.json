@@ -1,1 +1,5 @@
-{"address":"Via Monopoli 15","rooms":[{"id":0,"type":"salotto","progTemp":15,"sensor":{"id":"s:A6:2B:13:15:1A:3F"},"heatAct":{"id":"ah:A2:2B:13:15:1B:3F"},"coolAct":{"id":"ac:A3:2B:11:15:1A:3B"}}]}
+{
+  "address": "Via Monopoli 15",
+  "rooms": [
+  ]
+}

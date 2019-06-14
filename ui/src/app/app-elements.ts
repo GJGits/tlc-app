@@ -7,7 +7,7 @@ export interface Actuator {
 }
 
 export interface Room {
-  id: number;
+  id: string;
   type: string;
   progTemp: number;
   sensor: Sensor;

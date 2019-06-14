@@ -3,5 +3,9 @@
   <ul *ngIf="apartment" class="list-group mt-5 col-lg-8 offset-lg-2" >
     <app-room-list-element (roomDeleted)="deleteRoom($event)" (roomChanged)="updateRoom($event)" *ngFor="let room of apartment.rooms" [room]="room"></app-room-list-element>
   </ul>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary btn-block col-sm-6 offset-sm-3" data-toggle="modal" data-target="#exampleModal">
+    Add New Room
+  </button>
   <app-room-form (roomCreated)="addRoom($event)"></app-room-form>
 </div>
