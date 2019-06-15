@@ -3,6 +3,7 @@ import {ApiService} from '../api.service';
 import {Observable} from 'rxjs';
 import {Apartment, Room} from '../app-elements';
 import {DataService} from '../data.service';
+import {ChartData} from './line-chart/chart-data';
 
 @Component({
   selector: 'app-statistics',
@@ -12,7 +13,7 @@ import {DataService} from '../data.service';
 export class StatisticsComponent implements OnInit {
 
   apartment$: Observable<Apartment>;
-  selectedRoom: Room;
+  data$: Observable<ChartData[]>;
   debugData: any;
 
   constructor(private apiService: ApiService, private dataService: DataService) {
@@ -26,10 +27,8 @@ export class StatisticsComponent implements OnInit {
   updateChart($event: Room) {
     // todo: change chart when room changes
     if ($event !== undefined) {
-      this.selectedRoom = $event;
-      this.apiService.getLastReadings(this.selectedRoom.sensor.id).subscribe((value) => {
-        this.debugData = value;
-      }, (error) => console.log(error));
+      console.log('room', $event);
+      this.data$ = this.apiService.getLastReadings($event.sensor.id);
     }
   }
 }

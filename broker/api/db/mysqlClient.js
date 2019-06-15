@@ -40,10 +40,12 @@ class MySqlClient {
 
     getLastReading(sensorID, res) {
         this.connection
-            .query('select avg(temp) as temp, avg(hum) as hum, time from (select temp, hum, concat(extract(day from timestamp), "-" ,extract(hour from timestamp)) as time from  readings where timestamp between DATE_ADD(NOW(), INTERVAL -1 DAY) and NOW() and sensor_id = ?) as subTab group by time', [sensorID] ,(err, result) => {
+            .query('select avg(temp) as temp, avg(hum) as hum, time from (select temp, hum, concat(extract(day from timestamp), "-" ,extract(hour from timestamp)) as time from  readings where timestamp between DATE_ADD(NOW(), INTERVAL -1 DAY) and NOW() and sensor_id = ?) as subTab group by time', [sensorID], (err, result) => {
                 if (!err) {
-                    console.log(result);
-                    return res.status(200).send(result);
+                    let resp = [];
+                    resp = JSON.parse(JSON.stringify(result));
+                    console.log('type of response', typeof resp);
+                    return res.status(200).send(resp);
                 } else {
                     console.log(err);
                 }

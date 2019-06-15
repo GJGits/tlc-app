@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Actuator, Apartment, Reading, Room, Sensor} from './app-elements';
 import {environment} from '../environments/environment';
+import {ChartData} from './statistics/line-chart/chart-data';
 
 @Injectable({
   providedIn: 'root'
@@ -50,8 +51,8 @@ export class ApiService {
     return this.httpClient.get<Actuator[]>(this.baseUrl + 'acts/cool');
   }
 
-  getLastReadings(sensorId) {
-    return this.httpClient.get<any>(this.baseUrl + 'reading/lastReadings/' + sensorId);
+    getLastReadings(sensorId) {
+    return this.httpClient.get<ChartData[]>(this.baseUrl + 'reading/lastReadings/' + sensorId);
   }
 
 }
