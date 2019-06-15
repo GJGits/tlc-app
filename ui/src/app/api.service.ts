@@ -35,7 +35,7 @@ export class ApiService {
     const sensorId = sensor.id;
     const actuatorId = actuator.id;
     const temp: any = {temp: progTemp};
-    return this.httpClient.post(this.baseUrl + 'command/' + sensorId, + '/' + actuatorId, temp);
+    return this.httpClient.post(this.baseUrl + 'command/' + sensorId, +'/' + actuatorId, temp);
   }
 
   getSensors() {
@@ -48,6 +48,10 @@ export class ApiService {
 
   getCoolActs() {
     return this.httpClient.get<Actuator[]>(this.baseUrl + 'acts/cool');
+  }
+
+  getLastReadings(sensorId) {
+    return this.httpClient.get<any>(this.baseUrl + 'reading/lastReadings/' + sensorId);
   }
 
 }

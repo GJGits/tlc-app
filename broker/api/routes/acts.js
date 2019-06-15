@@ -12,7 +12,7 @@ router.get('/heat', (req, res, next) => {
     const acts = JSON.parse(fs.readFileSync(__dirname + '/../db/acts.json'));
     let heatActs = [];
     for (let a of acts) {
-        if(a.id.split(':')[0] === "ah") {
+        if(a.id.split(':')[0] === "ha") {
             heatActs.push(a);
         }
     }
@@ -26,7 +26,7 @@ router.get('/cool', (req, res, next) => {
     const acts = JSON.parse(fs.readFileSync(__dirname + '/../db/acts.json'));
     let coolActs = [];
     for (let a of acts) {
-        if(a.id.split(':')[0] === "ac") {
+        if(a.id.split(':')[0] === "ca") {
             coolActs.push(a);
         }
     }

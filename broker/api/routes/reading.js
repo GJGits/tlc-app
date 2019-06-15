@@ -42,4 +42,10 @@ router.get('/:id', (req, res, next) => {
     return res.status(200).send(reading);
 });
 
+router.get('/lastReadings/:id', (req, res, next) => {
+    const sensorId = req.params.id;
+   mysqlClient.getLastReading(sensorId, res);
+
+});
+
 module.exports = router;
