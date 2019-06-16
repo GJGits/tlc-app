@@ -2,6 +2,7 @@ const awsIot = require('aws-iot-device-sdk');
 const dateFormat = require('dateformat');
 
 /* MAC ADDRESS DEFINITION */
+/*
 const mac = require('getmac');
 let macAddress;
 mac.getMac({iface: 'eth0'}, (err, address) => {
@@ -9,15 +10,18 @@ mac.getMac({iface: 'eth0'}, (err, address) => {
     macAddress = address;
 });
 
+ */
+
 /* EVENTS DEFINITION */
-const eventMap = new Map(
-    [2, "some message"],
-    [3, "some message"],
-    [4, "some message"],
-    [5, "some message"],
-    [6, "some message"],
-    [7, "some message"],
-    [8, "some message"]
+const eventMap = new Map([
+        [2, "connection to mysql db failed"],
+        [3, "an insert query failed"],
+        [4, "a reading query failed"],
+        [5, "internal server error"],
+        [6, "some message"],
+        [7, "some message"],
+        [8, "some message"]
+    ]
 );
 
 class AWSClient {
@@ -80,9 +84,9 @@ class AWSClient {
                 if (notification.event_id === 0) {
                     let reply = {
                         event_id: 1,
-                        timestamp: dateFormat(new Date(), "%Y-%m-%d %H:%M:%S.%f"),
-                        device_mac: macAddress,
-                        event: {sequence: notification.event.sequence}
+                        timestamp: dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss.F"),
+                        device_mac: "01:01:01:01:01:01",
+                        event: {message: 'ping replay', sequence: notification.event.sequence}
                     };
                     this.device.publish('pl19/event', JSON.stringify(reply));
                     console.log("emitted ping reply:", JSON.stringify(reply));
@@ -91,12 +95,12 @@ class AWSClient {
 
     }
 
-    publishEvent(eventId) {
+    logEvent(eventId) {
         if (eventMap.has(eventId)) {
             let reply = {
                 event_id: eventId,
-                timestamp: dateFormat(new Date(), "%Y-%m-%d %H:%M:%S.%f"),
-                device_mac: macAddress,
+                timestamp: dateFormat(new Date(), "yyyy-MM-dd hh:mm:ss.f."),
+                device_mac: "01:01:01:01:01:01",
                 event: eventMap.get(eventId)
             };
         }

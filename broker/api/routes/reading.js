@@ -3,6 +3,7 @@ const router = express.Router();
 const fs = require('fs');
 const cors = require('cors');
 const mysqlClient = require('../db/mysqlClient');
+const awsClient = require('../mqtt/aws_mqtt_client');
 
 router.options('/', cors());
 

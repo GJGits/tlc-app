@@ -7,7 +7,8 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class ConsoleToolbarComponent implements OnInit {
 
-  mode = 'manual';
+  mode = '';
+  active: boolean;
   @Output() changeTemp = new EventEmitter<string>();
 
   constructor() {
@@ -26,4 +27,14 @@ export class ConsoleToolbarComponent implements OnInit {
     }
   }
 
+  toggleStatus() {
+    if (this.active) {
+      this.active = !this.active;
+      this.mode = '';
+    } else {
+      this.active = !this.active;
+      this.mode = 'manual';
+    }
+
+  }
 }

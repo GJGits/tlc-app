@@ -47,6 +47,7 @@ import {LineChartComponent} from './statistics/line-chart/line-chart.component';
 import { ProgramComponent } from './program/program.component';
 import { EventsTabComponent } from './program/events-tab/events-tab.component';
 import { EventsFormComponent } from './program/events-form/events-form.component';
+import { SimpleEventFormComponent } from './program/simple-event-form/simple-event-form.component';
 
 
 @NgModule({
@@ -71,6 +72,7 @@ import { EventsFormComponent } from './program/events-form/events-form.component
     ProgramComponent,
     EventsTabComponent,
     EventsFormComponent,
+    SimpleEventFormComponent,
   ],
   imports: [
     BrowserModule,

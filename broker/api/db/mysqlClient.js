@@ -1,4 +1,5 @@
 const mysql = require("mysql");
+const awsClient = require("../mqtt/aws_mqtt_client");
 
 class MySqlClient {
 
@@ -16,7 +17,10 @@ class MySqlClient {
 
     connect() {
         this.connection.connect((err) => {
-            if (err) throw err;
+            if (err) {
+                awsClient.logEvent(2);
+                throw err;
+            }
             console.log('connected');
         });
     }
@@ -33,7 +37,9 @@ class MySqlClient {
             .query("INSERT INTO readings(sensor_id, temp ,hum, index_factor) VALUES(?,?,?,?)",
                 [reading.id, reading.temp, reading.hum, reading.index],
                 (err, result) => {
-                    if (!err)
+                    if (err) {
+                        awsClient.logEvent(3);
+                    } else
                         console.log('saved reading into db', reading);
                 });
     }
@@ -47,7 +53,7 @@ class MySqlClient {
                     console.log('type of response', typeof resp);
                     return res.status(200).send(resp);
                 } else {
-                    console.log(err);
+                    awsClient.logEvent(4);
                 }
 
             });

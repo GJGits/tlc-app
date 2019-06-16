@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const morgan = require("morgan");
 const cors = require('cors');
+const awsClient = require("./api/mqtt/aws_mqtt_client");
 
 // enable cors options for all routes
 app.use(cors());
@@ -23,6 +24,7 @@ const commandRouter = require('./api/routes/command');
 const presenceRouter = require('./api/routes/presence');
 const authRouter = require('./api/routes/auth');
 const userRouter = require('./api/routes/user');
+const eventsRouter = require('./api/routes/events');
 
 // mappo routes
 app.use("/apartment", apartmentRouter);
@@ -34,6 +36,7 @@ app.use("/command", commandRouter);
 app.use("/presence", presenceRouter);
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
+app.use('/events', eventsRouter);
 
 // handle 404
 app.use((req, res, next) => {
@@ -42,6 +45,7 @@ app.use((req, res, next) => {
 
 // handle 500
 app.use((err, req, res, next) => {
+    awsClient.logEvent(5);
     console.error(err.stack);
     return res.status(500).send({error: err});
 });

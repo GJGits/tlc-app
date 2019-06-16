@@ -4,6 +4,7 @@ import {Observable} from 'rxjs';
 import {Actuator, Apartment, Reading, Room, Sensor} from './app-elements';
 import {environment} from '../environments/environment';
 import {ChartData} from './statistics/line-chart/chart-data';
+import {RepeatableEvent, SimpleEvent} from './program/events';
 
 @Injectable({
   providedIn: 'root'
@@ -51,8 +52,24 @@ export class ApiService {
     return this.httpClient.get<Actuator[]>(this.baseUrl + 'acts/cool');
   }
 
-    getLastReadings(sensorId) {
+  getLastReadings(sensorId) {
     return this.httpClient.get<ChartData[]>(this.baseUrl + 'reading/lastReadings/' + sensorId);
+  }
+
+  getRepeatableEvents() {
+    return this.httpClient.get<RepeatableEvent[]>(this.baseUrl + 'events/repeatable');
+  }
+
+  getSimpleEvents() {
+    return this.httpClient.get<SimpleEvent[]>(this.baseUrl + 'events/simple');
+  }
+
+  postRepeatableEvent(model: RepeatableEvent) {
+    return this.httpClient.post(this.baseUrl + 'events/repeatable', model);
+  }
+
+  postSimpleEvent(model: SimpleEvent) {
+    return this.httpClient.post(this.baseUrl + 'events/simple', model);
   }
 
 }

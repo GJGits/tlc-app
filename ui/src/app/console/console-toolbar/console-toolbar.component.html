@@ -5,4 +5,5 @@
        [src]="mode === 'manual'? '../../assets/imgs/mv.png' : '../../assets/imgs/mn.png' " alt="#">
   <img class="ml-1" (click)="changeMode('programmed')"
        [src]="mode === 'programmed'? '../../assets/imgs/pv.png' : '../../assets/imgs/pn.png'" width="32" height="32" alt="#">
+  <img class="ml-1" (click)="toggleStatus()" [src]="active ? '../../assets/imgs/accendere.png' : '../../assets/imgs/spegnere.png' "  width="32" height="32" alt="no image">
 </div>
