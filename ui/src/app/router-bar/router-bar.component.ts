@@ -9,7 +9,7 @@ import {Link} from './link';
 export class RouterBarComponent implements OnInit {
 
   links: Link[] = [
-    {link: 'console', linkDisplay: 'Console'},
+    {link: 'consoleStatus', linkDisplay: 'Console'},
     {link: 'apartment', linkDisplay: 'Apartment'},
     {link: 'statistics', linkDisplay: 'Statistics'},
     {link: 'infos', linkDisplay: 'Infos'},

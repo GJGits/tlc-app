@@ -1,9 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Apartment, Reading, Room} from '../app-elements';
+import {Apartment, ConsoleStatus, Reading, Room} from '../app-elements';
 import {ApiService} from '../api.service';
 import {Observable} from 'rxjs';
 import {DataService} from '../data.service';
-
 
 
 @Component({
@@ -36,14 +35,17 @@ export class ConsoleComponent implements OnInit {
   updateProgTemp(sign: string) {
     if (sign === '+' && this.selectedRoom && this.selectedRoom.progTemp < 35) {
       this.selectedRoom.progTemp++;
-      this.apiService.updateProgTemp(this.selectedRoom);
+      this.apiService.updateProgTemp(this.selectedRoom).subscribe((value) => console.log(value));
       this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.heatAct, this.selectedRoom.progTemp);
     }
     if (sign === '-' && this.selectedRoom && this.selectedRoom.progTemp > 15) {
       this.selectedRoom.progTemp--;
-      this.apiService.updateProgTemp(this.selectedRoom);
+      this.apiService.updateProgTemp(this.selectedRoom).subscribe((value) => console.log(value));
       this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.coolAct, this.selectedRoom.progTemp);
     }
   }
 
+  activate($event: ConsoleStatus) {
+    this.apiService.toggleActivation($event).subscribe((value) => console.log(value));
+  }
 }

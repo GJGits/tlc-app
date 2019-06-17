@@ -20,6 +20,24 @@ const client = new MqttHandler('reading', ['readings'], (topic, message) => {
     };
     writeReading(reading);
     mysqlClient.insertReading(reading);
+    const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json'));
+    const apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+    if (cons.active) {
+        const room = apartment.rooms.find(r => r.sensor.id === reading.id);
+        if (room) {
+            if(room.progTemp < reading.temp && room.heatAct.status === 'OFF') {
+                client.sendMessage('command-' + room.heatAct.id, 'ON');
+            } else if (room.progTemp > reading.temp && room.coolAct.status === 'OFF') {
+                client.sendMessage('command-' + room.coolAct.id, 'ON');
+            } else {
+                // raggiunta temperatura
+                room.coolAct.status = 'OFF';
+                room.heatAct.status = 'OFF';
+                client.sendMessage('command-' + room.heatAct.id, 'OFF');
+                client.sendMessage('command-' + room.coolAct.id, 'OFF');
+            }
+        }
+    }
 });
 client.connect();
 

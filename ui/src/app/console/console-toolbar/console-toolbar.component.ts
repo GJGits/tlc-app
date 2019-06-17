@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ConsoleStatus} from '../../app-elements';
+import {ApiService} from '../../api.service';
 
 @Component({
   selector: 'app-console-toolbar',
@@ -7,34 +9,33 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class ConsoleToolbarComponent implements OnInit {
 
-  mode = '';
-  active: boolean;
+  consoleStatus: ConsoleStatus;
   @Output() changeTemp = new EventEmitter<string>();
+  @Output() changeStatus = new EventEmitter<ConsoleStatus>();
 
-  constructor() {
+  constructor(private apiService: ApiService) {
   }
 
   ngOnInit() {
+    this.apiService.getConsoleStatus().subscribe((value) => {
+      this.consoleStatus = value;
+      console.log(value);
+    });
   }
 
   changeMode(type: string): void {
-    this.mode = type;
+    this.consoleStatus.mode = type;
+    this.changeStatus.emit(this.consoleStatus);
   }
 
   emitChange(sign: string) {
-    if (this.mode === 'manual') {
+    if (this.consoleStatus.mode === 'manual') {
       this.changeTemp.emit(sign);
     }
   }
 
   toggleStatus() {
-    if (this.active) {
-      this.active = !this.active;
-      this.mode = '';
-    } else {
-      this.active = !this.active;
-      this.mode = 'manual';
-    }
-
+    this.consoleStatus.active = !this.consoleStatus.active;
+    this.changeStatus.emit(this.consoleStatus);
   }
 }

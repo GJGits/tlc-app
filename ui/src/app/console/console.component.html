@@ -5,7 +5,7 @@
     <app-console-display class="ml-sm-3 ml-md-5 col-sm-3 py-4 text-center text-white border border-light" [value]="(reading$ | async)?.temp" [format]="'°C'" [tag]="'current'"></app-console-display>
     <app-console-display class="ml-sm-3 ml-md-5 col-sm-3 py-4 text-center text-white border border-light" [value]="(reading$ | async)?.hum" [format]="'%'" [tag]="'humidity'"></app-console-display>
   </div>
-  <app-console-toolbar (changeTemp)="updateProgTemp($event)"></app-console-toolbar>
+  <app-console-toolbar (changeStatus)="activate($event)" (changeTemp)="updateProgTemp($event)"></app-console-toolbar>
   <app-console-room-pagination (roomChanged)="updateDisplay($event)" [rooms]="(apartment$ | async)?.rooms"></app-console-room-pagination>
 </div>
 

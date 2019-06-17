@@ -7,11 +7,11 @@ import {StatisticsComponent} from './statistics/statistics.component';
 import {ProgramComponent} from './program/program.component';
 
 const appRoutes: Routes = [
-  {path: 'console', component: ConsoleComponent},
+  {path: 'consoleStatus', component: ConsoleComponent},
   {path: 'apartment', component: ApartmentComponent},
   {path: 'statistics', component: StatisticsComponent},
   {path: 'program', component: ProgramComponent},
-  {path: '', redirectTo: 'console', pathMatch: 'full'}
+  {path: '', redirectTo: 'consoleStatus', pathMatch: 'full'}
 ];
 
 @NgModule({

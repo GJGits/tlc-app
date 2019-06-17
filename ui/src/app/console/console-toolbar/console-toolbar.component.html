@@ -1,9 +1,9 @@
-<div class="row col-4 ml-5 mt-5 text-white" style="height: 30px">
-  <button (click)="emitChange('+')" class="col-2 btn border-white text-white text-center">+</button>
-  <button (click)="emitChange('-')" class="col-2 ml-1 btn border-white text-white text-center">-</button>
+<div  *ngIf="consoleStatus" class="row col-4 ml-5 mt-5 text-white" style="height: 30px">
+  <button [disabled]="consoleStatus.mode !== 'manual' || !consoleStatus.active" (click)="emitChange('+')" class="col-2 btn border-white text-white text-center">+</button>
+  <button [disabled]="consoleStatus.mode !== 'manual' || !consoleStatus.active" (click)="emitChange('-')" class="col-2 ml-1 btn border-white text-white text-center">-</button>
   <img class="ml-1" (click)="changeMode('manual')"
-       [src]="mode === 'manual'? '../../assets/imgs/mv.png' : '../../assets/imgs/mn.png' " alt="#">
+       [src]="(consoleStatus.mode === 'manual' && consoleStatus.active)? '../../assets/imgs/mv.png' : '../../assets/imgs/mn.png' " alt="#">
   <img class="ml-1" (click)="changeMode('programmed')"
-       [src]="mode === 'programmed'? '../../assets/imgs/pv.png' : '../../assets/imgs/pn.png'" width="32" height="32" alt="#">
-  <img class="ml-1" (click)="toggleStatus()" [src]="active ? '../../assets/imgs/accendere.png' : '../../assets/imgs/spegnere.png' "  width="32" height="32" alt="no image">
+       [src]="(consoleStatus.mode === 'programmed' && consoleStatus.active)? '../../assets/imgs/pv.png' : '../../assets/imgs/pn.png'" width="32" height="32" alt="#">
+  <img class="ml-1" (click)="toggleStatus()" [src]="consoleStatus.active ? '../../assets/imgs/accendere.png' : '../../assets/imgs/spegnere.png' "  width="32" height="32" alt="no image">
 </div>

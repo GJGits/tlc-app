@@ -9,14 +9,19 @@ POST http://localhost:3000/apartment/updateProgTemp
 Content-Type: application/json
 
 {
-  "id": 1,
-  "type": "Bagno",
-  "progTemp": 22,
+  "id": "cucina",
+  "type": "cucina",
+  "progTemp": 16,
   "sensor": {
-    "id": "s:C3:50:E3:56:2F:68"
+    "id": "s:7d:01:8b:07:a9:da"
   },
-  "actuator": {
-    "id":"a:B8:E6:2D:68:34:FD"
+  "heatAct": {
+    "id": "ha:8b:f9:46:17:40:c2",
+    "status": "OFF"
+  },
+  "coolAct": {
+    "id": "ca:66:33:f7:6a:1f:6b",
+    "status": "OFF"
   }
 }
 

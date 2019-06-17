@@ -9,7 +9,7 @@ const MqttHandler = require("../mqtt/mqtt_client");
  * Decide se e' necessario agire ed in caso positivo
  * invia una publish.
  */
-router.post('/:sensId/:actId', (req, res, next) => {
+router.post('/:roomId', (req, res, next) => {
     const temperaturaDesiderata = req.body.temp;
     const sensId = req.params.sensId;
     const actId = req.params.actId;

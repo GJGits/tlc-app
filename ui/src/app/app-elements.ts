@@ -4,6 +4,7 @@ export interface Sensor {
 
 export interface Actuator {
   id: string;
+  status: boolean;
 }
 
 export interface Room {
@@ -27,9 +28,9 @@ export interface Reading {
   index: number;
 }
 
-export interface ImagePath {
-  roomType: string;
-  path: string;
+export interface ConsoleStatus {
+  mode: string;
+  active: boolean;
 }
 
 

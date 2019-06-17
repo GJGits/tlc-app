@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Actuator, Apartment, Reading, Room, Sensor} from './app-elements';
+import {Actuator, Apartment, ConsoleStatus, Reading, Room, Sensor} from './app-elements';
 import {environment} from '../environments/environment';
 import {ChartData} from './statistics/line-chart/chart-data';
 import {RepeatableEvent, SimpleEvent} from './program/events';
@@ -70,6 +70,14 @@ export class ApiService {
 
   postSimpleEvent(model: SimpleEvent) {
     return this.httpClient.post(this.baseUrl + 'events/simple', model);
+  }
+
+  toggleActivation(consoleStatus: ConsoleStatus) {
+    return this.httpClient.post(this.baseUrl + 'events/status', consoleStatus);
+  }
+
+  getConsoleStatus() {
+    return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status');
   }
 
 }

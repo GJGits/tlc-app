@@ -1,6 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const fs = require('fs');
+const MqttHandler = require("../mqtt/mqtt_client");
+
+const mqttClient = new MqttHandler('apartmentHandler');
 
 removeAct = function (act) {
     let acts = JSON.parse(fs.readFileSync(__dirname + '/../db/acts.json'));
@@ -58,9 +61,18 @@ router.post('/updateProgTemp', (req, res, next) => {
     let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     let room = req.body;
     apartment.rooms.find(r => r.id === room.id).progTemp = room.progTemp;
+    const lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(r => r.id === room.sensor.id);
     fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
     console.log('scritto file: ' + JSON.stringify(apartment));
-    //todo: check if a publish is needed
+    if (lastReading) {
+        const lastTemp = lastReading.temp;
+        if (lastTemp < room.progTemp && room.heatAct.status === 'OFF') {
+            mqttClient.sendMessage('command-' + room.heatAct.id, 'ON');
+        }
+        if (lastTemp > room.progTemp && room.coolAct.status === 'OFF') {
+            mqttClient.sendMessage('command-' + room.coolAct.id, 'ON');
+        }
+    }
     return res.status(200);
 });
 
