@@ -14,9 +14,9 @@ const client = new MqttHandler('reading', ['readings'], (topic, message) => {
     let tokens = strMessage.split(', ');
     let reading = {
         id: tokens[3].split("=")[1],
-        temp: tokens[0].split("=")[1],
-        hum: tokens[1].split("=")[1],
-        index: tokens[2].split("=")[1]
+        temp: +tokens[0].split("=")[1],
+        hum: +tokens[1].split("=")[1],
+        index: +tokens[2].split("=")[1]
     };
     writeReading(reading);
     mysqlClient.insertReading(reading);
@@ -25,14 +25,14 @@ const client = new MqttHandler('reading', ['readings'], (topic, message) => {
     if (cons.active) {
         const room = apartment.rooms.find(r => r.sensor.id === reading.id);
         if (room) {
-            if(room.progTemp < reading.temp && room.heatAct.status === 'OFF') {
+            if (room.progTemp < reading.temp && !room.heatAct.status) {
                 client.sendMessage('command-' + room.heatAct.id, 'ON');
-            } else if (room.progTemp > reading.temp && room.coolAct.status === 'OFF') {
+            } else if (room.progTemp > reading.temp && !room.coolAct.status) {
                 client.sendMessage('command-' + room.coolAct.id, 'ON');
             } else {
                 // raggiunta temperatura
-                room.coolAct.status = 'OFF';
-                room.heatAct.status = 'OFF';
+                room.coolAct.status = false;
+                room.heatAct.status = false;
                 client.sendMessage('command-' + room.heatAct.id, 'OFF');
                 client.sendMessage('command-' + room.coolAct.id, 'OFF');
             }
@@ -43,9 +43,11 @@ client.connect();
 
 const writeReading = function (reading) {
     // recupero ultima lettura sensore
+    console.log('reading', reading);
     let readings = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json'));
-    let lastReadIndex = readings.findIndex(r => r.id === reading.id);
-    readings.splice(lastReadIndex, 1);
+    readings.forEach((item, index) => {
+        if (item.id === reading.id) readings.splice(index, 1)
+    });
     readings.push(reading);
     fs.writeFileSync(__dirname + '/../db/last-readings.json', JSON.stringify(readings));
     console.log('scritto file: ' + JSON.stringify(readings));
@@ -63,7 +65,7 @@ router.get('/:id', (req, res, next) => {
 
 router.get('/lastReadings/:id', (req, res, next) => {
     const sensorId = req.params.id;
-   mysqlClient.getLastReading(sensorId, res);
+    mysqlClient.getLastReading(sensorId, res);
 
 });
 

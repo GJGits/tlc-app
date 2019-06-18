@@ -1,4 +1,17 @@
-{
-  "mode": "",
-  "active": false
-}
+[
+  {
+    "roomId": "cucina",
+    "mode": "",
+    "active": true
+  },
+  {
+    "roomId": "bagnogrande",
+    "mode": "",
+    "active": false
+  },
+  {
+    "roomId": "salottofamily",
+    "mode": "",
+    "active": true
+  }
+]

@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {ConsoleStatus} from '../../app-elements';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {ConsoleStatus, Room} from '../../app-elements';
 import {ApiService} from '../../api.service';
 
 @Component({
@@ -7,20 +7,30 @@ import {ApiService} from '../../api.service';
   templateUrl: './console-toolbar.component.html',
   styleUrls: ['./console-toolbar.component.css']
 })
-export class ConsoleToolbarComponent implements OnInit {
+export class ConsoleToolbarComponent implements OnChanges {
 
-  consoleStatus: ConsoleStatus;
+  consoleStatus: ConsoleStatus = {roomId: '', mode: '', active: false};
+  @Input() room: Room;
   @Output() changeTemp = new EventEmitter<string>();
   @Output() changeStatus = new EventEmitter<ConsoleStatus>();
 
   constructor(private apiService: ApiService) {
   }
 
-  ngOnInit() {
-    this.apiService.getConsoleStatus().subscribe((value) => {
-      this.consoleStatus = value;
-      console.log(value);
-    });
+  ngOnChanges(changes: SimpleChanges) {
+    if (this.room) {
+      this.apiService.getConsoleStatus(this.room).subscribe((value) => {
+        if (value) {
+          this.consoleStatus = value;
+        } else {
+          this.consoleStatus.roomId = this.room.id;
+          this.consoleStatus.mode = '';
+          this.consoleStatus.active = false;
+        }
+
+      });
+    }
+
   }
 
   changeMode(type: string): void {

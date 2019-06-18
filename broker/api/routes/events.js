@@ -3,14 +3,20 @@ const router = express.Router();
 const fs = require('fs');
 
 router.post('/status', (req, res, next) => {
-    fs.writeFileSync(__dirname + '/../db/consoleStatus.json', JSON.stringify(req.body));
+    const consoleStatus = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json'));
+    consoleStatus.forEach((item, index) => {
+        if (item.roomId === req.body.roomId) consoleStatus.splice(index, 1)
+    });
+    consoleStatus.push(req.body);
+    fs.writeFileSync(__dirname + '/../db/consoleStatus.json', JSON.stringify(consoleStatus));
     // todo: se status on schedulare con crontab altrimenti eliminare scheduling
     return res.status(200).send(req.body);
 });
 
-router.get('/status', (req, res, next) => {
+router.get('/status/:roomId', (req, res, next) => {
+    const roomId = req.params.roomId;
     const consoleStatus = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json'));
-   return res.status(200).send(consoleStatus);
+   return res.status(200).send(consoleStatus.find(cs => cs.roomId === roomId));
 });
 
 router.get('/repeatable', (req, res, next) => {

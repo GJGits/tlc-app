@@ -29,6 +29,7 @@ export interface Reading {
 }
 
 export interface ConsoleStatus {
+  roomId: string;
   mode: string;
   active: boolean;
 }

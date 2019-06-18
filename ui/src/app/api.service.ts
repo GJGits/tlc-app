@@ -76,8 +76,8 @@ export class ApiService {
     return this.httpClient.post(this.baseUrl + 'events/status', consoleStatus);
   }
 
-  getConsoleStatus() {
-    return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status');
+  getConsoleStatus(room: Room) {
+    return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status/' + room.id.replace(/\s/g, ''));
   }
 
 }
