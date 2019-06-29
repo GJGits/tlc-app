@@ -80,4 +80,14 @@ export class ApiService {
     return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status/' + room.id.replace(/\s/g, ''));
   }
 
+  deleteSimpleEvent(simpleEvent: SimpleEvent) {
+    return this.httpClient.delete(this.baseUrl + 'events/deleteSimple/'
+      + simpleEvent.roomName.replace(/\s/g, '') + '/' + simpleEvent.startDate + '/' + simpleEvent.startTime);
+  }
+
+  deleteRepeatableEvent(event: RepeatableEvent) {
+    return this.httpClient.delete(this.baseUrl + 'events/deleteRepeatable/'
+      + event.roomName + '/' + event.repeat + '/' + event.startTime);
+  }
+
 }
