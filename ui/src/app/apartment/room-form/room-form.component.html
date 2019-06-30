@@ -1,0 +1,73 @@
+<!-- Modal -->
+<div class="modal fade" id="newRoom" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add New Room</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <!-- modal body -->
+        <form >
+          <div class="form-row">
+            <!-- ROOM TYPE -->
+            <div class="form-group col-sm-6">
+              <label for="roomType">Room type: </label>
+              <select id="roomType" name="type" class="form-control" [(ngModel)]="room.type" data-toggle="tooltip" data-placement="top" title="room type">
+                <option *ngFor="let type of types" [value]="type">{{type}}</option>
+              </select>
+            </div>
+            <!-- ROOM PROG TEMP -->
+            <div class="form-group col-sm-6">
+              <label for="temp">Room temp: </label>
+              <input type="number" id="temp" name="temp" min="15" max="35" class="form-control" data-toggle="tooltip" data-placement="top" title="programmed temperature" [value]="room.progTemp" [(ngModel)]="room.progTemp">
+            </div>
+            <!-- ROOM SENS -->
+            <div class="form-group col-sm-6">
+              <label for="roomSens">Room sensor: </label>
+              <select id="roomSens" name="sensor" class="form-control" [(ngModel)]="room.sensor.id" data-toggle="tooltip" data-placement="top" title="avaible sensors">
+                <option *ngFor="let sens of avaibleSensors" [value]="sens.id">{{sens.id}}</option>
+              </select>
+            </div>
+            <!-- ROOM HEAT ACT -->
+            <div class="form-group col-sm-6">
+              <label for="roomHAct">Room heat act: </label>
+              <select id="roomHAct" name="ha" class="form-control" [(ngModel)]="room.heatAct.id" data-toggle="tooltip" data-placement="top" title="avaible heat actuators">
+                <option *ngFor="let ha of avaibleHeatActs" [value]="ha.id">{{ha.id}}</option>
+              </select>
+            </div>
+            <!-- ROOM COOL ACT -->
+            <div class="form-group col-sm-6">
+              <label for="roomCAct">Room Cooling act: </label>
+              <select id="roomCAct" name="ca" class="form-control" [(ngModel)]="room.coolAct.id" data-toggle="tooltip" data-placement="top" title="avaible cool actuators">
+                <option *ngFor="let ca of avaibleCoolActs" [value]="ca.id">{{ca.id}}</option>
+              </select>
+            </div>
+            <!-- ROOM NAME -->
+            <div class="form-group col-sm-6">
+              <label for="roomName">Room name: </label>
+              <input class="form-control" type="text" id="roomName" name="roomName" [(ngModel)]="room.id">
+            </div>
+          </div>
+        </form>
+
+        <!-- ERROR -->
+        <div *ngIf="showAlert" class="col mt-5 alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>Form error.</strong> Please fill form before adding a room.
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addRoom()" >Add New Room</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

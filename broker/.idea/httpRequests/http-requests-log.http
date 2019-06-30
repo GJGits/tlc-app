@@ -1,0 +1,111 @@
+POST http://localhost:3000/apartment/updateProgTemp
+Content-Type: application/json
+
+{
+  "id": "cucina",
+  "type": "cucina",
+  "progTemp": 17,
+  "sensor": {
+    "id": "s:7d:01:8b:07:a9:da"
+  },
+  "heatAct": {
+    "id": "ha:8b:f9:46:17:40:c2",
+    "status": "OFF"
+  },
+  "coolAct": {
+    "id": "ca:66:33:f7:6a:1f:6b",
+    "status": "OFF"
+  }
+}
+
+###
+
+POST http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002/user/PL19-16/devices
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6MTM3MCwiaWF0IjoxNTU5OTg1NTUwLCJuYmYiOjE1NTk5ODU1NTAsImV4cCI6MTU2MjU3NzU1MH0.A7gQP3-dJe6XR6sCVKV-wzhsBJYgSleDelpkYrfKGMs
+Content-Type: application/json
+
+{"device_mac":  "39:05:62:2D:C8:B8", "nickname":  "my-nick2", "configuration": "some configuration here"}
+
+<> 2019-06-11T094946.200.json
+
+###
+
+POST http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002/user/PL19-16/devices
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6MTM3MCwiaWF0IjoxNTU5OTg1NTUwLCJuYmYiOjE1NTk5ODU1NTAsImV4cCI6MTU2MjU3NzU1MH0.A7gQP3-dJe6XR6sCVKV-wzhsBJYgSleDelpkYrfKGMs
+Content-Type: application/json
+
+{"device_mac":  "39:05:62:2D:C8:B8", "nickname":  "my-nick", "configuration": "some configuration here"}
+
+<> 2019-06-08T111953.200.json
+
+###
+
+POST http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002/auth
+Content-Type: application/json
+
+{"username":  "PL19-16", "password":  "PL19-16-oa"}
+
+<> 2019-06-08T111910.200.json
+
+###
+
+POST http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002/auth
+Content-Type: application/json
+
+{"username":  "PL19-16", "password":  "PL19-16-oa"}
+
+<> 2019-06-07T063313.200.json
+
+###
+
+POST http://localhost:3000/apartment/updateProgTemp
+Content-Type: application/json
+
+{
+  "id": 1,
+  "type": "Bagno",
+  "progTemp": 22,
+  "sensor": {
+    "id": "s:C3:50:E3:56:2F:68"
+  },
+  "actuator": {
+    "id":"a:B8:E6:2D:68:34:FD"
+  }
+}
+
+###
+
+POST http://localhost:3000/apartment/updateProgTemp
+Content-Type: application/json
+
+{
+  "id": 1,
+  "type": "Bagno",
+  "progTemp": 16,
+  "sensor": {
+    "id": "s:C3:50:E3:56:2F:68"
+  },
+  "actuator": {
+    "id":"a:B8:E6:2D:68:34:FD"
+  }
+}
+
+###
+
+POST http://localhost:3000/apartment/updateProgTemp
+Content-Type: application/json
+
+{
+  "id": 1,
+  "type": "Bagno",
+  "progTemp": 16,
+  "sensor": {
+    "id": "s:C3:50:E3:56:2F:68"
+  },
+  "actuator": {
+    "id":"a:B8:E6:2D:68:34:FD"
+  }
+}
+
+###
+

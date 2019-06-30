@@ -1,0 +1,65 @@
+<!-- events -->
+<table *ngIf="repeatableEvents; else noEvents" class="table table-hover table-sm-responsive text-center mt-sm-5">
+  <thead>
+
+  <tr>
+    <th scope="col">room</th>
+    <th scope="col">temp</th>
+    <th scope="col">start time</th>
+    <th scope="col">end time</th>
+    <th scope="col">repeat</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ev of repeatableEvents">
+    <th scope="row">{{ev.roomName}}</th>
+    <th>{{ev.temp}}</th>
+    <th>{{ev.startTime}}</th>
+    <th>{{ev.endTime}}</th>
+    <th>{{ev.repeat}}</th>
+    <th><button (click)="deleteRepeatableEvent(ev)" class="btn btn-danger">Delete</button></th>
+  </tr>
+  </tbody>
+</table>
+<ng-template #noEvents>
+  <div class="alert alert-primary" role="alert">
+    No events found!
+  </div>
+</ng-template>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-block col-sm-6 offset-sm-3" data-toggle="modal" data-target="#repeatEvent">
+  Repeatable Event
+</button>
+
+<table *ngIf="simpleEvents; else noSimpleEvents" class="table table-hover table-sm-responsive text-center mt-sm-5">
+  <thead>
+
+  <tr>
+    <th scope="col">room</th>
+    <th scope="col">temp</th>
+    <th scope="col">start time</th>
+    <th scope="col">end time</th>
+    <th scope="col">repeat</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let ev of simpleEvents">
+    <th scope="row">{{ev.roomName}}</th>
+    <th>{{ev.temp}}</th>
+    <th>{{ev.startTime}}</th>
+    <th>{{ev.endTime}}</th>
+    <th>{{ev.repeat}}</th>
+    <th><button (click)="deleteSimpleEvent(ev)" class="btn btn-danger">Delete</button></th>
+  </tr>
+  </tbody>
+</table>
+<ng-template #noSimpleEvents>
+  <div class="alert alert-primary" role="alert">
+    No events found!
+  </div>
+</ng-template>
+
+
+<button type="button" class="btn btn-primary btn-block col-sm-6 offset-sm-3" data-toggle="modal" data-target="#simpleEvent">
+   Simple Event
+</button>

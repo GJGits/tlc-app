@@ -1,0 +1,61 @@
+
+<!-- Modal -->
+<div class="modal fade" id="simpleEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Event form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- form body -->
+      <div class="modal-body">
+        <form (change)="errors = ''">
+          <div class="form-row">
+            <!-- temp desiderata -->
+            <div class="form-group col-sm-6">
+              <label for="temp">temp: </label>
+              <input type="number" class="form-control" id="temp" name="temp" min="15" max="35" [(ngModel)]="model.temp">
+            </div>
+            <!-- stanza desiderata -->
+            <div class="form-group col-sm-6">
+              <label for="room">room: </label>
+              <select name="room" id="room" class="form-control" [(ngModel)]="model.roomName">
+                <option *ngFor="let room of rooms" [value]="room.id">{{room.id}}</option>
+              </select>
+            </div>
+            <!-- start -->
+            <div class="form-group col-sm-6">
+              <label for="start">start time: </label>
+              <input type="number" class="form-control" id="start" name="start" min="0" max="24" [(ngModel)]="model.startTime">
+            </div>
+            <!-- end -->
+            <div class="form-group col-sm-6">
+              <label for="end">end time: </label>
+              <input type="number" class="form-control" id="end" name="end" min="0" max="24" [(ngModel)]="model.endTime">
+            </div>
+            <!-- from date to date options -->
+              <!-- from day-->
+              <div class="form-group col-sm-6 ">
+                <label for="from">from: </label>
+                <input type="date" class="form-control" id="from" name="start" [(ngModel)]="model.startDate">
+              </div>
+              <!-- to to-->
+              <div class="form-group col-sm-6 ">
+                <label for="to">to: </label>
+                <input type="date" class="form-control" id="to" name="to" [(ngModel)]="model.endData">
+              </div>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="errors" class="alert alert-danger" role="alert">
+        {{errors}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addEvent()">Add event</button>
+      </div>
+    </div>
+  </div>
+</div>

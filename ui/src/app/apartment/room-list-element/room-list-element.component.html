@@ -1,0 +1,49 @@
+<li *ngIf="!edit; else editMode" class="list-group-item">
+  <img class="ml-sm-3 ml-lg-5" [src]="src + room.type.toLocaleLowerCase() + '.png'" alt="not found" width="30" height="30" data-toggle="tooltip" data-placement="top" [title]="room.id">
+  <small class="ml-2">{{room.sensor.id}}</small>
+  <small class="ml-2">{{room.heatAct.id}}</small>
+  <small class="ml-2">{{room.coolAct.id}}</small>
+  <button (click)="changeMode()" type="button" class="btn btn-success btn-sm ml-3">Edit</button>
+  <button type="button" class="btn btn-danger btn-sm ml-2" data-toggle="modal" data-target="#exampleModal">Delete</button>
+</li>
+
+<app-delete-room-modal (deleteRoom)="deleteRoom()"></app-delete-room-modal>
+
+<ng-template #editMode>
+  <form >
+    <li class="list-group-item">
+      <form>
+        <div class="row">
+          <!-- ROOM TYPE -->
+          <div class="form-group col-3 mb-0">
+            <select id="roomType" name="roomType" class="form-control" [(ngModel)]="room.type" data-toggle="tooltip" data-placement="top" title="room type">
+              <option *ngFor="let type of types"  [selected]="type === room.type" [value]="type">{{type}}</option>
+            </select>
+          </div>
+          <!-- ROOM SENSOR -->
+          <div class="form-group col mb-0">
+            <select id="roomSensor" name="roomSensor" class="form-control" [(ngModel)]="room.sensor.id">
+              <option *ngFor="let sens of avaibleSensors">{{sens.id}}</option>
+            </select>
+          </div>
+          <!-- HEAT ACTUATOR -->
+          <div class="form-group col mb-0">
+            <select id="heatAct" name="heatAct" class="form-control" [(ngModel)]="room.heatAct.id">
+              <option *ngFor="let heat of avaibleHeatActs">{{heat.id}}</option>
+            </select>
+          </div>
+          <!-- COOL ACTUATOR -->
+          <div class="form-group col mb-0">
+            <select id="coolAct" name="coolAct" class="form-control" [(ngModel)]="room.coolAct.id">
+              <option *ngFor="let cool of avaibleCoolActs">{{cool.id}}</option>
+            </select>
+          </div>
+          <!-- SAVE EDIT BUTTON -->
+          <button (click)="saveEdits()" type="button" class="btn btn-primary btn-sm ">Save edits</button>
+          <button (click)="changeMode()" type="button" class="btn btn-primary ml-3 btn-sm">Cancel</button>
+        </div>
+      </form>
+    </li>
+  </form>
+
+</ng-template>

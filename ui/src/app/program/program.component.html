@@ -1,0 +1,6 @@
+<div class="container">
+  <app-events-tab (deleteSimple)="deleteSimple($event)" (deleteRepeatable)="deleteRepeatable($event)" [simpleEvents]="simpleEvents" [repeatableEvents]="repeatableEvents"></app-events-tab>
+  <app-events-form (newRepeatableEvent)="addEvent($event)" [rooms]="(apartment$ | async)?.rooms"></app-events-form>
+  <app-simple-event-form (newSimpleEvent)="addSimpleEvent($event)" [rooms]="(apartment$ | async)?.rooms"></app-simple-event-form>
+</div>
+

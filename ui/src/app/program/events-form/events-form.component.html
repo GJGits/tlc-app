@@ -1,0 +1,81 @@
+
+<!-- Modal -->
+<div class="modal fade" id="repeatEvent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Event form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <!-- form body -->
+      <div class="modal-body">
+        <form (change)="errors = ''">
+          <div class="form-row">
+            <!-- temp desiderata -->
+            <div class="form-group col-sm-6">
+              <label for="temp">temp: </label>
+              <input type="number" class="form-control" id="temp" name="temp" min="15" max="35" [(ngModel)]="model.temp">
+            </div>
+            <!-- stanza desiderata -->
+            <div class="form-group col-sm-6">
+              <label for="room">room: </label>
+              <select name="room" id="room" class="form-control" [(ngModel)]="model.roomName">
+                <option *ngFor="let room of rooms" [value]="room.id">{{room.id}}</option>
+              </select>
+            </div>
+            <!-- start -->
+            <div class="form-group col-sm-6">
+              <label for="start">start time: </label>
+              <input type="number" class="form-control" id="start" name="start" min="0" max="24" [(ngModel)]="model.startTime">
+            </div>
+            <!-- end -->
+            <div class="form-group col-sm-6">
+              <label for="end">end time: </label>
+              <input type="number" class="form-control" id="end" name="end" min="0" max="24" [(ngModel)]="model.endTime">
+            </div>
+            <!-- repeat section -->
+            <div class="form-group col-sm-6">
+              <label for="repeat">repeat: </label>
+              <select name="repeat" id="repeat" class="form-control" [disabled]="dateToDate" [(ngModel)]="model.repeat">
+                <option *ngFor="let option of repeatOptions" [value]="option">{{option}}</option>
+              </select>
+            </div>
+            <!-- date to date switch -->
+            <div class="form-group col-sm-6 mt-sm-4">
+              <div class="custom-control custom-switch form-group mt-sm-3">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1" (click)="switch()">
+                <label class="custom-control-label" for="customSwitch1">from day to day</label>
+              </div>
+            </div>
+            <!-- from date to date options -->
+            <div id="fromDateToDate" class="row" [hidden]="!dateToDate">
+              <!-- from week-->
+              <div class="form-group col-sm-6 ">
+                <label for="fromWeek">from: </label>
+                <select name="fromWeek" id="fromWeek" class="form-control" [(ngModel)]="model.from">
+                  <option *ngFor="let week of dayOfWeeks" [value]="week">{{week}}</option>
+                </select>
+              </div>
+              <!-- to week-->
+              <div class="form-group col-sm-6 ">
+                <label for="toWeek">to: </label>
+                <select name="toWeek" id="toWeek" class="form-control" [(ngModel)]="model.to">
+                  <option *ngFor="let week of dayOfWeeks" [value]="week">{{week}}</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div *ngIf="errors" class="alert alert-danger" role="alert">
+        {{errors}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="addEvent()">Add event</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+#!/bin/bash
+
+mosquitto_pub -d -t readings -m "temp=23, hum=45, index= 21.3, id=s:7d:01:8b:07:a9:da"
+sleep 5
+
+mosquitto_pub -d -t readings -m "temp=20.5, hum=51, index= 20.5, id=s:ad:e7:0b:8f:fb:b0"
+sleep 4
+
+mosquitto_pub -d -t readings -m "temp=22.00, hum=51, index= 22.00, id=s:52:64:9f:f6:11:34"
+sleep 3
+
+mosquitto_pub -d -t readings -m "temp=23.00, hum=48, index= 23.00, id=s:c9:91:48:9d:75:44"
+sleep 2
+
+mosquitto_pub -d -t readings -m "temp=19.00, hum=55, index= 19.00, id=s:7d:01:8b:07:a9:da"
+sleep 5
+
+mosquitto_pub -d -t readings -m "temp=20.00, hum=53, index= 20.00, id=s:ad:e7:0b:8f:fb:b0"
+sleep 4
+
+mosquitto_pub -d -t readings -m "temp=21, hum=57, index= 21, id=s:52:64:9f:f6:11:34"
+sleep 3
+
+mosquitto_pub -d -t readings -m "temp=18.00, hum=60, index= 18.00, id=s:c9:91:48:9d:75:44"
+sleep 2
+

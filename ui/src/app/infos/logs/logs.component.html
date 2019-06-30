@@ -1,0 +1,26 @@
+<div class="container">
+  <ul class="list-group col-sm-8 offset-sm-2 mt-5" *ngIf="(log | async)?.data; else emptyList">
+    <li *ngFor="let event of (log | async)?.data" class="list-group-item" [ngClass]="{'list-group-item-success': !isError(event.event_id), 'list-group-item-danger': isError(event.event_id)}">
+      <p><b>device_id: </b>{{event.device_id}}</p>
+      <p><b>event_id: </b>{{event.event_id}}</p>
+      <p><b>timestamp_dev: </b>{{event.timestamp_dev}</p>
+      <p><b>timestamp_srv: </b>{{event.timestamp_srv}}</p>
+      <p><b>message: </b>{{event.event.message}}</p>
+      <p><b>sequence: </b>{{event.event.sequence}}</p>
+    </li>
+  </ul>
+  <ng-template #emptyList>
+    <ul class="list-group col-sm-8 offset-sm-2 mt-5">
+      <li class="group-list-item list-group-item-primary mb-0">
+        <p>No logs found, here a sample log format:</p>
+        <p><b>device_id:</b> your device id</p>
+        <p><b>event_id: </b>event code number</p>
+        <p><b>timestamp_dev: </b> timestamp of machine event</p>
+        <p><b>timestamp_srv: </b> same of above, but for server</p>
+        <p><b>message: </b> log message</p>
+        </li>
+    </ul>
+  </ng-template>
+</div>
+
+{{log | async | json}}

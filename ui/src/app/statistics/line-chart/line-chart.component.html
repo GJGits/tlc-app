@@ -1,0 +1,16 @@
+<div style="display: block;">
+  <canvas *ngIf="lineChartData; else noData" baseChart  height="100"
+    [datasets]="lineChartData"
+    [labels]="lineChartLabels"
+    [options]="lineChartOptions"
+    [colors]="lineChartColors"
+    [legend]="lineChartLegend"
+    [chartType]="lineChartType"
+    [plugins]="lineChartPlugins">
+  </canvas>
+  <ng-template #noData>
+    <div class="alert alert-primary" role="alert">
+      No data found!
+    </div>
+  </ng-template>
+</div>

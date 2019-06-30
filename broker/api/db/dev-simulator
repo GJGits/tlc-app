@@ -1,0 +1,35 @@
+#!/bin/bash
+
+mosquitto_pub -d -t presence -m "s:7d:01:8b:07:a9:da"
+sleep 5
+mosquitto_pub -d -t presence -m "ha:8b:f9:46:17:40:c2"
+sleep 5
+mosquitto_pub -d -t presence -m "ca:66:33:f7:6a:1f:6b"
+
+sleep 10
+mosquitto_pub -d -t presence -m "s:ad:e7:0b:8f:fb:b0"
+sleep 5
+mosquitto_pub -d -t presence -m "ha:26:df:c6:06:bd:05"
+sleep 5
+mosquitto_pub -d -t presence -m "ca:0d:f1:a8:62:5a"
+
+sleep 10
+mosquitto_pub -d -t presence -m "s:52:64:9f:f6:11:34"
+sleep 5
+mosquitto_pub -d -t presence -m "ha:47:22:90:b6:5f:0b"
+sleep 5
+mosquitto_pub -d -t presence -m "ca:47:4d:ad:d5:49:45"
+
+sleep 10
+mosquitto_pub -d -t presence -m "s:c9:91:48:9d:75:44"
+sleep 5
+mosquitto_pub -d -t presence -m "ha:c3:fb:bb:c4:a8:10"
+sleep 5
+mosquitto_pub -d -t presence -m "ca:1f:02:59:81:ee:97"
+
+sleep 10
+mosquitto_pub -d -t presence -m "s:67:32:41:e0:61:5f"
+sleep 5
+mosquitto_pub -d -t presence -m "ha:32:0c:d6:fd:79:68"
+sleep 5
+mosquitto_pub -d -t presence -m "ca:54:4a:02:8c:8f:53"
