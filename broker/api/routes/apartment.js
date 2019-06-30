@@ -62,16 +62,15 @@ router.post('/updateProgTemp', (req, res, next) => {
     let room = req.body;
     apartment.rooms.find(r => r.id === room.id).progTemp = room.progTemp;
     const lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(r => r.id === room.sensor.id);
+    const consoleStatus = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
     fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
     console.log('upartment updated');
-    if (lastReading) {
+    if (lastReading && consoleStatus.active) {
         const lastTemp = lastReading.temp;
-        if (lastTemp < room.progTemp && !room.heatAct.status) {
-            console.log('send a message');
+        if (lastTemp < room.progTemp) {
             mqttClient.sendMessage('command-' + room.heatAct.id, 'ON');
         }
-        if (lastTemp > room.progTemp && !room.coolAct.status ) {
-            console.log('send a message');
+        if (lastTemp > room.progTemp) {
             mqttClient.sendMessage('command-' + room.coolAct.id, 'ON');
         }
     }

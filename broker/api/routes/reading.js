@@ -22,24 +22,112 @@ const client = new MqttHandler('reading', ['readings'], (topic, message) => {
     mysqlClient.insertReading(reading);
     const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json'));
     const apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+    let room = apartment.rooms.find(r => r.sensor.id === reading.id);
     if (cons.active) {
-        const room = apartment.rooms.find(r => r.sensor.id === reading.id);
-        if (room) {
-            if (room.progTemp < reading.temp && !room.heatAct.status) {
-                client.sendMessage('command-' + room.heatAct.id, 'ON');
-            } else if (room.progTemp > reading.temp && !room.coolAct.status) {
-                client.sendMessage('command-' + room.coolAct.id, 'ON');
-            } else {
-                // raggiunta temperatura
-                room.coolAct.status = false;
-                room.heatAct.status = false;
-                client.sendMessage('command-' + room.heatAct.id, 'OFF');
-                client.sendMessage('command-' + room.coolAct.id, 'OFF');
-            }
+        if (cons.mod === 'manual') {
+            handleReading(reading, room);
+        } else {
+            let roomId = room.id;
+            checkAndActivateProgrammed(roomId);
         }
     }
 });
 client.connect();
+
+const checkAndActivateProgrammed = function (roomId) {
+    let repeatableEvents = JSON.parse(fs.readFileSync(__dirname + '/../db/reapEvents.json'));
+    let index = repeatableEvents.findIndex(ev => ev.roomName === roomId);
+    if (index !== -1) {
+        handleRepeatable(repeatableEvents.find(ev => ev.roomName === roomId));
+    }
+    let simpleEvents = JSON.parse(fs.readFileSync(__dirname + '/../db/simpEvents.json'));
+    index = simpleEvents.findIndex(ev => ev.roomName === roomId);
+    if (index !== -1) {
+        handleSimple(simpleEvents.find(ev => ev.roomName === roomId));
+    }
+};
+
+const handleSimple = function (event) {
+    let now = dateformat(new Date(), 'yyyy-mm-dd');
+    let startDate = event.startDate;
+    let endDate = event.endDate;
+    if (now >= startDate && no <= endDate) {
+        let startTime = event.startTime;
+        let endTime = event.endTime;
+        let nowTime = new Date().getHours();
+        if (nowTime <= endTime) {
+            // supponiamo un grado per ora
+            let diffHours = startTime - nowTime;
+            let room = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json')).rooms.find(r => r.id === event.roomName);
+            let sensorId = room.sensor.id;
+            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId);
+            // valuto riscaldamento
+            if (progTemp > lastReading) {
+                let diffTemp = progTemp - lastReading;
+                if (diffTemp >= diffHours || diffHours < 0) {
+                    // riscaldo
+                    mqttClient.sendMessage('command-ha:' + room.heatAct.id, 'on');
+                }
+            } else {
+                let diffTemp = Math.abs(progTemp - lastReading);
+                if (diffTemp >= diffHours || diffHours < 0) {
+                    // raffreddo
+                    mqttClient.sendMessage('command-ca:' + room.coolAct.id, 'on');
+                }
+            }
+        }
+    }
+};
+
+const handleRepeatable = function (event) {
+    let start = mapDay(event.from.toLowerCase());
+    let end = mapDay(event.to.toLowerCase());
+    let now = new Date();
+    let nowDay = mapDay(now.getDay());
+    if (nowDay <= end && nowDay >= start) {
+        // ora di accendere?
+        let nowTime = now.getHours();
+        let progTemp = event.temp;
+        let startTime = event.startTime;
+        let endTime = event.endTime;
+        // metodo chiamato in caso di ON, se siamo ancora in tempo scheduliamo
+        if (nowTime <= endTime) {
+            // supponiamo un grado per ora
+            let diffHours = startTime - nowTime;
+            let room = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json')).rooms.find(r => r.id === event.roomName);
+            let sensorId = room.sensor.id;
+            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId);
+            // valuto riscaldamento
+            if (progTemp > lastReading) {
+                let diffTemp = progTemp - lastReading;
+                if (diffTemp >= diffHours || diffHours < 0) {
+                    // riscaldo
+                    mqttClient.sendMessage('command-ha:' + room.heatAct.id, 'on');
+                }
+            } else {
+                let diffTemp = Math.abs(progTemp - lastReading);
+                if (diffTemp >= diffHours || diffHours < 0) {
+                    // raffreddo
+                    mqttClient.sendMessage('command-ca:' + room.coolAct.id, 'on');
+                }
+            }
+        }
+    }
+};
+
+
+const handleReading = function (reading, room) {
+    if (reading.temp > room.progTemp) {
+        client.sendMessage('command-ha:' + room.heatAct.id,'on');
+    }
+    else if (reading.temp < room.progTemp) {
+        client.sendMessage('command-ca:' + room.coolAct.id,'on');
+    }
+    else {
+        client.sendMessage('command-ha:' + room.heatAct.id,'off');
+        client.sendMessage('command-ca:' + room.coolAct.id, 'off');
+    }
+};
 
 const writeReading = function (reading) {
     // recupero ultima lettura sensore
