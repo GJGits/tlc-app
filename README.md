@@ -15,8 +15,8 @@ Procedendo da sinistra troviamo sensori ed attuatori. Lo schema in questo caso r
 | device | sub topic | pub topic |
 | :----: | :-------: | :-------: |
 | sensor |   NONE    |  presence, readings |
-| heat actuator | command-ha:MAC_ADDRESS | | presence |
-| cool actuator | command-ha:MAC_ADDRESS | | presence |
+| heat actuator | command-ha:MAC_ADDRESS | presence |
+| cool actuator | command-ha:MAC_ADDRESS | presence |
 
 - **presence**: permette di comunicare la presenza del dispositivo, questo serve in fase di settings
 - **command-ha/ca:MAC_ADDRESS**: questo topic è univoco per ogni attuatore, questo gli permette di ricevere i messaggi di on/off
