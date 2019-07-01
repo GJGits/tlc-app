@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/api/db/last-readings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/last-readings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/consoleStatus.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/consoleStatus.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/reapEvents.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/reapEvents.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/simpEvents.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/simpEvents.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/events.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/routes/reading.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/console/console.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/console/console.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,20 +20,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="106" column="51" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
+            <state relative-caret-position="-107">
+              <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/routes/events.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="148" column="42" lean-forward="true" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/events.js">
+        <entry file="file://$PROJECT_DIR$/api/db/reapEvents.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="309">
-              <caret line="187" column="51" selection-start-line="187" selection-start-column="51" selection-end-line="187" selection-end-column="51" />
+            <state>
+              <caret column="1" selection-start-column="1" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/db/simpEvents.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="260">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -68,7 +87,7 @@
         <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="156" selection-start-column="156" selection-end-column="156" />
+              <caret column="157" selection-start-column="157" selection-end-column="157" />
             </state>
           </provider>
         </entry>
@@ -105,18 +124,18 @@
         <option value="$PROJECT_DIR$/api/db/mysqlClient.js" />
         <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
         <option value="$PROJECT_DIR$/app.js" />
-        <option value="$PROJECT_DIR$/api/db/reapEvents.json" />
         <option value="$PROJECT_DIR$/api/db/acts.json" />
         <option value="$PROJECT_DIR$/api/routes/command.js" />
         <option value="$PROJECT_DIR$/api/requests/updateTemp.http" />
-        <option value="$PROJECT_DIR$/api/db/simpEvents.json" />
         <option value="$PROJECT_DIR$/api/mqtt/mqtt_client.js" />
         <option value="$PROJECT_DIR$/api/routes/apartment.js" />
         <option value="$PROJECT_DIR$/api/db/consoleStatus.json" />
         <option value="$PROJECT_DIR$/api/db/apartment.json" />
         <option value="$PROJECT_DIR$/api/db/last-readings.json" />
-        <option value="$PROJECT_DIR$/api/routes/events.js" />
+        <option value="$PROJECT_DIR$/api/db/reapEvents.json" />
         <option value="$PROJECT_DIR$/api/routes/reading.js" />
+        <option value="$PROJECT_DIR$/api/db/simpEvents.json" />
+        <option value="$PROJECT_DIR$/api/routes/events.js" />
       </list>
     </option>
   </component>
@@ -332,7 +351,7 @@
       <workItem from="1561880691835" duration="8091000" />
       <workItem from="1561914230115" duration="447000" />
       <workItem from="1561969513049" duration="5878000" />
-      <workItem from="1561987277756" duration="6512000" />
+      <workItem from="1561987277756" duration="8816000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -408,10 +427,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="158313000" />
+    <option name="totallyTimeSpent" value="160617000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24981302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -427,7 +447,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32824427" />
-      <window_info active="true" anchor="bottom" x="0" y="64" width="1360" height="639" id="Terminal" maximized="true" order="10" type="WINDOWED" visible="true" weight="0.5591603" />
+      <window_info anchor="bottom" x="0" y="64" width="1360" height="639" id="Terminal" maximized="true" order="10" type="WINDOWED" weight="0.5591603" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -604,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/simpEvents.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="141" selection-start-column="141" selection-end-column="141" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.10.0/core-modules/events.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -635,7 +648,7 @@
     <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="156" selection-start-column="156" selection-end-column="156" />
+          <caret column="157" selection-start-column="157" selection-end-column="157" />
         </state>
       </provider>
     </entry>
@@ -646,13 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/reapEvents.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="1" selection-start-column="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/db/last-readings.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -660,17 +666,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/events.js">
+    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="187" column="51" selection-start-line="187" selection-start-column="51" selection-end-line="187" selection-end-column="51" />
+        <state relative-caret-position="-107">
+          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
+    <entry file="file://$PROJECT_DIR$/api/db/reapEvents.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="106" column="51" selection-start-line="106" selection-start-column="51" selection-end-line="106" selection-end-column="51" />
+        <state>
+          <caret column="1" selection-start-column="1" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/db/simpEvents.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="148" column="42" lean-forward="true" selection-start-line="148" selection-start-column="42" selection-end-line="148" selection-end-column="42" />
         </state>
       </provider>
     </entry>

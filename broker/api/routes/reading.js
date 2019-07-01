@@ -55,7 +55,7 @@ const handleSimple = function (event) {
     let now = dateformat(new Date(), 'yyyy-mm-dd');
     let startDate = event.startDate;
     let endDate = event.endDate;
-    if (now >= startDate && no <= endDate) {
+    if (now >= startDate && now <= endDate) {
         let startTime = event.startTime;
         let endTime = event.endTime;
         let nowTime = new Date().getHours();
