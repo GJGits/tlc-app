@@ -1,17 +1,1 @@
-[
-  {
-    "roomId": "bagnogrande",
-    "mode": "",
-    "active": false
-  },
-  {
-    "roomId": "salottofamily",
-    "mode": "",
-    "active": true
-  },
-  {
-    "roomId": "cucina",
-    "mode": "manual",
-    "active": false
-  }
-]
+[{"roomId":"bagnogrande","mode":"","active":false},{"roomId":"salottofamily","mode":"","active":true},{"roomId":"cucina","mode":"programmed","active":true}]

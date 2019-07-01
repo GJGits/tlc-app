@@ -4,6 +4,7 @@ const fs = require('fs');
 const cors = require('cors');
 const mysqlClient = require('../db/mysqlClient');
 const awsClient = require('../mqtt/aws_mqtt_client');
+const dateformat = require('dateformat');
 
 router.options('/', cors());
 
@@ -20,11 +21,14 @@ const client = new MqttHandler('reading', ['readings'], (topic, message) => {
     };
     writeReading(reading);
     mysqlClient.insertReading(reading);
-    const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json'));
+    let cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json'));
     const apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     let room = apartment.rooms.find(r => r.sensor.id === reading.id);
+    cons = cons.find(c => c.roomId === room.id);
     if (cons.active) {
-        if (cons.mod === 'manual') {
+        console.log('cons active from reading');
+        if (cons.mode === 'manual') {
+            console.log('cons mode manual');
             handleReading(reading, room);
         } else {
             let roomId = room.id;
@@ -66,13 +70,13 @@ const handleSimple = function (event) {
                 let diffTemp = progTemp - lastReading;
                 if (diffTemp >= diffHours || diffHours < 0) {
                     // riscaldo
-                    mqttClient.sendMessage('command-ha:' + room.heatAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
                 }
             } else {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours < 0) {
                     // raffreddo
-                    mqttClient.sendMessage('command-ca:' + room.coolAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
                 }
             }
         }
@@ -102,13 +106,13 @@ const handleRepeatable = function (event) {
                 let diffTemp = progTemp - lastReading;
                 if (diffTemp >= diffHours || diffHours < 0) {
                     // riscaldo
-                    mqttClient.sendMessage('command-ha:' + room.heatAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
                 }
             } else {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours < 0) {
                     // raffreddo
-                    mqttClient.sendMessage('command-ca:' + room.coolAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
                 }
             }
         }
@@ -117,16 +121,31 @@ const handleRepeatable = function (event) {
 
 
 const handleReading = function (reading, room) {
-    if (reading.temp > room.progTemp) {
-        client.sendMessage('command-ha:' + room.heatAct.id,'on');
+    console.log('reading, prog:', reading, room.progTemp);
+    if (reading.temp < room.progTemp) {
+        client.sendMessage('command-' + room.heatAct.id,'on');
     }
-    else if (reading.temp < room.progTemp) {
-        client.sendMessage('command-ca:' + room.coolAct.id,'on');
+    else if (reading.temp > room.progTemp) {
+        client.sendMessage('command-' + room.coolAct.id,'on');
     }
     else {
-        client.sendMessage('command-ha:' + room.heatAct.id,'off');
-        client.sendMessage('command-ca:' + room.coolAct.id, 'off');
+        client.sendMessage('command-' + room.heatAct.id,'off');
+        client.sendMessage('command-' + room.coolAct.id, 'off');
     }
+};
+
+/**
+ * monday = 0; tuesday = 1; ...
+ * */
+
+const mapDay = function (day) {
+    if (day === 'monday') return 0;
+    if (day === 'tuesday') return 1;
+    if (day === 'wednesday') return 2;
+    if (day === 'thursday') return 3;
+    if (day === 'friday') return 4;
+    if (day === 'saturday') return 5;
+    if (day === 'sunday') return 6;
 };
 
 const writeReading = function (reading) {

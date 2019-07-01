@@ -2,8 +2,8 @@ const express = require("express");
 const router = express.Router();
 const fs = require('fs');
 const MqttHandler = require("../mqtt/mqtt_client");
-
-const mqttClient = new MqttHandler('apartmentHandler');
+const mqttClient = new MqttHandler('apartmentHandler', [], function (){console.log('do nothing')});
+mqttClient.connect();
 
 removeAct = function (act) {
     let acts = JSON.parse(fs.readFileSync(__dirname + '/../db/acts.json'));
@@ -68,10 +68,14 @@ router.post('/updateProgTemp', (req, res, next) => {
     if (lastReading && consoleStatus.active) {
         const lastTemp = lastReading.temp;
         if (lastTemp < room.progTemp) {
-            mqttClient.sendMessage('command-' + room.heatAct.id, 'ON');
+            mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
         }
-        if (lastTemp > room.progTemp) {
-            mqttClient.sendMessage('command-' + room.coolAct.id, 'ON');
+        else if (lastTemp > room.progTemp) {
+            mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
+        }
+        else {
+            mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
+            mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
         }
     }
     return res.status(200);

@@ -2,7 +2,7 @@ const mqtt = require('mqtt');
 
 class MqttHandler {
 
-    constructor(handlerName, subTopics, subToWriteCallback) {
+    constructor(handlerName, subTopics = [], subToWriteCallback) {
         this.handlerName = handlerName;
         this.subTopics = subTopics;
         this.subToWriteCallback = subToWriteCallback;
