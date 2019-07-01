@@ -3,6 +3,7 @@ import {Apartment, ConsoleStatus, Reading, Room} from '../app-elements';
 import {ApiService} from '../api.service';
 import {Observable} from 'rxjs';
 import {DataService} from '../data.service';
+import {IMqttMessage, MqttService} from 'ngx-mqtt';
 
 
 @Component({
@@ -16,12 +17,15 @@ export class ConsoleComponent implements OnInit {
   selectedRoom: Room;
   reading$: Observable<Reading>;
 
-  constructor(private apiService: ApiService, private dataService: DataService) {
+  constructor(private apiService: ApiService, private dataService: DataService, private mqttService: MqttService) {
   }
 
   ngOnInit() {
     this.apartment$ = this.dataService.response;
     this.reading$ = this.dataService.reading;
+    this.mqttService.observe('newTemp').subscribe((message: IMqttMessage) => {
+      this.selectedRoom.progTemp = +message.payload.toString();
+    }, (error) => console.log(error));
   }
 
   updateDisplay($event: Room) {

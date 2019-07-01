@@ -166,8 +166,10 @@ const handleRepeatable = function (event) {
     let start = mapDay(event.from.toLowerCase());
     let end = mapDay(event.to.toLowerCase());
     let now = new Date();
-    let nowDay = mapDay(now.getDay());
+    let nowDay = now.getDay(); // restituisce giorno della settimana come numero
+    console.log('giorni:', now.getDay(), start, end);
     if (nowDay <= end && nowDay >= start) {
+        console.log('valuto accensione evento ripetibile');
         // ora di accendere?
         let nowTime = now.getHours();
         let progTemp = event.temp;
@@ -175,6 +177,7 @@ const handleRepeatable = function (event) {
         let endTime = event.endTime;
         // metodo chiamato in caso di ON, se siamo ancora in tempo scheduliamo
         if (nowTime <= endTime) {
+            console.log('schedulo evento ripetibile');
             // supponiamo un grado per ora
             let diffHours = startTime - nowTime;
             let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
@@ -182,17 +185,18 @@ const handleRepeatable = function (event) {
             fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
-            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId);
+            mqttClient.sendMessage('newTemp', '' + progTemp);
+            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp;
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;
-                if (diffTemp >= diffHours || diffHours < 0) {
+                if (diffTemp >= diffHours || diffHours <= 0) {
                     // riscaldo
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
                 }
-            } else {
+            } if (progTemp < lastReading){
                 let diffTemp = Math.abs(progTemp - lastReading);
-                if (diffTemp >= diffHours || diffHours < 0) {
+                if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
                     mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
                 }
