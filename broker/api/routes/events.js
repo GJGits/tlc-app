@@ -136,6 +136,7 @@ const handleSimple = function (event) {
     let progTemp = event.temp;
     console.log('dates:', now, startDate, endDate);
     if (now >= startDate && now <= endDate) {
+        console.log('trovato evento semplice');
         let startTime = event.startTime;
         let endTime = event.endTime;
         let nowTime = new Date().getHours();
@@ -148,7 +149,7 @@ const handleSimple = function (event) {
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
             mqttClient.sendMessage('newTemp', '' + progTemp);
-            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId);
+            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp;
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;

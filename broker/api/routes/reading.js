@@ -54,7 +54,8 @@ const checkAndActivateProgrammed = function (roomId) {
 const handleSimple = function (event) {
     let now = dateformat(new Date(), 'yyyy-mm-dd');
     let startDate = event.startDate;
-    let endDate = event.endDate;
+    let endDate = event.endData;
+    let progTemp = event.temp;
     if (now >= startDate && now <= endDate) {
         let startTime = event.startTime;
         let endTime = event.endTime;
@@ -64,20 +65,23 @@ const handleSimple = function (event) {
             let diffHours = startTime - nowTime;
             let room = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json')).rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
-            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId);
+            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp;
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;
-                if (diffTemp >= diffHours || diffHours < 0) {
+                if (diffTemp >= diffHours || diffHours <= 0) {
                     // riscaldo
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
                 }
-            } else {
+            } else  if (progTemp < lastReading){
                 let diffTemp = Math.abs(progTemp - lastReading);
-                if (diffTemp >= diffHours || diffHours < 0) {
+                if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
                     mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
                 }
+            } else {
+                mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
+                mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
             }
         }
     }
