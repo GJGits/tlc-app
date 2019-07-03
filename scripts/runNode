@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd WebstormProjects/tlc-app/broker
+npm start

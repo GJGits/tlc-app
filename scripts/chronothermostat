@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# print current directory
+echo $PWD
+
+# run Angular UI (remove this in production since it's always running)
+gnome-terminal -e WebstormProjects/tlc-app/scripts/runAngular
+
+# run node server
+gnome-terminal -e WebstormProjects/tlc-app/scripts/runNode
+
+# open browser, use chromium-browser on Raspberry
+google-chrome http://localhost:4200

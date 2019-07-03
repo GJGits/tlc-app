@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/reapEvents.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/reapEvents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/simpEvents.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/simpEvents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/reading.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/program/program.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/program/program.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/program/program.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/program/program.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,7 +28,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/events.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="2990">
               <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
             </state>
           </provider>
@@ -148,7 +141,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="126" />
     <option name="y" value="65" />
     <option name="width" value="1010" />
@@ -357,7 +350,8 @@
       <workItem from="1561987277756" duration="8816000" />
       <workItem from="1562053615053" duration="4837000" />
       <workItem from="1562077586956" duration="1047000" />
-      <workItem from="1562137892087" duration="2866000" />
+      <workItem from="1562137892087" duration="3463000" />
+      <workItem from="1562148258551" duration="14000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -433,11 +427,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169367000" />
+    <option name="totallyTimeSpent" value="169978000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1360" height="676" extended-state="7" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1360" height="676" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.24981302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -453,7 +446,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32824427" />
-      <window_info active="true" anchor="bottom" x="0" y="64" width="1360" height="639" id="Terminal" maximized="true" order="10" type="WINDOWED" visible="true" weight="0.5591603" />
+      <window_info anchor="bottom" x="0" y="64" width="1360" height="639" id="Terminal" maximized="true" order="10" type="WINDOWED" weight="0.5591603" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -651,6 +644,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2990">
+          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/api/db/reapEvents.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -683,13 +683,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="157" selection-start-column="157" selection-end-column="157" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="115" column="13" selection-start-line="115" selection-start-column="13" selection-end-line="115" selection-end-column="13" />
         </state>
       </provider>
     </entry>
