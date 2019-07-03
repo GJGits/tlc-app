@@ -107,14 +107,16 @@ const handleOn = function (consoleStatus) {
 
 const checkAndActivateProgrammed = function (roomId) {
     let repeatableEvents = JSON.parse(fs.readFileSync(__dirname + '/../db/reapEvents.json'));
-    let index = repeatableEvents.findIndex(ev => ev.roomName === roomId);
-    if (index !== -1) {
-        handleRepeatable(repeatableEvents.find(ev => ev.roomName === roomId));
+    for (let event of repeatableEvents) {
+        if (event.roomName === roomId) {
+            handleRepeatable(event);
+        }
     }
     let simpleEvents = JSON.parse(fs.readFileSync(__dirname + '/../db/simpEvents.json'));
-    index = simpleEvents.findIndex(ev => ev.roomName === roomId);
-    if (index !== -1) {
-        handleSimple(simpleEvents.find(ev => ev.roomName === roomId));
+    for (let event of simpleEvents) {
+        if (event.roomName === roomId) {
+            handleSimple(event);
+        }
     }
 };
 
@@ -149,7 +151,7 @@ const handleSimple = function (event) {
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
             mqttClient.sendMessage('newTemp', '' + progTemp);
-            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp;
+            let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;
@@ -193,7 +195,7 @@ const handleRepeatable = function (event) {
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
             mqttClient.sendMessage('newTemp', '' + progTemp);
-            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp;
+            let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;

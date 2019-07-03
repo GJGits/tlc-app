@@ -65,7 +65,7 @@ const handleSimple = function (event) {
             let diffHours = startTime - nowTime;
             let room = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json')).rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
-            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp;
+            let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;
@@ -107,7 +107,7 @@ const handleRepeatable = function (event) {
             fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
-            let lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp;
+            let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             mqttClient.sendMessage('newTemp', '' + progTemp);
             // valuto riscaldamento
             if (progTemp > lastReading) {
