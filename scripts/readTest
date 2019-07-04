@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# test comandi ad attuatore calore cucina.
+mosquitto_pub -d -t readings -m "temp=22, hum=45, index= 21.3, id=s:7d:01:8b:07:a9:da"
+sleep 30 
+mosquitto_pub -d -t readings -m "temp=21, hum=45, index= 21.3, id=s:7d:01:8b:07:a9:da"
+sleep 30
+mosquitto_pub -d -t readings -m "temp=20, hum=50, index= 21.3, id=s:7d:01:8b:07:a9:da"
+sleep 30
+mosquitto_pub -d -t readings -m "temp=19, hum=40, index= 21.3, id=s:7d:01:8b:07:a9:da"
+sleep 30
+mosquitto_pub -d -t readings -m "temp=18, hum=32, index= 21.3, id=s:7d:01:8b:07:a9:da"
+sleep 30
+
