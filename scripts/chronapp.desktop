@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=CHRONOTERMOSTAT
+Icon=../../../../../../home/gjcode/Scaricati/icons8-automazione-riscaldamento-48.png
+Exec="../../../../../../home/gjcode/WebstormProjects/tlc-app/scripts/chronothermostat" %f
+Comment=A chronotermostat for home automation
+Categories=Application
+Terminal=true
