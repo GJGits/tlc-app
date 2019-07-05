@@ -5,8 +5,8 @@ echo $PWD
 sleep 5
 
 # run node server
-cd ../../usr/bin/tlc-app/broker
-gnome-terminal -e node server &
+#cd ../../usr/bin/tlc-app/broker
+#gnome-terminal -e node server &
 
 # open page
 google-chromium http://localhost/ui/index.html
