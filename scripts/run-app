@@ -9,4 +9,4 @@ cd ../../usr/bin/tlc-app/broker
 gnome-terminal -e node server &
 
 # open page
-google-chromium http:localhost/ui/index.html
+google-chromium http://localhost/ui/index.html
