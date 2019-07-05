@@ -2,10 +2,10 @@
 
 # print current directory
 echo $PWD
-
+sleep 20
 # run node server
-cd usr/bin/tlc-app/broker
-node server &
+#cd usr/bin/tlc-app/broker
+#node server &
 
 # open page
-google-chromium http:localhost/ui/index.html
+#google-chromium http:localhost/ui/index.html
