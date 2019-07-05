@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# print current directory
+echo $PWD
+
+# run node server
+cd usr/bin/tlc-app/broker
+node server &
+
+# open page
+google-chromium http:localhost/ui/index.html

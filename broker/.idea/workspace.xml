@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/dist/ui/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/main.e80f57aee2bb47be06c4.js" beforeDir="false" />
-    </list>
+    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -313,7 +310,7 @@
       <workItem from="1562137892087" duration="3463000" />
       <workItem from="1562148258551" duration="14000" />
       <workItem from="1562249489282" duration="2716000" />
-      <workItem from="1562316985866" duration="1048000" />
+      <workItem from="1562316985866" duration="1153000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -389,7 +386,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173742000" />
+    <option name="totallyTimeSpent" value="173847000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
