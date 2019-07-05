@@ -6,7 +6,7 @@ sleep 5
 
 # run node server
 cd ../../usr/bin/tlc-app/broker
-node server &
+gnome-terminal -e node server &
 
 # open page
 google-chromium http:localhost/ui/index.html
