@@ -25,6 +25,7 @@ const presenceRouter = require('./api/routes/presence');
 const authRouter = require('./api/routes/auth');
 const userRouter = require('./api/routes/user');
 const eventsRouter = require('./api/routes/events');
+const deviceRouter = require('./api/routes/device-info');
 
 // mappo routes
 app.use("/apartment", apartmentRouter);
@@ -37,6 +38,7 @@ app.use("/presence", presenceRouter);
 app.use("/auth", authRouter);
 app.use("/user", userRouter);
 app.use('/events', eventsRouter);
+app.use('/device-info', deviceRouter);
 
 // handle 404
 app.use((req, res, next) => {
