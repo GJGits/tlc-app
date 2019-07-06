@@ -2,11 +2,12 @@
 
 # print current directory
 echo $PWD
+echo "app is starting"
 sleep 5
 
 # run node server
-#cd ../../usr/bin/tlc-app/broker
-#gnome-terminal -e node server &
+cd ../../usr/bin/tlc-app/scripts
+./runNode &
 
 # open page
-google-chromium http://localhost/ui/index.html
+chromium-browser http://localhost/ui/index.html
