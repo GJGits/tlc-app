@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# print current directory
+echo $PWD
+echo "app is starting"
+sleep 5
+
+# run node server
+cd ../../usr/bin/tlc-app/scripts
+./runNode &
+
+# open pagechromium-browser http://localhost/ui/index.html
