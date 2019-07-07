@@ -24,7 +24,7 @@ router.get('/ip', (req, res, next) => {
     if (ip) {
         return res.send(ip);
     }
-    const ipFromJson = fs.readFileSync(__dirname + '/ip.json');
+    const ipFromJson = JSON.parse(fs.readFileSync(__dirname + '/ip.json'));
     return ipFromJson.ip ? res.send(ipFromJson.ip) : res.status(400).send("interface's IPv4 not found");
 });
 
