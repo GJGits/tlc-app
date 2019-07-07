@@ -7,8 +7,8 @@ let ip;
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    if (ifaces.enp0s3) {
-        const wlan0 = ifaces.enp0s3;
+    if (ifaces.wlan0) {
+        const wlan0 = ifaces.wlan0;
         wlan0.forEach(iface => {
             if (iface.family === "IPv4") {
                 ip = iface.address;
