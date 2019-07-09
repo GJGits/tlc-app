@@ -13,7 +13,6 @@ void saveConfigCallback () {
   Serial.println("Should save config");
   shouldSaveConfig = true;
 }
-
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(115200);

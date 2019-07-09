@@ -157,6 +157,7 @@ bool EspMQTTClient::isConnected() const
 void EspMQTTClient::publish(const String &topic, const String &payload, bool retain)
 {
   mMqttClient->publish(topic.c_str(), payload.c_str(), retain);
+  delay(300);
 
   if (mEnableSerialLogs)
     Serial.printf("MQTT << [%s] %s.\n", topic.c_str(), payload.c_str());

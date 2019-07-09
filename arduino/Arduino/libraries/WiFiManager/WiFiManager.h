@@ -121,6 +121,7 @@ class WiFiManager
     const char*          getSSID();
     //get password as a const char*
     const char*   getPassword();
+    // get mqtt broker ip as a const char*
     const char* getBrokerIp();
 
   private:
