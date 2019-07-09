@@ -21,10 +21,9 @@ const mqttClient = new MqttHandler('reading', ['readings'], (topic, message) => 
     };
     writeReading(reading);
     mysqlClient.insertReading(reading);
-    let cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json'));
     const apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     let room = apartment.rooms.find(r => r.sensor.id === reading.id);
-    cons = cons.find(c => c.roomId === room.id);
+    const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
     if (cons.active) {
         console.log('cons active from reading');
         if (cons.mode === 'manual') {

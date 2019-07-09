@@ -50,7 +50,7 @@ export class ConsoleComponent implements OnInit {
   }
 
   activate($event: ConsoleStatus) {
-    const roomId = $event.roomId.replace(/\s/g, '');
+    const roomId = $event.roomId;
     $event.roomId = roomId;
     this.apiService.toggleActivation($event).subscribe((value) => console.log(value));
   }

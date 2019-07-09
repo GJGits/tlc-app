@@ -77,7 +77,7 @@ export class ApiService {
   }
 
   getConsoleStatus(room: Room) {
-    return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status/' + room.id.replace(/\s/g, ''));
+    return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status/' + room.id);
   }
 
   deleteSimpleEvent(simpleEvent: SimpleEvent) {

@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="" />
+    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/consoleStatus.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/consoleStatus.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/last-readings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/last-readings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/reading.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reading.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/console/console.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/console/console.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/infos/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/infos/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/page-not-found/page-not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/page-not-found/page-not-found.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/page-not-found/page-not-found.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/page-not-found/page-not-found.component.ts" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -32,11 +42,47 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="156">
-              <caret line="6" selection-start-line="6" selection-end-line="6" />
+            <state relative-caret-position="130">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/db/apartment.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-182">
+              <caret column="832" selection-start-column="832" selection-end-column="832" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="207" selection-start-column="207" selection-end-column="207" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/events.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -76,16 +122,16 @@
         <option value="$PROJECT_DIR$/api/requests/updateTemp.http" />
         <option value="$PROJECT_DIR$/api/mqtt/mqtt_client.js" />
         <option value="$PROJECT_DIR$/api/routes/apartment.js" />
-        <option value="$PROJECT_DIR$/api/db/consoleStatus.json" />
-        <option value="$PROJECT_DIR$/api/db/apartment.json" />
         <option value="$PROJECT_DIR$/api/db/last-readings.json" />
         <option value="$PROJECT_DIR$/api/db/reapEvents.json" />
         <option value="$PROJECT_DIR$/api/db/simpEvents.json" />
-        <option value="$PROJECT_DIR$/api/routes/reading.js" />
         <option value="$PROJECT_DIR$/api/routes/events.js" />
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/api/routes/device-info.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/api/db/apartment.json" />
+        <option value="$PROJECT_DIR$/api/routes/reading.js" />
+        <option value="$PROJECT_DIR$/api/db/consoleStatus.json" />
       </list>
     </option>
   </component>
@@ -118,6 +164,12 @@
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broker" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
@@ -304,6 +356,9 @@
       <workItem from="1562316985866" duration="1153000" />
       <workItem from="1562406680528" duration="599000" />
       <workItem from="1562432313680" duration="1355000" />
+      <workItem from="1562680674830" duration="1212000" />
+      <workItem from="1562687421263" duration="640000" />
+      <workItem from="1562702678899" duration="2651000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -375,16 +430,23 @@
       <option name="project" value="LOCAL" />
       <updated>1560880938570</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="piccoli ritocchi grafici">
+      <created>1562683235784</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1562683235784</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="175801000" />
+    <option name="totallyTimeSpent" value="180304000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981302" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24981302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -398,7 +460,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32824427" />
-      <window_info anchor="bottom" x="0" y="64" width="1360" height="639" id="Terminal" maximized="true" order="10" type="WINDOWED" weight="0.5591603" />
+      <window_info active="true" anchor="bottom" x="0" y="64" width="1360" height="639" id="Terminal" maximized="true" order="10" type="WINDOWED" visible="true" weight="0.5591603" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -419,7 +481,8 @@
     <MESSAGE value="wbsockets abilitati su broker" />
     <MESSAGE value="working on gestione temperatura" />
     <MESSAGE value="stato console separato per camera" />
-    <option name="LAST_COMMIT_MESSAGE" value="stato console separato per camera" />
+    <MESSAGE value="piccoli ritocchi grafici" />
+    <option name="LAST_COMMIT_MESSAGE" value="piccoli ritocchi grafici" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/api/routes/sens.js">
@@ -575,13 +638,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/apartment.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="832" selection-start-column="832" selection-end-column="832" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1352">
@@ -593,13 +649,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="366" selection-start-column="366" selection-end-column="366" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="157" selection-start-column="157" selection-end-column="157" />
         </state>
       </provider>
     </entry>
@@ -617,10 +666,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
+    <entry file="file://$PROJECT_DIR$/api/routes/device-info.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="109" column="146" selection-start-line="109" selection-start-column="146" selection-end-line="109" selection-end-column="146" />
+        <state relative-caret-position="104">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -631,24 +680,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/device-info.js">
+    <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        <state relative-caret-position="130">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/db/apartment.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-182">
+          <caret column="832" selection-start-column="832" selection-end-column="832" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6500">
-          <caret line="250" selection-start-line="250" selection-end-line="250" selection-end-column="24" />
+        <state relative-caret-position="408">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
+    <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        <state>
+          <caret column="207" selection-start-column="207" selection-end-column="207" />
         </state>
       </provider>
     </entry>
