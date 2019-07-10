@@ -21,7 +21,7 @@ export class ApiService {
   }
 
   postApartment(apartment: Apartment) {
-    console.log('post apartment: ' + apartment.address);
+    console.log('post apartment: ', apartment);
     return this.httpClient.post(this.baseUrl + 'apartment', apartment);
   }
 

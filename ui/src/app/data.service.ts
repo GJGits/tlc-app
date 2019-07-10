@@ -27,7 +27,7 @@ export class DataService {
   updateApartment(apartment: Apartment) {
     this.responseSource.next(apartment);
     this.apiService.postApartment(apartment).subscribe(value => {
-      console.log(value);
+      console.log('apartment updated in updateApartment:', value);
     });
   }
 
