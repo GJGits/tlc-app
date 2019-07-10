@@ -28,7 +28,7 @@ removeSensor = function (sensor) {
 
 /** Manage sensors and actuators availability **/
 manageElements = function (apartment) {
-    if (apartment.rooms.length > 0) {
+    if (apartment.rooms) {
         for (let room of apartment.rooms) {
             let sensor = room.sensor;
             let heatAct = room.heatAct;
