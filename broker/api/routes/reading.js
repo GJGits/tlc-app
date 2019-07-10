@@ -26,7 +26,7 @@ const mqttClient = new MqttHandler('reading', ['readings'], (topic, message) => 
             writeReading(reading);
             mysqlClient.insertReading(reading);
             const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
-            if (cons.active) {
+            if (cons && cons.active) {
                 console.log('cons active from reading');
                 if (cons.mode === 'manual') {
                     console.log('cons mode manual');
