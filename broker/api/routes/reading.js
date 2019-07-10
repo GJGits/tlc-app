@@ -19,21 +19,27 @@ const mqttClient = new MqttHandler('reading', ['readings'], (topic, message) => 
         hum: +tokens[1].split("=")[1],
         index: +tokens[2].split("=")[1]
     };
-    writeReading(reading);
-    mysqlClient.insertReading(reading);
     const apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
-    let room = apartment.rooms.find(r => r.sensor.id === reading.id);
-    const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
-    if (cons.active) {
-        console.log('cons active from reading');
-        if (cons.mode === 'manual') {
-            console.log('cons mode manual');
-            handleReading(reading, room);
-        } else {
-            let roomId = room.id;
-            checkAndActivateProgrammed(roomId);
+    if (apartment.rooms) {
+        let room = apartment.rooms.find(r => r.sensor.id === reading.id);
+        if (room) {
+            writeReading(reading);
+            mysqlClient.insertReading(reading);
+            const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
+            if (cons.active) {
+                console.log('cons active from reading');
+                if (cons.mode === 'manual') {
+                    console.log('cons mode manual');
+                    handleReading(reading, room);
+                } else {
+                    let roomId = room.id;
+                    checkAndActivateProgrammed(roomId);
+                }
+            }
         }
+
     }
+
 });
 mqttClient.connect();
 
@@ -72,7 +78,7 @@ const handleSimple = function (event) {
                     // riscaldo
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
                 }
-            } else  if (progTemp < lastReading){
+            } else if (progTemp < lastReading) {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
@@ -115,7 +121,7 @@ const handleRepeatable = function (event) {
                     // riscaldo
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
                 }
-            } else if (progTemp < lastReading){
+            } else if (progTemp < lastReading) {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
@@ -133,13 +139,11 @@ const handleRepeatable = function (event) {
 const handleReading = function (reading, room) {
     console.log('reading, prog:', reading, room.progTemp);
     if (reading.temp < room.progTemp) {
-        mqttClient.sendMessage('command-' + room.heatAct.id,'on');
-    }
-    else if (reading.temp > room.progTemp) {
-        mqttClient.sendMessage('command-' + room.coolAct.id,'on');
-    }
-    else {
-        mqttClient.sendMessage('command-' + room.heatAct.id,'off');
+        mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
+    } else if (reading.temp > room.progTemp) {
+        mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
+    } else {
+        mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
         mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
     }
 };
