@@ -138,9 +138,11 @@ const handleRepeatable = function (event) {
 
 const handleReading = function (reading, room) {
     console.log('reading, prog:', reading, room.progTemp);
-    if (reading.temp < room.progTemp) {
+    if (Math.round(reading.temp) < room.progTemp) {
         mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
-    } else if (reading.temp > room.progTemp) {
+        mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
+    } else if (Math.round(reading.temp) > room.progTemp) {
+        mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
         mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
     } else {
         mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
