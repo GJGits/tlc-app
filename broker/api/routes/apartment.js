@@ -2,7 +2,19 @@ const express = require("express");
 const router = express.Router();
 const fs = require('fs');
 const MqttHandler = require("../mqtt/mqtt_client");
-const mqttClient = new MqttHandler('apartmentHandler', [], function (){console.log('do nothing')});
+let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+
+/** Save apartment in async mode **/
+saveApartment = function (apa) {
+    fs.writeFile(__dirname + '/../db/apartment.json', JSON.stringify(apa), (err) => {
+        if (err) throw err;
+        console.log('apartment updated');
+    });
+};
+
+const mqttClient = new MqttHandler('apartmentHandler', [], function () {
+    console.log('do nothing')
+});
 mqttClient.connect();
 
 removeAct = function (act) {
@@ -40,17 +52,19 @@ manageElements = function (apartment) {
     }
 };
 
+
 /** GET apartment **/
 router.get('/', (req, res, next) => {
-    let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+    //let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     return res.status(200).send(apartment);
 });
 
 //** POST apartment **/
 router.post('/', (req, res, next) => {
-    let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+    //let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     apartment = req.body;
-    fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
+    //fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
+    saveApartment(apartment);
     manageElements(apartment);
     console.log('scritto file: ' + JSON.stringify(apartment));
     return res.status(200);
@@ -58,27 +72,25 @@ router.post('/', (req, res, next) => {
 
 /** POST update prog temp **/
 router.post('/updateProgTemp', (req, res, next) => {
-    let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+    //let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     let room = req.body;
     apartment.rooms.find(r => r.id === room.id).progTemp = room.progTemp;
     const lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(r => r.id === room.sensor.id);
     const consoleStatus = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
-    fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
-    console.log('upartment updated');
+    //fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
+    saveApartment(apartment);
     if (lastReading && consoleStatus.active) {
         const lastTemp = lastReading.temp;
         if (lastTemp < room.progTemp) {
             mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
-        }
-        else if (lastTemp > room.progTemp) {
+        } else if (lastTemp > room.progTemp) {
             mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
-        }
-        else {
+        } else {
             mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
             mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
         }
     }
-    return res.status(200);
+    return res.status(200).send(apartment);
 });
 
 module.exports = router;
