@@ -1,1 +1,5 @@
-{"address":"via test 1","rooms":[{"id":"cucina","type":"cucina","progTemp":21,"sensor":{"id":"s:AA:CC:CC:12:22:12"},"heatAct":{"id":"ha:AA:BB:CC:11:21:13","status":false},"coolAct":{"id":"ca:AA:BB:CC:11:22:11","status":false}}]}
+{
+  "address": "address not set",
+  "rooms": [
+  ]
+}
