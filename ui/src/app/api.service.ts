@@ -33,12 +33,15 @@ export class ApiService {
     return this.httpClient.post(this.baseUrl + 'apartment/updateProgTemp', room);
   }
 
+  /*
   postCommand(sensor: Sensor, actuator: Actuator, progTemp: number) {
     const sensorId = sensor.id;
     const actuatorId = actuator.id;
     const temp: any = {temp: progTemp};
     return this.httpClient.post(this.baseUrl + 'command/' + sensorId, +'/' + actuatorId, temp);
   }
+
+   */
 
   getSensors() {
     return this.httpClient.get<Sensor[]>(this.baseUrl + 'sens');

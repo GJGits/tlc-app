@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/reading.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/apartment/room-list-element/room-list-element.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/apartment/room-list-element/room-list-element.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/apartment.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/apartment.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/consoleStatus.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/consoleStatus.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/last-readings.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/last-readings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/dist/ui/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/main.2202ae8eefedc7005a11.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/console/console.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/console/console.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,17 +25,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-390">
-              <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+            <state relative-caret-position="260">
+              <caret line="67" column="40" lean-forward="true" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/db/sens.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/command.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="431">
+              <caret line="22" column="14" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
+        <entry file="file://$PROJECT_DIR$/api/db/apartment.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-4000">
-              <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state>
+              <caret column="228" lean-forward="true" selection-start-column="228" selection-end-column="228" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/db/acts.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="2" selection-start-column="2" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -77,10 +108,10 @@
         <option value="$PROJECT_DIR$/api/db/last-readings.json" />
         <option value="$PROJECT_DIR$/api/db/reapEvents.json" />
         <option value="$PROJECT_DIR$/api/routes/apartment.js" />
-        <option value="$PROJECT_DIR$/api/db/sens.json" />
-        <option value="$PROJECT_DIR$/api/db/acts.json" />
-        <option value="$PROJECT_DIR$/api/db/apartment.json" />
         <option value="$PROJECT_DIR$/api/routes/reading.js" />
+        <option value="$PROJECT_DIR$/api/db/acts.json" />
+        <option value="$PROJECT_DIR$/api/db/sens.json" />
+        <option value="$PROJECT_DIR$/api/db/apartment.json" />
       </list>
     </option>
   </component>
@@ -118,7 +149,7 @@
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -303,7 +334,7 @@
       <workItem from="1562687421263" duration="640000" />
       <workItem from="1562702678899" duration="2767000" />
       <workItem from="1562741819088" duration="6119000" />
-      <workItem from="1562766625758" duration="784000" />
+      <workItem from="1562766625758" duration="4731000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -414,7 +445,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="187323000" />
+    <option name="totallyTimeSpent" value="191270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
@@ -566,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/command.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="22" column="14" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.10.0/core-modules/events.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -650,17 +674,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/apartment.json">
+    <entry file="file://$PROJECT_DIR$/api/routes/presence.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="286">
+          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/acts.json">
+    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        <state relative-caret-position="-4000">
+          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -671,24 +695,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/presence.js">
+    <entry file="file://$PROJECT_DIR$/api/routes/command.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
+        <state relative-caret-position="431">
+          <caret line="22" column="14" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        <state relative-caret-position="260">
+          <caret line="67" column="40" lean-forward="true" selection-start-line="67" selection-start-column="40" selection-end-line="67" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
+    <entry file="file://$PROJECT_DIR$/api/db/acts.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4000">
-          <caret line="28" column="24" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/db/apartment.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="228" lean-forward="true" selection-start-column="228" selection-end-column="228" />
         </state>
       </provider>
     </entry>
