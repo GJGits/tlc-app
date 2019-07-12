@@ -15,7 +15,10 @@ export class ApartmentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dataService.response.subscribe(apa => this.apartment = apa);
+    this.dataService.response.subscribe(apa => {
+      this.apartment = apa;
+      console.log('apartment on init:', apa);
+    });
   }
 
   updateAddress(address: string) {

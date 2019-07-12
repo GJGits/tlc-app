@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PageNotFoundComponent implements OnInit {
 
+  link = '../infos';
+
   constructor() { }
 
   ngOnInit() {

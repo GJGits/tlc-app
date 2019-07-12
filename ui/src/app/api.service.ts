@@ -21,7 +21,7 @@ export class ApiService {
   }
 
   postApartment(apartment: Apartment) {
-    console.log('post apartment: ' + apartment.address);
+    console.log('post apartment: ', apartment);
     return this.httpClient.post(this.baseUrl + 'apartment', apartment);
   }
 
@@ -33,12 +33,15 @@ export class ApiService {
     return this.httpClient.post(this.baseUrl + 'apartment/updateProgTemp', room);
   }
 
+  /*
   postCommand(sensor: Sensor, actuator: Actuator, progTemp: number) {
     const sensorId = sensor.id;
     const actuatorId = actuator.id;
     const temp: any = {temp: progTemp};
     return this.httpClient.post(this.baseUrl + 'command/' + sensorId, +'/' + actuatorId, temp);
   }
+
+   */
 
   getSensors() {
     return this.httpClient.get<Sensor[]>(this.baseUrl + 'sens');
@@ -77,7 +80,7 @@ export class ApiService {
   }
 
   getConsoleStatus(room: Room) {
-    return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status/' + room.id.replace(/\s/g, ''));
+    return this.httpClient.get<ConsoleStatus>(this.baseUrl + 'events/status/' + room.id);
   }
 
   deleteSimpleEvent(simpleEvent: SimpleEvent) {

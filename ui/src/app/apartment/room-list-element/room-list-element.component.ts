@@ -30,9 +30,15 @@ export class RoomListElementComponent implements OnInit {
     this.mqttService.observe('presence').subscribe((mex) => {
       const message = mex.payload.toString();
       const firstToken = message.split(':')[0];
-      firstToken === 's' ? this.avaibleSensors.push({id: message})
-        : firstToken === 'ha' ? this.avaibleHeatActs.push({id: message, status: false})
-        : this.avaibleCoolActs.push({id: message, status: false});
+      if (firstToken === 's' && this.avaibleSensors.findIndex(s => s.id === message) === -1) {
+        this.avaibleSensors.push({id: message});
+      }
+      if (firstToken === 'ha' && this.avaibleHeatActs.findIndex(s => s.id === message) === -1) {
+        this.avaibleHeatActs.push({id: message, status: false});
+      }
+      if (firstToken === 'ca' && this.avaibleCoolActs.findIndex(s => s.id === message) === -1) {
+        this.avaibleCoolActs.push({id: message, status: false});
+      }
     });
   }
 

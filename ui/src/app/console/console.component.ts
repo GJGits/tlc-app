@@ -40,17 +40,17 @@ export class ConsoleComponent implements OnInit {
     if (sign === '+' && this.selectedRoom && this.selectedRoom.progTemp < 35) {
       this.selectedRoom.progTemp++;
       this.apiService.updateProgTemp(this.selectedRoom).subscribe((value) => console.log(value));
-      this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.heatAct, this.selectedRoom.progTemp);
+      // this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.heatAct, this.selectedRoom.progTemp);
     }
     if (sign === '-' && this.selectedRoom && this.selectedRoom.progTemp > 15) {
       this.selectedRoom.progTemp--;
       this.apiService.updateProgTemp(this.selectedRoom).subscribe((value) => console.log(value));
-      this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.coolAct, this.selectedRoom.progTemp);
+      // this.apiService.postCommand(this.selectedRoom.sensor, this.selectedRoom.coolAct, this.selectedRoom.progTemp);
     }
   }
 
   activate($event: ConsoleStatus) {
-    const roomId = $event.roomId.replace(/\s/g, '');
+    const roomId = $event.roomId;
     $event.roomId = roomId;
     this.apiService.toggleActivation($event).subscribe((value) => console.log(value));
   }

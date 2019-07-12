@@ -1,4 +1,4 @@
-<div class="container bg-dark mt-5 text-white ">
+<div class="container bg-dark mt-md-5 text-white ">
   <app-console-bar [apartmentAddress]="(apartment$ | async)?.address"></app-console-bar>
   <div class="row mt-5 align-content-center">
     <app-console-display  class="offset-sm-1 col-sm-3 py-4 text-center text-white border border-light" [value]="(selectedRoom === null || selectedRoom === undefined) ? (reading$ | async)?.temp: selectedRoom.progTemp" [format]="'°C'" [tag]="'programmed'"></app-console-display>

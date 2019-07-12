@@ -1,5 +1,5 @@
 <div class="container mt-5">
-  <form class="col-6 offset-3 mt-3" #regForm="ngForm" (ngSubmit)="submit($event)">
+  <form class="col-sm-8 offset-sm-2 col-6 offset-3 mt-3" #regForm="ngForm" (ngSubmit)="submit($event)">
     <!-- USERNAME -->
     <div class="form-group">
       <label for="username">Username</label>
@@ -23,10 +23,11 @@
       <button type="submit" [ngClass]="{disabled: regForm.invalid}" class="btn btn-primary col-3 offset-1">Login</button>
     </div>
 
+    <!--
     <div *ngIf="serverErrors" class="alert alert-danger" role="alert">
       An error has occured on the server, please check console logs.
     </div>
-
+   -->
     <div *ngIf="serverErrors.error && regForm.submitted" class="alert alert-danger" role="alert">
       <b >{{serverErrors.message}}</b>
     </div>
