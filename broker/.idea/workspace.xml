@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="apartment reset">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/mysqlClient.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/mysqlClient.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/apartment.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/apartment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/reading.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reading.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/db/consoleStatus.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/consoleStatus.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,7 +15,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="101" selection-start-column="101" selection-end-column="101" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -63,7 +65,6 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/api/routes/device-info.js" />
         <option value="$PROJECT_DIR$/server.js" />
-        <option value="$PROJECT_DIR$/api/db/consoleStatus.json" />
         <option value="$PROJECT_DIR$/api/db/last-readings.json" />
         <option value="$PROJECT_DIR$/api/db/reapEvents.json" />
         <option value="$PROJECT_DIR$/api/db/acts.json" />
@@ -74,6 +75,7 @@
         <option value="$PROJECT_DIR$/api/routes/reading.js" />
         <option value="$PROJECT_DIR$/api/db/mysqlClient.js" />
         <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
+        <option value="$PROJECT_DIR$/api/db/consoleStatus.json" />
       </list>
     </option>
   </component>
@@ -106,6 +108,12 @@
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="broker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="broker" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="db" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -292,7 +300,7 @@
       <workItem from="1562741819088" duration="6119000" />
       <workItem from="1562766625758" duration="4731000" />
       <workItem from="1562850673598" duration="6092000" />
-      <workItem from="1562915886945" duration="4109000" />
+      <workItem from="1562915886945" duration="4357000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -417,10 +425,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201471000" />
+    <option name="totallyTimeSpent" value="201719000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -566,13 +575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="1" lean-forward="true" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/db/reapEvents.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -689,6 +691,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="68" column="7" selection-start-line="68" selection-end-line="68" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="101" selection-start-column="101" selection-end-column="101" />
         </state>
       </provider>
     </entry>
