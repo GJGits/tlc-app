@@ -108,8 +108,8 @@ void setup() {
 void onConnectionEstablished()
 {
 
-  client->publish("presence", "ca:" + String(WiFi.macAddress()));
-  client->subscribe("command-ca:" + String(WiFi.macAddress()), [](const String & payload) {
+  client->publish("presence", "ha:" + String(WiFi.macAddress()));
+  client->subscribe("command-ha:" + String(WiFi.macAddress()), [](const String & payload) {
     if ( payload == "off" ) {
       digitalWrite(led, LOW);
       Serial.println("entro in off");

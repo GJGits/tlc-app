@@ -39,7 +39,7 @@ void setup() {
   } else {
     Serial.println("failed to mount FS");
   }
-  WiFi.setPhyMode(WIFI_PHY_MODE_11N);
+  //WiFi.setPhyMode(WIFI_PHY_MODE_11N);
   WiFiManagerParameter custom_mqtt_server("server", "192.168.X.X", mqtt_server, 40);
   WiFiManager wifiManager;
   //reset saved settings
@@ -127,13 +127,6 @@ void onConnectionEstablished()
 
   client->publish("presence", "s:" + String(WiFi.macAddress()));
   client->publish("readings", "t=" + String(t) + ", h=" + String(h) + ", index=" + String(hic) + ", id=s:" + String(WiFi.macAddress()));
-
-  Serial.print(F("Humidity: "));
-  Serial.print(h);
-  Serial.print(F("%  Temperature: "));
-  Serial.print(t);
-  Serial.print(hic);
-  Serial.print(F("°C "));
 
 }
 
