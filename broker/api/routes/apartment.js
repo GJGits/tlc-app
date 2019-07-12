@@ -8,7 +8,7 @@ let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'))
 saveApartment = function (apa) {
     fs.writeFile(__dirname + '/../db/apartment.json', JSON.stringify(apa), (err) => {
         if (err) throw err;
-        console.log('apartment updated');
+        console.log('apartment updated'.green);
     });
 };
 
@@ -23,18 +23,17 @@ removeAct = function (act) {
     if (actIndex !== -1) {
         acts.splice(actIndex, 1);
         fs.writeFileSync(__dirname + '/../db/acts.json', JSON.stringify(acts));
-        console.log('scritto file: ' + JSON.stringify(acts));
+        console.log('aggiornata lista act:'.green);
     }
 };
 
 removeSensor = function (sensor) {
     let acts = JSON.parse(fs.readFileSync(__dirname + '/../db/sens.json'));
-    console.log('type of acts: ' + (typeof acts));
     let actIndex = acts.findIndex(a => sensor.id === a.id);
     if (actIndex !== -1) {
         acts.splice(actIndex, 1);
         fs.writeFileSync(__dirname + '/../db/sens.json', JSON.stringify(sensor));
-        console.log('scritto file: ' + JSON.stringify(sensor));
+        console.log('aggiornata lista sensori'.green);
     }
 };
 
@@ -55,29 +54,23 @@ manageElements = function (apartment) {
 
 /** GET apartment **/
 router.get('/', (req, res, next) => {
-    //let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     return res.status(200).send(apartment);
 });
 
 //** POST apartment **/
 router.post('/', (req, res, next) => {
-    //let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     apartment = req.body;
-    //fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
     saveApartment(apartment);
     manageElements(apartment);
-    console.log('scritto file: ' + JSON.stringify(apartment));
-    return res.status(200);
+    return res.status(200).send(apartment);
 });
 
 /** POST update prog temp **/
 router.post('/updateProgTemp', (req, res, next) => {
-    //let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     let room = req.body;
     apartment.rooms.find(r => r.id === room.id).progTemp = room.progTemp;
     const lastReading = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(r => r.id === room.sensor.id);
     const consoleStatus = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
-    //fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
     saveApartment(apartment);
     if (lastReading && consoleStatus.active) {
         const lastTemp = lastReading.temp;

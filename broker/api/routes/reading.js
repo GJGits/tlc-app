@@ -27,9 +27,7 @@ const mqttClient = new MqttHandler('reading', ['readings'], (topic, message) => 
             mysqlClient.insertReading(reading);
             const cons = JSON.parse(fs.readFileSync(__dirname + '/../db/consoleStatus.json')).find(c => c.roomId === room.id);
             if (cons && cons.active) {
-                console.log('cons active from reading');
                 if (cons.mode === 'manual') {
-                    console.log('cons mode manual');
                     handleReading(reading, room);
                 } else {
                     let roomId = room.id;
@@ -77,12 +75,14 @@ const handleSimple = function (event) {
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // riscaldo
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
                 }
             } else if (progTemp < lastReading) {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
                     mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
                 }
             } else {
                 mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
@@ -120,12 +120,14 @@ const handleRepeatable = function (event) {
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // riscaldo
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
                 }
             } else if (progTemp < lastReading) {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
                     mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
                 }
             } else {
                 mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
@@ -183,7 +185,7 @@ router.get('/:id', (req, res, next) => {
     let sensorId = req.params.id;
     let readings = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json'));
     let reading = readings.find(r => r.id === sensorId);
-    return res.status(200).send(reading);
+    return reading ? res.status(200).send(reading) : res.status(200).send({}) ;
 });
 
 router.get('/lastReadings/:id', (req, res, next) => {

@@ -1,5 +1,6 @@
 const mysql = require("mysql");
 const awsClient = require("../mqtt/aws_mqtt_client");
+const colors = require('colors');
 
 class MySqlClient {
 
@@ -50,9 +51,9 @@ class MySqlClient {
                 if (!err) {
                     let resp = [];
                     resp = JSON.parse(JSON.stringify(result));
-                    console.log('type of response', typeof resp);
                     return res.status(200).send(resp);
                 } else {
+                    console.log('error:'.red, 'mysql.getLastReading failed');
                     awsClient.logEvent(4);
                 }
 

@@ -47,23 +47,23 @@ class AWSClient {
 
         this.device
             .on('connect', () => {
-                console.log('aws device: ', ' connected');
+                console.log('aws device:', ' connected'.green);
                 this.device.subscribe('pl19/notification');
             });
 
         this.device
             .on('offline', () => {
-                console.log('offline');
+                console.log('aws device:', 'offline'.red);
             });
 
         this.device
             .on('reconnect', () => {
-                console.log('reconnect');
+                console.log('aws device:', 'reconnect'.yellow);
             });
 
         this.device
             .on('close', () => {
-                console.log('close');
+                console.log('aws device:', 'close'.blue);
             });
 
 
@@ -89,7 +89,7 @@ class AWSClient {
                         event: {message: 'ping replay', sequence: notification.event.sequence}
                     };
                     this.device.publish('pl19/event', JSON.stringify(reply));
-                    console.log("emitted ping reply:", JSON.stringify(reply));
+                    console.log("ping reply:".green, reply.event.sequence);
                 }
             });
 

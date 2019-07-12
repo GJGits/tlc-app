@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require('fs');
 const MqttHandler = require("../mqtt/mqtt_client");
+const colors = require('colors');
 const mqttClient = new MqttHandler('eventsHandler', [], function () {
     console.log('do nothing')
 });
@@ -21,7 +22,7 @@ router.post('/status', (req, res, next) => {
     consoleStatus.push(cons);
     fs.writeFileSync(__dirname + '/../db/consoleStatus.json', JSON.stringify(consoleStatus));
     if (cons.active) {
-        console.log('console attivata');
+        console.log('console attivata:'.green, req.body.roomId);
         handleOn(cons);
     } else {
         let room = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json')).rooms.find(r => r.id === cons.roomId);
@@ -77,11 +78,10 @@ router.delete('/deleteRepeatable/:roomName/:repeat/:startTime', (req, res, next)
     const roomName = req.params.roomName;
     const repeat = req.params.repeat;
     const startTime = req.params.startTime;
-    console.log([roomName, repeat, startTime]);
     let events = JSON.parse(fs.readFileSync(__dirname + '/../db/reapEvents.json'));
     events = events.filter(ev => ev.roomName !== roomName && ev.repeat !== repeat && ev.startTime !== startTime);
     fs.writeFileSync(__dirname + '/../db/reapEvents.json', JSON.stringify(events));
-    return res.status(200);
+    return res.status(200).send(roomName);
 });
 
 const schedule = function (roomId) {
@@ -100,7 +100,7 @@ const handleOn = function (consoleStatus) {
         checkAndActivateProgrammed(roomId);
     }
     if (consoleStatus.mode === 'manual') {
-        console.log('mod manuale');
+        console.log('mod manuale:'.green, roomId);
         checkAndActivateManual(JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json')).rooms.find(r => r.id === consoleStatus.roomId));
     }
 };
@@ -136,9 +136,7 @@ const handleSimple = function (event) {
     let startDate = event.startDate;
     let endDate = event.endData;
     let progTemp = event.temp;
-    console.log('dates:', now, startDate, endDate);
     if (now >= startDate && now <= endDate) {
-        console.log('trovato evento semplice');
         let startTime = event.startTime;
         let endTime = event.endTime;
         let nowTime = new Date().getHours();
@@ -171,14 +169,11 @@ const handleSimple = function (event) {
 };
 
 const handleRepeatable = function (event) {
-    console.log('trovato evento ripetibile');
     let start = mapDay(event.from.toLowerCase());
     let end = mapDay(event.to.toLowerCase());
     let now = new Date();
     let nowDay = now.getDay(); // restituisce giorno della settimana come numero
-    console.log('giorni:', now.getDay(), start, end);
     if (nowDay <= end && nowDay >= start) {
-        console.log('valuto accensione evento ripetibile');
         // ora di accendere?
         let nowTime = now.getHours();
         let progTemp = event.temp;
@@ -186,7 +181,6 @@ const handleRepeatable = function (event) {
         let endTime = event.endTime;
         // metodo chiamato in caso di ON, se siamo ancora in tempo scheduliamo
         if (nowTime <= endTime) {
-            console.log('schedulo evento ripetibile');
             // supponiamo un grado per ora
             let diffHours = startTime - nowTime;
             let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
@@ -228,24 +222,5 @@ const mapDay = function (day) {
     if (day === 'sunday') return 6;
 };
 
-const scheduleRepeatable = function (event) {
-
-    // todo: schedule here
-
-    setTimeout(function () {
-        // todo: un schedule here
-    }, 0);
-
-};
-
-const scheduleSimple = function (event) {
-
-    // todo: schedule here
-
-    setTimeout(function () {
-        // todo: un schedule here
-    }, 0);
-
-};
 
 module.exports = router;
