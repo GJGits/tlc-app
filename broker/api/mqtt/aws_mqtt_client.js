@@ -2,15 +2,20 @@ const awsIot = require('aws-iot-device-sdk');
 const dateFormat = require('dateformat');
 
 /* MAC ADDRESS DEFINITION */
-/*
 const mac = require('getmac');
 let macAddress;
-mac.getMac({iface: 'eth0'}, (err, address) => {
-    if (err) throw err;
-    macAddress = address;
+mac.getMac({iface: 'wlan0'}, (err, address) => {
+    if (!err) {
+        macAddress = address;
+        console.log('device mac address:'.green, address);
+    } else {
+        // give a fake mac address
+        console.log('set device mac failed'.red);
+        macAddress = "01:01:01:01:01:01";
+    }
+
 });
 
- */
 
 /* EVENTS DEFINITION */
 const eventMap = new Map([
@@ -85,7 +90,7 @@ class AWSClient {
                     let reply = {
                         event_id: 1,
                         timestamp: dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss.F"),
-                        device_mac: "01:01:01:01:01:01",
+                        device_mac: macAddress,
                         event: {message: 'ping replay', sequence: notification.event.sequence}
                     };
                     this.device.publish('pl19/event', JSON.stringify(reply));
@@ -100,9 +105,13 @@ class AWSClient {
             let reply = {
                 event_id: eventId,
                 timestamp: dateFormat(new Date(), "yyyy-MM-dd hh:mm:ss.f."),
-                device_mac: "01:01:01:01:01:01",
+                device_mac: macAddress,
                 event: eventMap.get(eventId)
             };
+            this.device.publish('pl19/event', JSON.stringify(reply));
+            console.log('published event:'.green, eventId);
+        } else {
+            console.log('evento non trovato:'.red, eventId);
         }
     }
 
