@@ -71,7 +71,7 @@ router.delete('/deleteSimple/:roomName/:startDate/:startTime', (req, res, next) 
     let simpleEvents = JSON.parse(fs.readFileSync(__dirname + '/../db/simpEvents.json'));
     simpleEvents = simpleEvents.filter(ev => ev.roomName !== roomName && ev.startDate !== startDate && ev.startTime !== startTime);
     fs.writeFileSync(__dirname + '/../db/simpEvents.json', JSON.stringify(simpleEvents));
-    return res.status(200);
+    return res.status(200).send(roomName);
 });
 
 router.delete('/deleteRepeatable/:roomName/:repeat/:startTime', (req, res, next) => {

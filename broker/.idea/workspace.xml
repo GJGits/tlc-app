@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="evento termina">
+      <change beforePath="$PROJECT_DIR$/api/routes/apartment.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/apartment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/api.service.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,20 +21,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/routes/events.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="171" column="72" selection-start-line="171" selection-start-column="72" selection-end-line="171" selection-end-column="72" />
+            <state relative-caret-position="281">
+              <caret line="74" column="3" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
               <folding>
                 <element signature="e#5269#5666#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="616">
-              <caret line="94" column="72" selection-start-line="94" selection-start-column="72" selection-end-line="94" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -81,12 +74,12 @@
         <option value="$PROJECT_DIR$/api/db/acts.json" />
         <option value="$PROJECT_DIR$/api/db/sens.json" />
         <option value="$PROJECT_DIR$/api/db/apartment.json" />
-        <option value="$PROJECT_DIR$/api/routes/apartment.js" />
         <option value="$PROJECT_DIR$/api/db/mysqlClient.js" />
         <option value="$PROJECT_DIR$/api/db/consoleStatus.json" />
         <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
         <option value="$PROJECT_DIR$/api/routes/user.js" />
         <option value="$PROJECT_DIR$/api/routes/reading.js" />
+        <option value="$PROJECT_DIR$/api/routes/apartment.js" />
         <option value="$PROJECT_DIR$/api/routes/events.js" />
       </list>
     </option>
@@ -314,7 +307,7 @@
       <workItem from="1562850673598" duration="6092000" />
       <workItem from="1562915886945" duration="6556000" />
       <workItem from="1563011813867" duration="747000" />
-      <workItem from="1563025928123" duration="4178000" />
+      <workItem from="1563025928123" duration="5983000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -470,11 +463,18 @@
       <option name="project" value="LOCAL" />
       <updated>1563030372583</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="evento termina">
+      <created>1563030807640</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1563030807640</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="208843000" />
+    <option name="totallyTimeSpent" value="210648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="988" extended-state="6" />
@@ -685,13 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/db/mysqlClient.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="uml://JavaScript-modules-diagram//home/gjcode/WebstormProjects/tlc-app/broker/api/db">
       <provider selected="true" editor-type-id="UmlEditorProvider">
         <state>
@@ -796,24 +789,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
+    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="68" column="7" selection-start-line="68" selection-end-line="68" selection-end-column="7" />
+        <state relative-caret-position="174">
+          <caret line="113" column="70" selection-start-line="113" selection-start-column="70" selection-end-line="113" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/reading.js">
+    <entry file="file://$PROJECT_DIR$/api/db/mysqlClient.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="94" column="72" selection-start-line="94" selection-start-column="72" selection-end-line="94" selection-end-column="72" />
+        <state relative-caret-position="784">
+          <caret line="56" column="36" selection-start-line="56" selection-start-column="36" selection-end-line="56" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="75" column="53" selection-start-line="75" selection-start-column="53" selection-end-line="75" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/events.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="171" column="72" selection-start-line="171" selection-start-column="72" selection-end-line="171" selection-end-column="72" />
+        <state relative-caret-position="281">
+          <caret line="74" column="3" lean-forward="true" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
           <folding>
             <element signature="e#5269#5666#0" />
           </folding>
