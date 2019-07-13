@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="apartment reset">
-      <change beforePath="$PROJECT_DIR$/api/db/consoleStatus.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/consoleStatus.json" afterDir="false" />
+    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/user.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -16,11 +17,47 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="101" selection-start-column="101" selection-end-column="101" />
+            <state relative-caret-position="286">
+              <caret line="68" column="7" selection-start-line="68" selection-end-line="68" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/auth.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/api/routes/user.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1794">
+              <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/routes/device-info.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="104">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="78">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="16" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -53,7 +90,6 @@
         <option value="$PROJECT_DIR$/api/routes/sens.js" />
         <option value="$PROJECT_DIR$/api/routes/auth.js" />
         <option value="$PROJECT_DIR$/api/requests/api.http" />
-        <option value="$PROJECT_DIR$/api/routes/user.js" />
         <option value="$PROJECT_DIR$/api/mqtt/mqtt_broker.js" />
         <option value="$PROJECT_DIR$/api/routes/presence.js" />
         <option value="$PROJECT_DIR$/api/routes/acts.js" />
@@ -74,8 +110,9 @@
         <option value="$PROJECT_DIR$/api/routes/apartment.js" />
         <option value="$PROJECT_DIR$/api/routes/reading.js" />
         <option value="$PROJECT_DIR$/api/db/mysqlClient.js" />
-        <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
         <option value="$PROJECT_DIR$/api/db/consoleStatus.json" />
+        <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
+        <option value="$PROJECT_DIR$/api/routes/user.js" />
       </list>
     </option>
   </component>
@@ -97,6 +134,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -113,13 +151,12 @@
               <item name="broker" type="b2602c69:ProjectViewProjectNode" />
               <item name="broker" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
-              <item name="db" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -300,7 +337,9 @@
       <workItem from="1562741819088" duration="6119000" />
       <workItem from="1562766625758" duration="4731000" />
       <workItem from="1562850673598" duration="6092000" />
-      <workItem from="1562915886945" duration="4357000" />
+      <workItem from="1562915886945" duration="6556000" />
+      <workItem from="1563011813867" duration="747000" />
+      <workItem from="1563025928123" duration="555000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -421,17 +460,24 @@
       <option name="project" value="LOCAL" />
       <updated>1562856998313</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="implementata logica log e recuperato device mac">
+      <created>1562921977273</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1562921977273</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="201719000" />
+    <option name="totallyTimeSpent" value="205220000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1360" height="676" extended-state="6" />
+    <frame x="0" y="27" width="1920" height="988" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981302" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24934107" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -471,7 +517,8 @@
     <MESSAGE value="risolto bug reading" />
     <MESSAGE value="risolto bug" />
     <MESSAGE value="apartment reset" />
-    <option name="LAST_COMMIT_MESSAGE" value="apartment reset" />
+    <MESSAGE value="implementata logica log e recuperato device mac" />
+    <option name="LAST_COMMIT_MESSAGE" value="implementata logica log e recuperato device mac" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/api/routes/sens.js">
@@ -526,13 +573,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/requests/updateTemp.http">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="230">
@@ -565,13 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="130">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/device-info.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -638,38 +671,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1846">
-          <caret line="71" column="45" selection-start-line="71" selection-start-column="45" selection-end-line="71" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="7" column="32" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/events.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="102" column="19" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="590">
-          <caret line="91" column="34" selection-start-line="91" selection-start-column="34" selection-end-line="91" selection-end-column="34" />
         </state>
       </provider>
     </entry>
@@ -687,17 +692,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="68" column="7" selection-start-line="68" selection-end-line="68" selection-end-column="7" />
+    <entry file="uml://JavaScript-modules-diagram//home/gjcode/WebstormProjects/tlc-app/broker/api/db">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/api/db</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/mysql/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/colors/lib/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/api/db/mysqlClient.js#awsClient#38;/home/gjcode/WebstormProjects/tlc-app/broker/api/db/mysqlClient.js#colors#92;/home/gjcode/WebstormProjects/tlc-app/broker/api/db/mysqlClient.js#mysql#6;</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="244.0" y="141.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://JavaScript-modules-diagram//home/gjcode/WebstormProjects/tlc-app/broker/api/routes">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>JavaScript-modules-diagram</ID>
+          <OriginalElement>$PROJECT_DIR$/api/routes</OriginalElement>
+          <nodes>
+            <node x="" y="">$PROJECT_DIR$/api/routes/acts.js#cors#101;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/acts.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/acts.js#fs#75;</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/apartment.js#MqttHandler#101;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/apartment.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/apartment.js#fs#75;</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/auth.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/auth.js#request#75;</node>
+            <node x="" y="">$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/command.js#MqttHandler#134;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/command.js#cors#75;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/command.js#express#6;</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/dateformat/lib/dateformat.js</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/device-info.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/device-info.js#fs#75;</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/events.js#MqttHandler#101;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/events.js#colors#153;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/events.js#dateformat#313;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/events.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/events.js#fs#75;</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/cors/lib/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/colors/lib/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/node_modules/request/index.js</node>
+            <node x="" y="">$PROJECT_DIR$/api/mqtt/mqtt_client.js</node>
+            <node x="" y="">$PROJECT_DIR$/api/db/mysqlClient.js</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/presence.js#MqttHandler#101;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/presence.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/presence.js#fs#75;</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/reading.js#MqttHandler#308;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/reading.js#awsClient#181;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/reading.js#cors#101;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/reading.js#dateformat#235;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/reading.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/reading.js#fs#75;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/reading.js#mysqlClient#131;</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/sens.js#cors#101;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/sens.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/sens.js#fs#75;</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/updateTemp.js#cors#101;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/updateTemp.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/updateTemp.js#fs#75;</node>
+            <node x="" y="">$PROJECT_DIR$/api/routes/user.js#express#6;/home/gjcode/WebstormProjects/tlc-app/broker/api/routes/user.js#request#75;</node>
+            <node x="" y="">express</node>
+            <node x="" y="">fs</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.8524752475247526" x="971.0" y="845.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>All</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
+          <VISIBILITY>Details</VISIBILITY>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/api/db/consoleStatus.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="101" selection-start-column="101" selection-end-column="101" />
+          <caret column="50" selection-start-column="50" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="40" column="38" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="68" column="7" selection-start-line="68" selection-end-line="68" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2652">
+          <caret line="102" column="19" selection-start-line="102" selection-start-column="8" selection-end-line="102" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/device-info.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/auth.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="7" column="4" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="21" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="16" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1794">
+          <caret line="75" column="36" selection-start-line="75" selection-start-column="36" selection-end-line="75" selection-end-column="36" />
         </state>
       </provider>
     </entry>

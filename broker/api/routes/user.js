@@ -3,6 +3,21 @@ const router = express.Router();
 const request = require("request");
 const awsURL = "http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002";
 
+/* MAC ADDRESS DEFINITION */
+const mac = require('getmac');
+let macAddress;
+mac.getMac({iface: 'wlan0'}, (err, address) => {
+    if (!err) {
+        macAddress = address;
+        console.log('device mac address:'.green, address);
+    } else {
+        // give a fake mac address
+        console.log('set device mac failed'.red);
+        macAddress = "01:01:01:01:01:01";
+    }
+
+});
+
 sendRequest = function (url, method, req, res) {
     const clientOptions = {
         uri: url,
@@ -58,6 +73,7 @@ router.get('/:groupID/devices', (req, res, next) => {
 
 router.post('/:groupID/devices', (req, res, next) => {
     const groupID = req.params.groupID;
+    req.body.device_mac = macAddress;
     const uri = awsURL + "/user/" + groupID + "/devices";
     return sendRequest(uri, 'POST', req, res);
 });
