@@ -156,12 +156,16 @@ const handleSimple = function (event) {
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // riscaldo
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
+                    mqttClient.sendMessage('newTemp', '' + progTemp);
                 }
             } if (progTemp < lastReading) {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
                     mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
+                    mqttClient.sendMessage('newTemp', '' + progTemp);
                 }
             }
         }
@@ -188,20 +192,23 @@ const handleRepeatable = function (event) {
             fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
-            mqttClient.sendMessage('newTemp', '' + progTemp);
             let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // riscaldo
+                    mqttClient.sendMessage('newTemp', '' + progTemp);
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
                 }
             } if (progTemp < lastReading) {
                 let diffTemp = Math.abs(progTemp - lastReading);
                 if (diffTemp >= diffHours || diffHours <= 0) {
                     // raffreddo
+                    mqttClient.sendMessage('newTemp', '' + progTemp);
                     mqttClient.sendMessage('command-' + room.coolAct.id, 'on');
+                    mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
                 }
             }
         }

@@ -13,7 +13,7 @@ export class DeviceInfoComponent implements OnInit {
   serverErrors: ServerMessage;
 
   constructor(private aws: AwsService) {
-    this.model = {status: -1, data: {configuration: null, nickname: '', device_mac: '', device_status: 0}};
+    this.model = {status: -1, data: {configuration: null, nickname: '', device_mac: '', device_status: 1}};
     this.serverErrors = {error: false, message: ''};
   }
 
