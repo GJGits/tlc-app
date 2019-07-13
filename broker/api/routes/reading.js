@@ -90,6 +90,9 @@ const handleSimple = function (event) {
                 mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
                 mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
             }
+        } else {
+            mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
+            mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
         }
     }
 };
@@ -136,6 +139,9 @@ const handleRepeatable = function (event) {
                 mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
                 mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
             }
+        } else {
+            mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
+            mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
         }
     }
 };

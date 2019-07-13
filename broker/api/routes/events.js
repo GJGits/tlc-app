@@ -167,6 +167,9 @@ const handleSimple = function (event) {
                     mqttClient.sendMessage('newTemp', '' + progTemp);
                 }
             }
+        } else {
+            mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
+            mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
         }
     }
 };
@@ -210,6 +213,10 @@ const handleRepeatable = function (event) {
                     mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
                 }
             }
+        } else {
+            // spengo tutto: o l'evento e' finito o e' stato programmato un evento gia' concluso
+            mqttClient.sendMessage('command-' + room.coolAct.id, 'off');
+            mqttClient.sendMessage('command-' + room.heatAct.id, 'off');
         }
     }
 };
