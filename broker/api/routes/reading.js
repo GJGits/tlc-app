@@ -115,7 +115,6 @@ const handleRepeatable = function (event) {
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
             let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
-            mqttClient.sendMessage('newTemp', '' + progTemp);
             // valuto riscaldamento
             if (progTemp > lastReading) {
                 let diffTemp = progTemp - lastReading;

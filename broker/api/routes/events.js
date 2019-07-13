@@ -148,7 +148,6 @@ const handleSimple = function (event) {
             fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
             let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
-            mqttClient.sendMessage('newTemp', '' + progTemp);
             let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             // valuto riscaldamento
             if (progTemp > lastReading) {
