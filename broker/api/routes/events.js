@@ -140,13 +140,13 @@ const handleSimple = function (event) {
         let startTime = event.startTime;
         let endTime = event.endTime;
         let nowTime = new Date().getHours();
+        let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+        apartment.rooms.find(r => r.id === event.roomName).progTemp = progTemp;
+        fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
+        let room = apartment.rooms.find(r => r.id === event.roomName);
         if (nowTime <= endTime) {
             // supponiamo un grado per ora
             let diffHours = startTime - nowTime;
-            let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
-            apartment.rooms.find(r => r.id === event.roomName).progTemp = progTemp;
-            fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
-            let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
             let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             // valuto riscaldamento

@@ -108,14 +108,14 @@ const handleRepeatable = function (event) {
         let progTemp = event.temp;
         let startTime = event.startTime;
         let endTime = event.endTime;
+        let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+        apartment.rooms.find(r => r.id === event.roomName).progTemp = progTemp;
+        fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
+        let room = apartment.rooms.find(r => r.id === event.roomName);
         // metodo chiamato in caso di ON, se siamo ancora in tempo scheduliamo
         if (nowTime <= endTime) {
             // supponiamo un grado per ora
             let diffHours = startTime - nowTime;
-            let apartment = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
-            apartment.rooms.find(r => r.id === event.roomName).progTemp = progTemp;
-            fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
-            let room = apartment.rooms.find(r => r.id === event.roomName);
             let sensorId = room.sensor.id;
             let lastReading = Math.round(JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json')).find(re => re.id === sensorId).temp);
             // valuto riscaldamento
