@@ -25,9 +25,10 @@ EspMQTTClient::EspMQTTClient(
   const bool enableWebUpdater, const bool enableSerialLogs)
   : mWifiSsid(wifiSsid), mWifiPassword(wifiPassword), mMqttServerIp(mqttServerIp),
     mMqttServerPort(mqttServerPort), mMqttUsername(mqttUsername), mMqttPassword(mqttPassword),
-    mMqttClientName(mqttClientName), mConnectionEstablishedCallback(connectionEstablishedCallback),
+    mMqttClientName("h2"), mConnectionEstablishedCallback(connectionEstablishedCallback),
     mEnableWebUpdater(enableWebUpdater), mEnableSerialLogs(enableSerialLogs)
 {
+  Serial.printf("client id: %s\n", mqttClientName);
   Serial.printf("1: %s\n", mqttServerIp);
   initialize();
 }
@@ -157,13 +158,18 @@ bool EspMQTTClient::isConnected() const
 void EspMQTTClient::publish(const String &topic, const String &payload, bool retain)
 {
   mMqttClient->publish(topic.c_str(), payload.c_str(), retain);
-  delay(300);
+  delay(500);
 
   if (mEnableSerialLogs)
     Serial.printf("MQTT << [%s] %s.\n", topic.c_str(), payload.c_str());
   
-  if (topic.c_str() == "readings")
-    ESP.deepSleep(5e6);
+  const char *sleep_topic = "readings";
+  if (strcmp(topic.c_str(), sleep_topic) == 0) {
+    delay(500);
+    ESP.deepSleep(10e6);
+    delay(500);
+  }
+    
 }
 
 void EspMQTTClient::subscribe(const String &topic, MessageReceivedCallback messageReceivedCallback)
