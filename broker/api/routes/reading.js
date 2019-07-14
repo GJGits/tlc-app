@@ -33,6 +33,17 @@ const mqttClient = new MqttHandler('reading', ['readings'], (topic, message) => 
                     let roomId = room.id;
                     checkAndActivateProgrammed(roomId);
                 }
+            } else {
+                // controllo anti freezing
+                if (room) {
+                    const heat = room.heatAct.id;
+                    if (reading.temp < 5) {
+                        mqttClient.sendMessage('command-' + heat, 'on');
+                    } else {
+                        mqttClient.sendMessage('command-' + heat, 'off');
+                    }
+                }
+
             }
         }
 
@@ -63,7 +74,7 @@ const handleSimple = function (event) {
         let startTime = event.startTime;
         let endTime = event.endTime;
         let nowTime = new Date().getHours();
-        if (nowTime <= endTime) {
+        if (nowTime < endTime) {
             // supponiamo un grado per ora
             let diffHours = startTime - nowTime;
             let room = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json')).rooms.find(r => r.id === event.roomName);
@@ -113,7 +124,7 @@ const handleRepeatable = function (event) {
         fs.writeFileSync(__dirname + '/../db/apartment.json', JSON.stringify(apartment));
         let room = apartment.rooms.find(r => r.id === event.roomName);
         // metodo chiamato in caso di ON, se siamo ancora in tempo scheduliamo
-        if (nowTime <= endTime) {
+        if (nowTime < endTime) {
             // supponiamo un grado per ora
             let diffHours = startTime - nowTime;
             let sensorId = room.sensor.id;
@@ -194,7 +205,7 @@ router.get('/:id', (req, res, next) => {
     let sensorId = req.params.id;
     let readings = JSON.parse(fs.readFileSync(__dirname + '/../db/last-readings.json'));
     let reading = readings.find(r => r.id === sensorId);
-    return reading ? res.status(200).send(reading) : res.status(200).send({}) ;
+    return reading ? res.status(200).send(reading) : res.status(200).send({});
 });
 
 router.get('/lastReadings/:id', (req, res, next) => {
