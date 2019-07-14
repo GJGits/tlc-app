@@ -9,7 +9,7 @@ sleep 5
 cd ../../usr/bin/tlc-app/scripts && ./runNode 
 
 # open page
-chromium-browser --incognito --noerrdialogs --disable-infobars  http://localhost/ui/index.html
+chromium-browser --incognito --noerrdialogs --disable-infobars --kiosk  http://localhost/ui/index.html
 
 echo "app is running"
 sleep 20
