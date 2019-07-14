@@ -16,7 +16,7 @@
             <!-- ROOM TYPE -->
             <div class="form-group col-sm-6">
               <label for="roomType">Room type: </label>
-              <select id="roomType" name="type" class="form-control" [(ngModel)]="room.type" data-toggle="tooltip" data-placement="top" title="room type">
+              <select id="roomType" name="type" class="form-control" (change)="room.id = room.type" [(ngModel)]="room.type" data-toggle="tooltip" data-placement="top" title="room type">
                 <option *ngFor="let type of types" [value]="type">{{type}}</option>
               </select>
             </div>

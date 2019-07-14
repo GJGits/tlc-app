@@ -39,6 +39,7 @@ export class EventsFormComponent implements OnInit {
         this.model.to = 'sunday';
       }
       this.newRepeatableEvent.emit(this.model);
+      this.model = {roomName: '', temp: 15, startTime: 0, endTime: 0, from: '', to: '', repeat: ''};
     } else {
       this.errors = 'correct errors';
     }

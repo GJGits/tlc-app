@@ -23,7 +23,7 @@ removeAct = function (act) {
     if (actIndex !== -1) {
         acts.splice(actIndex, 1);
         fs.writeFileSync(__dirname + '/../db/acts.json', JSON.stringify(acts));
-        console.log('aggiornata lista act:'.green);
+        console.log('lista acts:','aggiornata'.green);
     }
 };
 
@@ -32,8 +32,8 @@ removeSensor = function (sensor) {
     let actIndex = acts.findIndex(a => sensor.id === a.id);
     if (actIndex !== -1) {
         acts.splice(actIndex, 1);
-        fs.writeFileSync(__dirname + '/../db/sens.json', JSON.stringify(sensor));
-        console.log('aggiornata lista sensori'.green);
+        fs.writeFileSync(__dirname + '/../db/sens.json', JSON.stringify(acts));
+        console.log('lista sensori:', 'aggiornata'.green);
     }
 };
 

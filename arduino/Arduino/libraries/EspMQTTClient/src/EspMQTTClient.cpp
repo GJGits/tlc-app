@@ -163,13 +163,14 @@ void EspMQTTClient::publish(const String &topic, const String &payload, bool ret
   if (mEnableSerialLogs)
     Serial.printf("MQTT << [%s] %s.\n", topic.c_str(), payload.c_str());
   
+  /* 
   const char *sleep_topic = "readings";
   if (strcmp(topic.c_str(), sleep_topic) == 0) {
     delay(500);
-    ESP.deepSleep(10e6);
+    //ESP.deepSleep(10e6);
     delay(500);
   }
-    
+    */
 }
 
 void EspMQTTClient::subscribe(const String &topic, MessageReceivedCallback messageReceivedCallback)

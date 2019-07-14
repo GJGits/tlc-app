@@ -27,10 +27,11 @@ export class RoomListElementComponent implements OnInit {
     this.apiService.getSensors().subscribe(sens => this.avaibleSensors = sens);
     this.apiService.getHeatActs().subscribe(ha => this.avaibleHeatActs = ha);
     this.apiService.getCoolActs().subscribe(ca => this.avaibleCoolActs = ca);
-    this.mqttService.observe('presence').subscribe((mex) => {
+    this.mqttService.observe('presence').subscribe((mex: IMqttMessage) => {
       const message = mex.payload.toString();
       const firstToken = message.split(':')[0];
-      if (firstToken === 's' && this.avaibleSensors.findIndex(s => s.id === message) === -1) {
+      console.log('message:', message);
+      if (firstToken === 's' && !this.avaibleSensors.includes({id: message})) {
         this.avaibleSensors.push({id: message});
       }
       if (firstToken === 'ha' && this.avaibleHeatActs.findIndex(s => s.id === message) === -1) {

@@ -25,6 +25,7 @@ export class SimpleEventFormComponent implements OnInit {
     if ((this.model.startTime < this.model.endTime) && (this.model.startDate.localeCompare(this.model.endData) <= 0)) {
       this.model.repeat = this.model.startDate + '-' + this.model.endData;
       this.newSimpleEvent.emit(this.model);
+      this.model = {roomName: '', temp: 15, startTime: 0, endTime: 0, startDate: '', endData: '', repeat: ''};
     } else {
       this.errors = 'correct errors';
     }

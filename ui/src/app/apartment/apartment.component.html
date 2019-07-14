@@ -7,5 +7,5 @@
   <button type="button" class="btn btn-primary btn-block col-sm-6 offset-sm-3 mt-5" data-toggle="modal" data-target="#newRoom">
     Add New Room
   </button>
-  <app-room-form (roomCreated)="addRoom($event)"></app-room-form>
+  <app-room-form [apartment]="apartment" (roomCreated)="addRoom($event)"></app-room-form>
 </div>
