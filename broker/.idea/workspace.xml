@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="evento termina">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/apartment.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/apartment.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/db/reapEvents.json" beforeDir="false" afterPath="$PROJECT_DIR$/api/db/reapEvents.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/apartment.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/apartment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/events.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/dist/ui/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/main.12a22f9b5694ab00beef.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/apartment/apartment.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/apartment/apartment.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/apartment/room-form/room-form.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/apartment/room-form/room-form.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/apartment/room-form/room-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/apartment/room-form/room-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/apartment/room-list-element/room-list-element.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/apartment/room-list-element/room-list-element.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/program/events-form/events-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/program/events-form/events-form.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/program/events-tab/events-tab.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/program/events-tab/events-tab.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/program/program.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/program/program.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/program/simple-event-form/simple-event-form.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/program/simple-event-form/simple-event-form.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -351,7 +334,7 @@
       <workItem from="1562915886945" duration="6556000" />
       <workItem from="1563011813867" duration="747000" />
       <workItem from="1563025928123" duration="6567000" />
-      <workItem from="1563088005093" duration="6284000" />
+      <workItem from="1563088005093" duration="6358000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -514,15 +497,21 @@
       <option name="project" value="LOCAL" />
       <updated>1563030807640</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="app v1.3">
+      <created>1563097930144</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1563097930144</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217516000" />
+    <option name="totallyTimeSpent" value="217590000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24906507" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -569,7 +558,8 @@
     <MESSAGE value="test correzione bug temperatura mostrata su programmed mode" />
     <MESSAGE value="test correzione bug temperatura mostrata su programmed mode 2" />
     <MESSAGE value="evento termina" />
-    <option name="LAST_COMMIT_MESSAGE" value="evento termina" />
+    <MESSAGE value="app v1.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="app v1.3" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/api/mqtt/root-CA.crt">
