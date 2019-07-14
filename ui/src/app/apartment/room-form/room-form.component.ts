@@ -1,5 +1,5 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {Actuator, Room, Sensor} from '../../app-elements';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Actuator, Apartment, Room, Sensor} from '../../app-elements';
 import {ApiService} from '../../api.service';
 import {IMqttMessage, MqttService} from 'ngx-mqtt';
 
@@ -10,6 +10,7 @@ import {IMqttMessage, MqttService} from 'ngx-mqtt';
 })
 export class RoomFormComponent implements OnInit {
 
+  @Input() apartment: Apartment;
   room: Room = {
     id: 'a', type: 'select type',
     progTemp: 15, sensor: {id: 'a'}, heatAct: {id: 'a', status: false}, coolAct: {id: 'a', status: false}
@@ -28,15 +29,22 @@ export class RoomFormComponent implements OnInit {
     this.apiService.getSensors().subscribe(sens => this.avaibleSensors = sens);
     this.apiService.getHeatActs().subscribe(ha => this.avaibleHeatActs = ha);
     this.apiService.getCoolActs().subscribe(ca => this.avaibleCoolActs = ca);
-    this.mqttService.observe('presence').subscribe((message: IMqttMessage) => {
-      const mex = message.payload.toString();
-      const tokens = mex.split(':');
-      if (tokens[0] === 's') {
-        this.avaibleSensors.push({id: mex});
-      } else if (tokens[0] === 'ca') {
-        this.avaibleCoolActs.push({id: mex, status: false});
-      } else {
-        this.avaibleHeatActs.push({id: mex, status: false});
+    this.mqttService.observe('presence').subscribe((mex: IMqttMessage) => {
+      const message = mex.payload.toString();
+      const firstToken = message.split(':')[0];
+      console.log('message:', message);
+      if (firstToken === 's'
+        && this.avaibleSensors.findIndex(s => s.id === message) === -1
+        && this.apartment.rooms.findIndex(r => r.sensor.id === message) === -1) {
+        this.avaibleSensors.push({id: message});
+      }
+      if (firstToken === 'ha' && this.avaibleHeatActs.findIndex(s => s.id === message) === -1
+        && this.apartment.rooms.findIndex(r => r.heatAct.id === message) === -1) {
+        this.avaibleHeatActs.push({id: message, status: false});
+      }
+      if (firstToken === 'ca' && this.avaibleCoolActs.findIndex(s => s.id === message) === -1
+        && this.apartment.rooms.findIndex(r => r.coolAct.id === message) === -1) {
+        this.avaibleCoolActs.push({id: message, status: false});
       }
     });
   }

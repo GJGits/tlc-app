@@ -1,5 +1,1 @@
-{
-  "address": "address not set",
-  "rooms": [
-  ]
-}
+{"address":"address not set","rooms":[{"id":"cucina","type":"cucina","progTemp":15,"sensor":{"id":"s:bb"},"heatAct":{"id":"ha:aa","status":false},"coolAct":{"id":"ca:aa","status":false}},{"id":"bagno","type":"bagno","progTemp":15,"sensor":{"id":"s:bb"},"heatAct":{"id":"ha:bb","status":false},"coolAct":{"id":"ca:bb","status":false}}]}

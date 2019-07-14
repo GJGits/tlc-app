@@ -84,12 +84,12 @@ export class ApiService {
   }
 
   deleteSimpleEvent(simpleEvent: SimpleEvent) {
-    return this.httpClient.delete<string>(this.baseUrl + 'events/deleteSimple/'
-      + simpleEvent.roomName.replace(/\s/g, '') + '/' + simpleEvent.startDate + '/' + simpleEvent.startTime);
+    return this.httpClient.delete<any>(this.baseUrl + 'events/deleteSimple/'
+      + simpleEvent.roomName + '/' + simpleEvent.startDate + '/' + simpleEvent.startTime);
   }
 
   deleteRepeatableEvent(event: RepeatableEvent) {
-    return this.httpClient.delete<string>(this.baseUrl + 'events/deleteRepeatable/'
+    return this.httpClient.delete<any>(this.baseUrl + 'events/deleteRepeatable/'
       + event.roomName + '/' + event.repeat + '/' + event.startTime);
   }
 

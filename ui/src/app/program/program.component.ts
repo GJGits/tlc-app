@@ -52,12 +52,18 @@ export class ProgramComponent implements OnInit {
   deleteSimple(event: SimpleEvent) {
     this.apiService.deleteSimpleEvent(event).subscribe((value) => {
       console.log('%c event deleted successfully', 'color: green; font-weight: bold;');
+      const index = this.simpleEvents
+        .findIndex((ev => ev.roomName === event.roomName && ev.startDate === event.startDate && ev.startTime === event.startTime));
+      this.simpleEvents.splice(index, 1);
     }, (error) => console.log(error));
   }
 
   deleteRepeatable(event: RepeatableEvent) {
     this.apiService.deleteRepeatableEvent(event).subscribe((value) => {
       console.log('%c event deleted successfully', 'color: green; font-weight: bold;');
+      const index = this.repeatableEvents
+        .findIndex(ev => ev.roomName === event.roomName && ev.repeat === event.repeat && ev.startTime === event.startTime);
+      this.repeatableEvents.splice(index, 1);
     }, (error) => console.log(error));
   }
 
@@ -65,13 +71,12 @@ export class ProgramComponent implements OnInit {
     const roomName = event.roomName;
     const startTime = event.startTime;
     const startDate = event.startDate ? new Date(event.startDate).getDay() : this.mapDay(event.from);
-    console.log('event params:', roomName, startTime, startDate);
     return this.repeatableEvents.findIndex(ev => ev.roomName === roomName
       && (ev.startTime <= startTime && ev.endTime >= startTime)
       && (this.mapDay(ev.from) <= startDate && this.mapDay(ev.to) >= startDate)) !== -1 ||
       this.simpleEvents.findIndex(ev => ev.roomName === roomName
         && (ev.startTime <= startTime && ev.endTime >= startTime)
-        && (new Date(ev.startDate).getDay()  <= startDate && new Date(ev.endData).getDay() >= startDate)) !== -1;
+        && (new Date(ev.startDate).getDay() <= startDate && new Date(ev.endData).getDay() >= startDate)) !== -1;
   }
 
   mapDay(day) {

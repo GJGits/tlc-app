@@ -21,16 +21,10 @@ export class EventsTabComponent implements OnInit {
 
   deleteSimpleEvent(simpleEvent: SimpleEvent) {
     this.deleteSimple.emit(simpleEvent);
-    this.simpleEvents = this.simpleEvents
-      .filter(ev => ev.roomName !== simpleEvent.roomName &&
-        ev.startTime !== simpleEvent.startTime && ev.startDate !== simpleEvent.startDate);
   }
 
   deleteRepeatableEvent(repeatableEvent: RepeatableEvent) {
     this.deleteRepeatable.emit(repeatableEvent);
-    this.repeatableEvents = this.repeatableEvents
-      .filter(ev => ev.roomName !== repeatableEvent.roomName &&
-        ev.repeat !== repeatableEvent.repeat && ev.startTime !== repeatableEvent.startTime);
   }
 
 }
