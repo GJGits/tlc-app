@@ -23,7 +23,7 @@ const eventMap = new Map([
         [3, "an insert query failed"],
         [4, "a reading query failed"],
         [5, "internal server error"],
-        [6, "some message"],
+        [6, "app started"],
         [7, "some message"],
         [8, "some message"]
     ]
