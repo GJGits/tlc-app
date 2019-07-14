@@ -53,6 +53,7 @@ class AWSClient {
         this.device
             .on('connect', () => {
                 console.log('aws device:', ' connected'.green);
+                this.device.logEvent(6);
                 this.device.subscribe('pl19/notification');
             });
 

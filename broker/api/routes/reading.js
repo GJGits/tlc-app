@@ -5,7 +5,6 @@ const cors = require('cors');
 const mysqlClient = require('../db/mysqlClient');
 const awsClient = require('../mqtt/aws_mqtt_client');
 const dateformat = require('dateformat');
-awsClient.logEvent(6);
 
 router.options('/', cors());
 
