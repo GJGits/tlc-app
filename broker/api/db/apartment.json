@@ -1,1 +1,1 @@
-{"address":"via testing 3","rooms":[]}
+{"address":"via testing 3","rooms":[{"id":"cucina","type":"cucina","progTemp":32,"sensor":{"id":"s:CC:50:E3:56:2F:68"},"heatAct":{"id":"ha:B4:E6:2D:68:34:FD","status":false},"coolAct":{"id":"ca:B4:E6:2D:68:30:9F","status":false}},{"id":"camera mia","type":"camera","progTemp":25,"sensor":{"id":"s:CC:50:E3:56:1F:C8"},"heatAct":{"id":"ha:B4:E6:2D:67:8A:EB","status":false},"coolAct":{"id":"ca:B4:E6:2D:67:85:BD","status":false}}]}
