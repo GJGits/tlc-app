@@ -19,3 +19,17 @@ Content-Type: application/json
 {"device_mac":  "39:05:62:2D:C8:B8", "nickname":  "my-nick2", "configuration": "some configuration here"}
 
 ###
+
+GET http://ec2-34-220-162-82.us-west-2.compute.amazonaws.com:5002/user/PL19-16/logs
+Authorization: JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZGVudGl0eSI6MTM3MCwiaWF0IjoxNTYzMTMyMDM0LCJuYmYiOjE1NjMxMzIwMzQsImV4cCI6MTU2NTcyNDAzNH0.cjUGWSdFh7XgXROdJlZpTvdg5uyNMYE_FU96H3IL0tg
+
+> {%
+client.log(JSON.parse(response.body
+.replace(/\\/g, '')
+.replace(/\\\\/g, '')
+.replace(/""/g, '"')
+.replace(/"{/g, '{')
+.replace(/}"/g, '}')
+));
+%}
+###

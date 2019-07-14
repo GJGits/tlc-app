@@ -18,7 +18,7 @@ mac.getMac({iface: 'wlan0'}, (err, address) => {
 
 });
 
-sendRequest = function (url, method, req, res) {
+sendRequest = function (url, method, req, res, parse) {
     const clientOptions = {
         uri: url,
         body: JSON.stringify(req.body),
@@ -30,6 +30,14 @@ sendRequest = function (url, method, req, res) {
     };
     request(clientOptions, (error, response) => {
         if (!error) {
+            if(parse) {
+                return res.status(200).send(response.body
+                    .replace(/\\/g, '')
+                    .replace(/\\\\/g, '')
+                    .replace(/""/g, '"')
+                    .replace(/"{/g, '{')
+                    .replace(/}"/g, '}'));
+            }
             return res.status(200).send(response.body);
         } else {
             console.error(error);
@@ -44,7 +52,7 @@ sendRequest = function (url, method, req, res) {
 router.get('/:groupID', (req, res, next) => {
     const groupID = req.params.groupID;
     const uri = awsURL + "/user/" + groupID;
-    return sendRequest(uri, 'GET', req, res);
+    return sendRequest(uri, 'GET', req, res, false);
 });
 
 /**
@@ -54,7 +62,7 @@ router.get('/:groupID', (req, res, next) => {
 router.post('/:groupID', (req, res, next) => {
     const groupID = req.params.groupID;
     const uri = awsURL + "/user/" + groupID;
-    return sendRequest(uri, 'POST', req, res);
+    return sendRequest(uri, 'POST', req, res, false);
 });
 
 /**
@@ -64,7 +72,7 @@ router.post('/:groupID', (req, res, next) => {
 router.get('/:groupID/devices', (req, res, next) => {
     const groupID = req.params.groupID;
     const uri = awsURL + "/user/" + groupID + "/devices";
-    return sendRequest(uri, 'GET', req, res);
+    return sendRequest(uri, 'GET', req, res, false);
 });
 
 /**
@@ -77,7 +85,7 @@ router.post('/:groupID/devices', (req, res, next) => {
     req.body.configuration = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
     req.body.device_status = 1;
     const uri = awsURL + "/user/" + groupID + "/devices";
-    return sendRequest(uri, 'POST', req, res);
+    return sendRequest(uri, 'POST', req, res, false);
 });
 
 /**
@@ -87,7 +95,7 @@ router.post('/:groupID/devices', (req, res, next) => {
 router.get('/:groupID/logs', (req, res, next) => {
     const groupID = req.params.groupID;
     const uri = awsURL + "/user/" + groupID + "/logs";
-    return sendRequest(uri, 'GET', req, res);
+    return sendRequest(uri, 'GET', req, res, true);
 });
 
 module.exports = router;

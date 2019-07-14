@@ -32,7 +32,7 @@ export interface Event {
   event_id: number;
   timestamp_dev: any;
   timestamp_srv: any;
-  event: Message;
+  event: string;
   device_id: string;
 }
 

@@ -21,7 +21,8 @@ export class LogsComponent implements OnInit {
   }
 
   isError(eventId: number) {
-    this.errorCodes.findIndex((e) => e === eventId);
+    // return this.errorCodes.findIndex((e) => e === eventId) === -1;
+    return false;
   }
 
 }

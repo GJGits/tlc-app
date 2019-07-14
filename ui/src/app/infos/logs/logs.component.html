@@ -1,12 +1,12 @@
 <div class="container">
   <ul class="list-group col-sm-8 offset-sm-2 mt-5" *ngIf="(log | async)?.data; else emptyList">
-    <li *ngFor="let event of (log | async)?.data" class="list-group-item" [ngClass]="{'list-group-item-success': !isError(event.event_id), 'list-group-item-danger': isError(event.event_id)}">
+    <li *ngFor="let event of (log | async)?.data.slice(1,5)" class="list-group-item" [ngClass]="{'list-group-item-success': !isError(event.event_id), 'list-group-item-danger': isError(event.event_id)}">
       <p><b>device_id: </b>{{event.device_id}}</p>
       <p><b>event_id: </b>{{event.event_id}}</p>
-      <p><b>timestamp_dev: </b>{{event.timestamp_dev}</p>
+      <p><b>timestamp_dev: </b>{{event.timestamp_dev}}</p>
       <p><b>timestamp_srv: </b>{{event.timestamp_srv}}</p>
-      <p><b>message: </b>{{event.event.message}}</p>
-      <p><b>sequence: </b>{{event.event.sequence}}</p>
+      <p><b>message: </b>{{event.event}}</p>
+      <p><b>sequence: </b>{{event.device_id}}</p>
     </li>
   </ul>
   <ng-template #emptyList>
@@ -23,4 +23,3 @@
   </ng-template>
 </div>
 
-{{log | async | json}}
