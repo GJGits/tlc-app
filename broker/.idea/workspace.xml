@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/routes/reading.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/routes/reading.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,8 +28,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+            <state relative-caret-position="2002">
+              <caret line="108" column="73" lean-forward="true" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -94,8 +92,8 @@
         <option value="$PROJECT_DIR$/api/db/sens.json" />
         <option value="$PROJECT_DIR$/api/db/apartment.json" />
         <option value="$PROJECT_DIR$/api/routes/events.js" />
-        <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
         <option value="$PROJECT_DIR$/api/routes/reading.js" />
+        <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
       </list>
     </option>
   </component>
@@ -330,7 +328,7 @@
       <workItem from="1563011813867" duration="747000" />
       <workItem from="1563025928123" duration="6567000" />
       <workItem from="1563088005093" duration="6358000" />
-      <workItem from="1563112980444" duration="1638000" />
+      <workItem from="1563112980444" duration="2587000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -507,11 +505,32 @@
       <option name="project" value="LOCAL" />
       <updated>1563114333683</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="aggiunto log di start">
+      <created>1563114633558</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1563114633558</updated>
+    </task>
+    <task id="LOCAL-00027" summary="aggiunto log di start">
+      <created>1563114792901</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1563114792901</updated>
+    </task>
+    <task id="LOCAL-00028" summary="aggiunto log di start">
+      <created>1563114933424</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1563114933424</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="219228000" />
+    <option name="totallyTimeSpent" value="220177000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
@@ -851,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+        <state relative-caret-position="2002">
+          <caret line="108" column="73" lean-forward="true" selection-start-line="108" selection-start-column="71" selection-end-line="108" selection-end-column="73" />
         </state>
       </provider>
     </entry>

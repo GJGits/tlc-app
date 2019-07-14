@@ -106,7 +106,8 @@ class AWSClient {
         if (eventMap.has(eventId)) {
             let reply = {
                 event_id: eventId,
-                timestamp: dateFormat(new Date(), "yyyy-MM-dd hh:mm:ss.f."),
+                //timestamp: dateFormat(new Date(), "yyyy-MM-dd hh:mm:ss.f."),
+                timestamp: dateFormat(new Date(), "%Y-%m-%d %H:%M:S.%f"),
                 device_mac: macAddress,
                 event: eventMap.get(eventId)
             };
