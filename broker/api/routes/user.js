@@ -74,6 +74,8 @@ router.get('/:groupID/devices', (req, res, next) => {
 router.post('/:groupID/devices', (req, res, next) => {
     const groupID = req.params.groupID;
     req.body.device_mac = macAddress;
+    req.body.configuration = JSON.parse(fs.readFileSync(__dirname + '/../db/apartment.json'));
+    req.body.device_status = 1;
     const uri = awsURL + "/user/" + groupID + "/devices";
     return sendRequest(uri, 'POST', req, res);
 });

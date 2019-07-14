@@ -90,7 +90,7 @@ class AWSClient {
                 if (notification.event_id === 0) {
                     let reply = {
                         event_id: 1,
-                        timestamp: dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss.F"),
+                        timestamp: dateFormat(new Date(), "yyyy-mm-dd hh:MM:ss") + ".000000",
                         device_mac: macAddress,
                         event: {message: 'ping replay', sequence: notification.event.sequence}
                     };
@@ -106,8 +106,8 @@ class AWSClient {
         if (eventMap.has(eventId)) {
             let reply = {
                 event_id: eventId,
-                //timestamp: dateFormat(new Date(), "yyyy-MM-dd hh:mm:ss.f."),
-                timestamp: dateFormat(new Date(), "%Y-%m-%d %H:%M:S.%f"),
+                timestamp: dateFormat(new Date(), "yyyy-MM-dd hh:mm:ss") + ".000000",
+                //timestamp: dateFormat(new Date(), "%Y-%m-%d %H:%M:S.%f"),
                 device_mac: macAddress,
                 event: eventMap.get(eventId)
             };
