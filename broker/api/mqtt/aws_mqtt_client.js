@@ -101,7 +101,8 @@ class AWSClient {
 
     }
 
-    logEvent(eventId) {
+
+    logEvent = function (eventId) {
         if (eventMap.has(eventId)) {
             let reply = {
                 event_id: eventId,
