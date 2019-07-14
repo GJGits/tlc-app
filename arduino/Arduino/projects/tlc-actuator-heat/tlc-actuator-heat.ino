@@ -43,11 +43,11 @@ void setup() {
   //wifiManager.resetSettings();
   //set config save notify callback
   wifiManager.setSaveConfigCallback(saveConfigCallback);
-  WiFiManagerParameter custom_text("<input type='text' id='broker-ip' name='broker-ip' placeholder='192.168.X.X' value='ciao'>");
+  WiFiManagerParameter custom_text("<input type='text' id='broker-ip' name='broker-ip' placeholder='192.168.X.X' value='ip add here'>");
   WiFiManagerParameter ip_script("<script type='text/javascript'>fetch('http://localhost:3000/ip').then(response => response.text()).then((resp) => {document.getElementById('broker-ip').value = resp});</script>");
   wifiManager.addParameter(&custom_text);
   wifiManager.addParameter(&ip_script);
-  if (!wifiManager.autoConnect("AutoConnectAP", "password")) {
+  if (!wifiManager.autoConnect("AP-H2", "password")) {
     Serial.println("failed to connect and hit timeout");
     delay(3000);
   }
@@ -100,7 +100,20 @@ void setup() {
           onConnectionEstablished,// MQTT connection established callback
           ip                    // MQTT broker ip
         );
+        configFile.close();
       }
+    } else {
+      // CASI ESTREMI
+      Serial.println("CASO ESTREMHOOO!");
+      /*   WiFi.begin("Xiaomi MI5", "");
+         client = new EspMQTTClient(
+             "Xiaomi MI5",                 // Wifi ssid
+             "",                 // Wifi password
+             onConnectionEstablished,// MQTT connection established callback
+             "192.168.43.66"                    // MQTT broker ip
+           );
+      */
+      Serial.println("Failed to open config file!.");
     }
   }
 }

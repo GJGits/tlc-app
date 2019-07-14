@@ -47,7 +47,7 @@ void setup() {
   WiFiManagerParameter ip_script("<script type='text/javascript'>fetch('http://localhost:3000/ip').then(response => response.text()).then((resp) => {document.getElementById('broker-ip').value = resp});</script>");
   wifiManager.addParameter(&custom_text);
   wifiManager.addParameter(&ip_script);
-  if (!wifiManager.autoConnect("AutoConnectAP", "password")) {
+  if (!wifiManager.autoConnect("AP-C2", "password")) {
     Serial.println("failed to connect and hit timeout");
     delay(3000);
   }
@@ -101,6 +101,8 @@ void setup() {
           ip                    // MQTT broker ip
         );
       }
+    } else {
+      Serial.println("Failed to load file");
     }
   }
 }
