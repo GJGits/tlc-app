@@ -27,6 +27,7 @@ const userRouter = require('./api/routes/user');
 const eventsRouter = require('./api/routes/events');
 const deviceRouter = require('./api/routes/device-info');
 const ipRouter = require('./api/routes/ip');
+const networkRouter = require('./api/routes/network');
 
 // mappo routes
 app.use("/apartment", apartmentRouter);
@@ -41,6 +42,7 @@ app.use("/user", userRouter);
 app.use('/events', eventsRouter);
 app.use('/device-info', deviceRouter);
 app.use('/ip', ipRouter);
+app.use('/network', ipRouter);
 
 // handle 404
 app.use((req, res, next) => {

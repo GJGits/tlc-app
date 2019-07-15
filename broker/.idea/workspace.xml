@@ -2,246 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ff3e3b3c-95ea-4105-b99d-ac1728156f49" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/db/ip.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/ip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/routes/network.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/jsdoc2md/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/lib/array-back.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/array-back/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/bin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/bin/cli.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/lib/argv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/lib/command-line-args.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/lib/definition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/lib/definitions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/lib/option.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/alias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/ambiguous-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/bad-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/class-argv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/class-definitions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/default-option.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/default-value.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/detect-process-argv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/exceptions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/grouping.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/name-alias-mix.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/name-unicode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/notations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/option.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-boolean-multiple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-boolean.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-none.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-number-multiple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-number.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-other-multiple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-other.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/es5/test/type-string.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/alias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/defaultValue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/group.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/multiple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/name.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/type.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/typical.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/example/validate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/jsdoc2md/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/bin/cli.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/lib/argv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/lib/command-line-args.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/lib/definition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/lib/definitions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/lib/option.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/alias.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/ambiguous-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/bad-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/class-argv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/class-definitions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/default-option.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/default-value.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/detect-process-argv.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/exceptions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/grouping.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/name-alias-mix.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/name-unicode.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/notations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/option.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-boolean-multiple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-boolean.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-none.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-number-multiple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-number.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-other-multiple.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-other.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/src/test/type-string.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-args/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/lib/chalk-format.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/lib/content-section.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/lib/content.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/lib/option-list.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/lib/section.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/.coveralls.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/coverage.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/array-back/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/array-back/index.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/array-back/test.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/prettify.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/prettify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/sort-arrow-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov-report/sorter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/coverage/lcov.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/node_modules/array-back/yarn.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/command-line-usage/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/iojs.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/v0.10.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/v0.12.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/v4.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/v5.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/v6.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/feature-detect-es6/test/v7.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/jsdoc2md/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/lib/find-replace.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/find-replace/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/lodash.padend/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/lodash.padend/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/lodash.padend/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/lodash.padend/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/CHANGELOG.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/CONTRIBUTING.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/bin/wifi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/env.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/linux-connect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/linux-current-connections.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/linux-delete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/linux-disconnect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/linux-scan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/mac-connect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/mac-current-connections.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/mac-delete.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/mac-scan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/network-utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/wifi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/windows-connect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/windows-current-connections.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/windows-disconnect.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/node-wifi/src/windows-scan.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/reduce-flatten/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/reduce-flatten/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/reduce-flatten/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/reduce-flatten/jsdoc2md/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/reduce-flatten/lib/reduce-flatten.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/reduce-flatten/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/reduce-flatten/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/lib/ansi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/lib/cell.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/lib/column.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/lib/columns.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/lib/padding.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/lib/rows.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/.coveralls.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/coverage.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/array-back/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/array-back/index.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/array-back/test.js.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/prettify.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/prettify.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/sort-arrow-sprite.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov-report/sorter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/coverage/lcov.info" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/node_modules/array-back/yarn.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/table-layout/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/jsdoc2md/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/lib/test-value.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/test-value/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/jsdoc2md/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/lib/typical.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/typical/test/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/.npmignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/.travis.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/jsdoc2md/README.hbs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/node_modules/wordwrapjs/test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ui/src/app/network/network.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ui/src/app/network/network.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ui/src/app/network/network.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ui/src/app/network/network.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../conf-devices/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../conf-devices/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/dist/ui/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/main.4cb4f0437fa8ad3736a4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ui/src/app/router-bar/router-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/router-bar/router-bar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/3rdpartylicenses.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/accendere.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/bagno.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/camera.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/cucina.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/icons8-cottage-50.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/icons8-più-64.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/mn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/mv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/oops.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/oops.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/pn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/pv.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/salotto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/assets/imgs/spegnere.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/es2015-polyfills.bda95d5896422d031328.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/main.4f93ca1c1769abb786f1.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/polyfills.8bbb231b43165d65d357.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/runtime.26209474bfa8dc87a77c.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/scripts.f92b7b80d941ab14bed3.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/dist/ui/styles.aa9cb9c90aa127ff5812.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/network/network.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/network/network.component.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -264,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api/routes/network.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="798">
@@ -282,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
+            <state relative-caret-position="44">
+              <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -350,10 +135,10 @@
         <option value="$PROJECT_DIR$/api/mqtt/aws_mqtt_client.js" />
         <option value="$PROJECT_DIR$/api/requests/api.http" />
         <option value="$PROJECT_DIR$/api/routes/user.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/api/db/ip.json" />
         <option value="$PROJECT_DIR$/api/routes/ip.js" />
         <option value="$PROJECT_DIR$/api/routes/network.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -610,7 +395,7 @@
       <workItem from="1563112980444" duration="4523000" />
       <workItem from="1563131312287" duration="4872000" />
       <workItem from="1563176149760" duration="57000" />
-      <workItem from="1563203641085" duration="1944000" />
+      <workItem from="1563203641085" duration="2200000" />
     </task>
     <task id="LOCAL-00001" summary="scheletro app e apartment endopoint aggiunto, display component template ok ma senza binding su reading e up/down manuale">
       <created>1559342209052</created>
@@ -858,7 +643,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228986000" />
+    <option name="totallyTimeSpent" value="229242000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
@@ -1189,13 +974,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="42" column="25" selection-start-line="42" selection-start-column="25" selection-end-line="42" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/api/routes/apartment.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -1221,6 +999,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="798">
           <caret line="54" column="3" selection-start-line="54" selection-start-column="3" selection-end-line="54" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="29" column="51" selection-start-line="29" selection-start-column="51" selection-end-line="29" selection-end-column="51" />
         </state>
       </provider>
     </entry>
