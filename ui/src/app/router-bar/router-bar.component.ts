@@ -14,7 +14,7 @@ export class RouterBarComponent implements OnInit {
     {link: 'statistics', linkDisplay: 'Statistics'},
     {link: 'infos', linkDisplay: 'Infos'},
     {link: 'program', linkDisplay: 'Program'},
-    {link: 'network', linkDisplay: 'Network'}
+    // {link: 'network', linkDisplay: 'Network'}
   ];
 
   constructor() {

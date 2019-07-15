@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, concat} from 'rxjs';
 import {Actuator, Apartment, ConsoleStatus, Reading, Room, Sensor} from './app-elements';
 import {environment} from '../environments/environment';
 import {ChartData} from './statistics/line-chart/chart-data';
@@ -14,6 +14,9 @@ export class ApiService {
   baseUrl = environment.baseUrl;
 
   constructor(private httpClient: HttpClient) {
+    concat(this.setIPAddress(), this.getIp()).subscribe((value) => {
+      this.baseUrl = 'http://' + value + ':3000/';
+    }, (error) => console.log(error));
   }
 
   getApartment(): Observable<Apartment> {
@@ -99,6 +102,10 @@ export class ApiService {
 
   getAvaibleNetwork() {
     return this.httpClient.get<any[]>(this.baseUrl + 'network/avaible');
+  }
+
+  getIp() {
+    return this.httpClient.get<any>(this.baseUrl + 'ip');
   }
 
 }

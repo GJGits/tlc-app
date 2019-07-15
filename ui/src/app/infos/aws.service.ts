@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../environments/environment';
+import {Observable, concat} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import {DeviceInfo, GroupInfo, Log} from './info';
 
@@ -11,6 +12,9 @@ export class AwsService {
   baseURL = environment.baseUrl;
 
   constructor(private http: HttpClient) {
+    concat(this.setIPAddress(), this.getIp()).subscribe((value) => {
+      this.baseURL = 'http://' + value + ':3000/';
+    }, (error) => console.log(error));
   }
 
   getGroupInfo(groupId: string) {
@@ -33,6 +37,14 @@ export class AwsService {
 
   getLogs() {
     return this.http.get<Log>(this.baseURL + 'user/' + environment.groupId + '/logs');
+  }
+
+  getIp() {
+    return this.http.get<any>(this.baseURL + 'ip');
+  }
+
+  setIPAddress() {
+    return this.http.get<any>(this.baseURL + 'network');
   }
 
 }
