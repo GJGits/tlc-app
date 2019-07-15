@@ -15,7 +15,7 @@ export class ApiService {
 
   constructor(private httpClient: HttpClient) {
     concat(this.setIPAddress(), this.getIp()).subscribe((value) => {
-      this.baseUrl = 'http://' + value + ':3000/';
+      this.baseUrl = 'http://' + value.ip + ':3000/';
     }, (error) => console.log(error));
   }
 

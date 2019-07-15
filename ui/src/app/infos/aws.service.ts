@@ -13,7 +13,7 @@ export class AwsService {
 
   constructor(private http: HttpClient) {
     concat(this.setIPAddress(), this.getIp()).subscribe((value) => {
-      this.baseURL = 'http://' + value + ':3000/';
+      this.baseURL = 'http://' + value.ip + ':3000/';
     }, (error) => console.log(error));
   }
 

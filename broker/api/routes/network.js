@@ -13,8 +13,8 @@ router.get('/', (req, res, next) => {
         const wlan0 = ifaces.wlan0;
         wlan0.forEach(iface => {
             if (iface.family === "IPv4") {
-                ip = iface.address;
-                fs.writeFileSync(__dirname + '/ip.json', JSON.stringify({ip: ip}));
+                const ip = iface.address;
+                fs.writeFileSync(__dirname + '/../db/ip.json', JSON.stringify({ip: ip}));
                 return res.send({message: "address setted!"});
             }
         });
