@@ -42,7 +42,7 @@ app.use("/user", userRouter);
 app.use('/events', eventsRouter);
 app.use('/device-info', deviceRouter);
 app.use('/ip', ipRouter);
-app.use('/network', ipRouter);
+app.use('/network', networkRouter);
 
 // handle 404
 app.use((req, res, next) => {
