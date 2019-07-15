@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
 });
 
 wifi.init({
-    iface: null
+    iface: 'wlan0'
 });
 
 /**
@@ -34,6 +34,7 @@ router.get('/avaible', (req, res, next) => {
             console.log(networks);
             res.status(200).send(networks);
         } else {
+            console.log(error);
             res.status(500).send({error: 'something went wrong'});
         }
     });
