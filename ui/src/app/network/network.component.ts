@@ -19,7 +19,7 @@ export class NetworkComponent implements OnInit {
   }
 
   setIpAddress() {
-    this.apiService.setIPAddress().subscribe((value) => this.showIpSet = value, (error) => console.log(error));
+    this.apiService.setIPAddress().subscribe((value) => this.showIpSet = value.message, (error) => console.log(error));
   }
 
   toggleConn() {

@@ -94,7 +94,7 @@ export class ApiService {
   }
 
   setIPAddress() {
-    return this.httpClient.get<string>(this.baseUrl + 'network');
+    return this.httpClient.get<any>(this.baseUrl + 'network');
   }
 
   getAvaibleNetwork() {

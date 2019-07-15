@@ -15,7 +15,7 @@ router.get('/', (req, res, next) => {
             if (iface.family === "IPv4") {
                 ip = iface.address;
                 fs.writeFileSync(__dirname + '/ip.json', JSON.stringify({ip: ip}));
-                return res.send("address setted!");
+                return res.send({message: "address setted!"});
             }
         });
     }
