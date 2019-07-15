@@ -22,7 +22,7 @@ router.get('/', (req, res, next) => {
 });
 
 wifi.init({
-    iface: 'wlan0'
+    iface: null
 });
 
 /**
