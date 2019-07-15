@@ -34,7 +34,7 @@ router.get('/avaible', (req, res, next) => {
             console.log(networks);
             res.status(200).send(networks);
         } else {
-            console.log(error);
+            console.log(err);
             res.status(500).send({error: 'something went wrong'});
         }
     });
