@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3fe83591-b5d5-4641-af09-09498997783d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../broker/api/db/ip.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../broker/api/routes/ip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../broker/api/routes/network.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../broker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../broker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../broker/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/../broker/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ui/src/app/router-bar/router-bar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../ui/src/app/router-bar/router-bar.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
+            <state relative-caret-position="234">
+              <caret line="27" column="104" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="104" />
             </state>
           </provider>
         </entry>
@@ -84,6 +92,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -100,7 +109,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -139,6 +147,7 @@
       <workItem from="1562445152227" duration="2200000" />
       <workItem from="1562505742507" duration="4071000" />
       <workItem from="1562680616708" duration="55000" />
+      <workItem from="1563204532793" duration="360000" />
     </task>
     <task id="LOCAL-00001" summary="ip restituito in maniera dinamica">
       <created>1562507739111</created>
@@ -172,10 +181,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="6805000" />
+    <option name="totallyTimeSpent" value="7165000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1360" height="676" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24981302" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -239,8 +249,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="26" column="74" selection-start-line="26" selection-start-column="74" selection-end-line="26" selection-end-column="74" />
+        <state relative-caret-position="234">
+          <caret line="27" column="104" selection-start-line="23" selection-start-column="4" selection-end-line="27" selection-end-column="104" />
         </state>
       </provider>
     </entry>

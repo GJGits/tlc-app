@@ -93,4 +93,12 @@ export class ApiService {
       + event.roomName + '/' + event.repeat + '/' + event.startTime);
   }
 
+  setIPAddress() {
+    return this.httpClient.get<string>(this.baseUrl + 'network');
+  }
+
+  getAvaibleNetwork() {
+    return this.httpClient.get<any[]>(this.baseUrl + 'network/avaible');
+  }
+
 }

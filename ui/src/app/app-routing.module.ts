@@ -5,12 +5,14 @@ import {ConsoleComponent} from './console/console.component';
 import {ApartmentComponent} from './apartment/apartment.component';
 import {StatisticsComponent} from './statistics/statistics.component';
 import {ProgramComponent} from './program/program.component';
+import {NetworkComponent} from './network/network.component';
 
 const appRoutes: Routes = [
   {path: 'consoleStatus', component: ConsoleComponent},
   {path: 'apartment', component: ApartmentComponent},
   {path: 'statistics', component: StatisticsComponent},
   {path: 'program', component: ProgramComponent},
+  {path: 'network', component: NetworkComponent},
   {path: '', redirectTo: 'consoleStatus', pathMatch: 'full'}
 ];
 

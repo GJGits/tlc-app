@@ -1,0 +1,8 @@
+<div class="container">
+  <button type="button" class="btn btn-primary" (click)="setIpAddress()">Set Device IP</button>
+  <p *ngIf="showIpSet">IP Address OK!</p>
+  <button type="button" class="btn btn-primary" (click)="toggleConn()">Set Device IP</button>
+  <ul class="list-group" *ngIf="toggleConnection">
+    <li class="list-group-item" *ngFor="let wifi of avaibleWiFi">{{wifi.ssid}}</li>
+  </ul>
+</div>

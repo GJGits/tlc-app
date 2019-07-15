@@ -13,7 +13,8 @@ export class RouterBarComponent implements OnInit {
     {link: 'apartment', linkDisplay: 'Apartment'},
     {link: 'statistics', linkDisplay: 'Statistics'},
     {link: 'infos', linkDisplay: 'Infos'},
-    {link: 'program', linkDisplay: 'Program'}
+    {link: 'program', linkDisplay: 'Program'},
+    {link: 'network', linkDisplay: 'Network'}
   ];
 
   constructor() {

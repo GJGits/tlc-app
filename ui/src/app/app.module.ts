@@ -48,6 +48,7 @@ import { ProgramComponent } from './program/program.component';
 import { EventsTabComponent } from './program/events-tab/events-tab.component';
 import { EventsFormComponent } from './program/events-form/events-form.component';
 import { SimpleEventFormComponent } from './program/simple-event-form/simple-event-form.component';
+import { NetworkComponent } from './network/network.component';
 
 
 @NgModule({
@@ -73,6 +74,7 @@ import { SimpleEventFormComponent } from './program/simple-event-form/simple-eve
     EventsTabComponent,
     EventsFormComponent,
     SimpleEventFormComponent,
+    NetworkComponent,
   ],
   imports: [
     BrowserModule,
