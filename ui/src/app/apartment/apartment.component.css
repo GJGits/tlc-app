@@ -2,8 +2,10 @@
   .container {
     max-width: 95%;
   }
-  .key {
-    width: 100%;
-    height: 100px;
-  }
+
+}
+
+.key {
+  width: 100%;
+  height: 100px;
 }
