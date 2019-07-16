@@ -2,10 +2,17 @@
   .container {
     max-width: 95%;
   }
-
+  .key {
+    width: 100% !important;
+    height: 100px !important;
+  }
+  .vk {
+    width: 100% !important;
+    height: 100px !important;
+  }
 }
 
-.key {
-  width: 100%;
-  height: 100px;
+.vk {
+  width: 100% !important;
+  height: 100px !important;
 }
