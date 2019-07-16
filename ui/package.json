@@ -31,6 +31,7 @@
     "moment": "^2.24.0",
     "mqtt": "^2.18.8",
     "ng2-charts": "^2.2.3",
+    "ng2-virtual-keyboard": "^0.5.0",
     "ngx-mqtt": "^6.10.0",
     "popper.js": "^1.15.0",
     "rxjs": "~6.3.3",

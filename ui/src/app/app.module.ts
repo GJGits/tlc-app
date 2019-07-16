@@ -8,6 +8,7 @@ import { InfoRoutingModule } from './infos/menu/info-routing.module';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
+import {Ng2VirtualKeyboardModule} from 'ng2-virtual-keyboard';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 
 
@@ -79,6 +80,7 @@ import { NetworkComponent } from './network/network.component';
   imports: [
     BrowserModule,
     ConsoleModule,
+    Ng2VirtualKeyboardModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
