@@ -1,12 +1,12 @@
 /* MODULES */
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import {ConsoleModule} from './console/console.module';
 import { AppRoutingModule } from './app-routing.module';
 import {HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InfoRoutingModule } from './infos/menu/info-routing.module';
 import { ChartsModule } from 'ng2-charts';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import {Ng2VirtualKeyboardModule} from 'ng2-virtual-keyboard';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
@@ -79,6 +79,7 @@ import { NetworkComponent } from './network/network.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ConsoleModule,
     Ng2VirtualKeyboardModule,
     AppRoutingModule,
@@ -88,7 +89,6 @@ import { NetworkComponent } from './network/network.component';
     InfoRoutingModule,
     MqttModule.forRoot(MQTT_SERVICE_OPTIONS),
     ChartsModule,
-    BrowserAnimationsModule,
     CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory

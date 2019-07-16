@@ -5,10 +5,11 @@
 
 <ng-template #editAddress>
   <div class="row" style="height: 35px">
+    <vk-keyboard></vk-keyboard>
     <input vkToggle vkInput class="col-sm-5 offset-sm-3 col-md-4 offset-md-4 align-middle" type="text" [(ngModel)]="address">
     <button (click)="saveEdits()" type="button" class="btn btn-primary ml-3">Save edits</button>
   </div>
 
 </ng-template>
 
-<vk-keyboard></vk-keyboard>
+
