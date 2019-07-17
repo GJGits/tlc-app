@@ -12,9 +12,9 @@ export class AwsService {
   baseURL = environment.baseUrl;
 
   constructor(private http: HttpClient) {
-    concat(this.setIPAddress(), this.getIp()).subscribe((value) => {
+    /*concat(this.setIPAddress(), this.getIp()).subscribe((value) => {
       this.baseURL = 'http://' + value.ip + ':3000/';
-    }, (error) => console.log(error));
+    }, (error) => console.log(error));*/
   }
 
   getGroupInfo(groupId: string) {
